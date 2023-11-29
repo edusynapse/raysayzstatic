@@ -9,10 +9,10 @@
 
 <channel>
 	<title>Uncategorized &#8211; Ray Sayz</title>
-	<atom:link href="http://localhost/category/uncategorized/feed/?simply_static_page=396" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/category/uncategorized/feed/?simply_static_page=583" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Nowhere, everywhere ... now</description>
-	<lastBuildDate>Tue, 28 Nov 2023 14:04:45 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 29 Nov 2023 09:19:35 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,22 +28,129 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>WordPress Tip 101</title>
+		<link>/wordpress-tip-101/</link>
+		
+		<dc:creator><![CDATA[raysayz]]></dc:creator>
+		<pubDate>Wed, 29 Nov 2023 09:12:43 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=41</guid>
+
+					<description><![CDATA[Unhooking a Function from the Parent Theme If the function from the parent theme isn’t pluggable, you can still prevent it from running. Imagine your parent theme has a function called parent_function(), which is hooked to the init hook with&#8230; ]]></description>
+										<content:encoded><![CDATA[
+<h4 class="wp-block-heading" id="unhooking-a-function-from-the-parent-theme">Unhooking a Function from the Parent Theme<a class="anchor-hash" href="#unhooking-a-function-from-the-parent-theme" aria-hidden="true"></a></h4>
+
+
+
+<p>If the function from the parent theme isn’t pluggable, you can still prevent it from running. Imagine your parent theme has a function called <code>parent_function()</code>, which is hooked to the <code>init</code> hook with a priority of <code>20</code>. You want to prevent it from running so you can replace it with a function of your own.</p>
+
+
+
+<p>Here’s what the parent theme function might look like:</p>
+
+
+
+<pre class="wp-block-code"><code><span class="token keyword">function</span> <span class="token function-definition function">parent_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment">//contents of function here</span>
+<span class="token punctuation">}</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> ‘init’<span class="token punctuation">,</span> ‘parent_function’<span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<p>To unhook it, you’d code this in your child theme:</p>
+
+
+
+<pre class="wp-block-code"><code><span class="token keyword">function</span> <span class="token function-definition function">remove_parent_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">remove_action</span><span class="token punctuation">(</span> ‘init’<span class="token punctuation">,</span> ‘parent_function’<span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> ‘wp_head’<span class="token punctuation">,</span> ‘remove_parent_function’ <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<p>Note that you hook your second function to the wp_head hook which is run at the top of each page, and that you have to include the same value for the priority parameter as in the original function. If the original <code>add_action()</code> function didn’t have a priority, you can omit that from your child theme’s <code>remove_action()</code> function.</p>
+
+
+
+<p><em>Note: If the original function was hooked to a filter hook instead of an action hook, you would use <code>remove_filter()</code> in the same way.</em></p>
+
+
+
+<h4 class="wp-block-heading" id="augmenting-a-function-with-another-function">Augmenting a Function With Another Function<a class="anchor-hash" href="#augmenting-a-function-with-another-function" aria-hidden="true"></a></h4>
+
+
+
+<p>Instead of overriding or removing a function, sometimes you might want to add to it instead. In this case, you’d write a new function with a different name, and attach it to the same hook.</p>
+
+
+
+<p>Let’s imagine there is an action hook for the footer in your parent theme called <code>parent_footer</code>. Any function you attach to that hook will run in the place where the hook is situated.</p>
+
+
+
+<p>In the parent theme, there’s already a function called <code>parent_footer_content()</code> that populates the footer. But what if you wanted to add some extra code to it?</p>
+
+
+
+<p>Here’s what the <code>parent_footer_content()</code> function might look like in the parent theme:</p>
+
+
+
+<pre class="wp-block-code"><code><span class="token keyword">function</span> <span class="token function-definition function">parent_footer_content</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment">// content of function here</span>
+<span class="token punctuation">}</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> ‘parent_footer’<span class="token punctuation">,</span> ‘parent_footer_content’ <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<p>Now if you wanted to add additional content after that, you would create a function in your child theme, hooked to the same action hook, with a priority that meant it run after the first function. As the priority isn’t set for the parent theme’s function, it defaults to 10. So you need to use a higher number so it fires after that.</p>
+
+
+
+<pre class="wp-block-code"><code><span class="token keyword">function</span> <span class="token function-definition function">child_footer_extra_content</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment">// contents of function here</span>
+<span class="token punctuation">}</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> ‘parent_footer’<span class="token punctuation">,</span> ‘child_footer_extra_content’<span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<p>This would add the code from your child theme’s function after the code from your parent theme’s function.</p>
+
+
+
+<h2 class="wp-block-heading">An Example</h2>
+
+
+
+<p> This is a snippet I used to get rid of the footer in the Attitude theme</p>
+
+
+
+<pre class="wp-block-code"><code>
+add_action( 'wp_head', 'remove_attitude_footer' );
+
+function remove_attitude_footer() {
+ remove_action( 'attitude_footer', 'attitude_footer_info', 30 );
+}</code></pre>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>Hello world!</title>
 		<link>/hello-world/</link>
-					<comments>/hello-world/#comments</comments>
 		
 		<dc:creator><![CDATA[raysayz]]></dc:creator>
 		<pubDate>Tue, 28 Nov 2023 14:04:45 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
 		<guid isPermaLink="false">/?p=1</guid>
 
-					<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
+					<description><![CDATA[This is first post. That&#8217;s it.]]></description>
 										<content:encoded><![CDATA[
-<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+<p>This is first post. That&#8217;s it. </p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/hello-world/feed/</wfw:commentRss>
-			<slash:comments>1</slash:comments>
 		
 		
 			</item>
