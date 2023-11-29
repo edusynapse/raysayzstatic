@@ -8,9 +8,9 @@
 <channel>
 	<title>
 	Comments for Ray Sayz	</title>
-	<atom:link href="http://localhost/comments/feed/?simply_static_page=250" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/comments/feed/?simply_static_page=346" rel="self" type="application/rss+xml" />
 	<link>/</link>
-	<description></description>
+	<description>Nowhere, everywhere ... now</description>
 	<lastBuildDate>Tue, 28 Nov 2023 14:04:45 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
