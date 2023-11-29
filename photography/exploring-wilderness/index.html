@@ -150,12 +150,47 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
   			<div class="entry-content clearfix">
     			
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="684" data-id="63" src="/wp-content/uploads/2023/11/DSCF3458-1024x684.jpg" alt="" class="wp-image-63" srcset="/wp-content/uploads/2023/11/DSCF3458-1024x684.jpg 1024w, /wp-content/uploads/2023/11/DSCF3458-300x200.jpg 300w, /wp-content/uploads/2023/11/DSCF3458-768x513.jpg 768w, /wp-content/uploads/2023/11/DSCF3458-1536x1026.jpg 1536w, /wp-content/uploads/2023/11/DSCF3458-2048x1368.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+<figure class="wp-block-image size-large"><a href="/wp-content/uploads/2023/11/DSCF3458-scaled.jpg"><img fetchpriority="high" decoding="async" width="1024" height="684" data-id="63" src="/wp-content/uploads/2023/11/DSCF3458-1024x684.jpg" alt="" class="wp-image-63" srcset="/wp-content/uploads/2023/11/DSCF3458-1024x684.jpg 1024w, /wp-content/uploads/2023/11/DSCF3458-300x200.jpg 300w, /wp-content/uploads/2023/11/DSCF3458-768x513.jpg 768w, /wp-content/uploads/2023/11/DSCF3458-1536x1026.jpg 1536w, /wp-content/uploads/2023/11/DSCF3458-2048x1368.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></a></figure>
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="684" data-id="62" src="/wp-content/uploads/2023/11/DSCF4165-1024x684.jpg" alt="" class="wp-image-62" srcset="/wp-content/uploads/2023/11/DSCF4165-1024x684.jpg 1024w, /wp-content/uploads/2023/11/DSCF4165-300x200.jpg 300w, /wp-content/uploads/2023/11/DSCF4165-768x513.jpg 768w, /wp-content/uploads/2023/11/DSCF4165-1536x1026.jpg 1536w, /wp-content/uploads/2023/11/DSCF4165-2048x1368.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+<figure class="wp-block-image size-large"><a href="/wp-content/uploads/2023/11/DSCF4165-scaled.jpg"><img decoding="async" width="1024" height="684" data-id="62" src="/wp-content/uploads/2023/11/DSCF4165-1024x684.jpg" alt="" class="wp-image-62" srcset="/wp-content/uploads/2023/11/DSCF4165-1024x684.jpg 1024w, /wp-content/uploads/2023/11/DSCF4165-300x200.jpg 300w, /wp-content/uploads/2023/11/DSCF4165-768x513.jpg 768w, /wp-content/uploads/2023/11/DSCF4165-1536x1026.jpg 1536w, /wp-content/uploads/2023/11/DSCF4165-2048x1368.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></a></figure>
 </figure>
+
+
+
+
+<style>#divBlockEntirePage
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.75);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+#divBlockEntirePage #close {
+ position : absolute;
+ right : 1em;
+ top : 0.7em;
+ font-size:4em;
+}</style>
+<script>
+jQuery(document).ready(function () {
+    jQuery('figure.wp-block-image img').on("click", function () {
+        //jQuery('#divBlockEntirePage').show();
+        var link = this.parentNode.href;
+        //link.replace(/[\w]*:\/\/[\w]*\/[\w]*/, "");
+        jQuery('<div id="divBlockEntirePage"><img decoding="async" src="'+ link +'"/>\n' +
+            '<span id="close" onclick="this.parentNode.style.display=\'none\'; return false;">x<\/span><\/div>').appendTo('body');
+    });
+    jQuery('figure').find('a').on("click", function () {
+        return false;
+    });
+});
+</script>
     			  			</div>
 
   			
