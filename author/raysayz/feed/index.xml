@@ -9,16 +9,16 @@
 
 <channel>
 	<title>raysayz &#8211; Ray Sayz</title>
-	<atom:link href="http://localhost/author/raysayz/feed/?simply_static_page=1536" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/author/raysayz/feed/?simply_static_page=1665" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Nowhere, everywhere ... now</description>
-	<lastBuildDate>Wed, 29 Nov 2023 09:19:35 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 12 Dec 2023 08:50:08 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<generator>https://wordpress.org/?v=6.4.3</generator>
 
 <image>
 	<url>/wp-content/uploads/2023/11/cropped-raysayz-32x32.png</url>
@@ -28,6 +28,195 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>Disable keyboard touch pad in Pop!</title>
+		<link>/disable-keyboard-touch-pad-in-pop/</link>
+		
+		<dc:creator><![CDATA[raysayz]]></dc:creator>
+		<pubDate>Tue, 12 Dec 2023 08:50:08 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=175</guid>
+
+					<description><![CDATA[In the case of convertible laptops the keyboard and touchpad needs to be disabled if the laptop screen is being used as a tablet and you dont want accidental keypresses. This happens automatically on windows but linux and Pop! does&#8230; ]]></description>
+										<content:encoded><![CDATA[
+<p>In the case of convertible laptops the keyboard and touchpad needs to be disabled if the laptop screen is being used as a tablet and you dont want accidental keypresses. This happens automatically on windows but linux and Pop! does not detect the switch which allows it to know that the laptop os being flipped. Some laptops show up this key , some dont.</p>
+
+
+
+<pre class="wp-block-code"><code>ray@pop-os:~/TabletButton$ xinput list 
+<strong>⎡ Virtual core pointer                    	id=2	</strong>&#91;master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	&#91;slave  pointer  (2)]
+⎜   ↳ Asus Keyboard                           	id=9	&#91;slave  pointer  (2)]
+⎜   ↳ Asus Keyboard                           	id=11	&#91;slave  pointer  (2)]
+⎜   ↳ ELAN9008:00 04F3:2FC2                   	id=12	&#91;slave  pointer  (2)]
+⎜   ↳ ASUE120D:00 04F3:31FB Mouse             	id=14	&#91;slave  pointer  (2)]
+<strong>⎜   ↳ ASUE120D:00 04F3:31FB Touchpad          	id=15	&#91;slave  pointer  (2)]</strong>
+⎜   ↳ input-remapper Asus Keyboard forwarded  	id=20	&#91;slave  pointer  (2)]
+⎜   ↳ ERGO M575 Mouse                         	id=22	&#91;slave  pointer  (2)]
+⎜   ↳ input-remapper ERGO M575 Mouse forwarded	id=23	&#91;slave  pointer  (2)]
+⎣ <strong>Virtual core keyboard                   	id=3</strong>	&#91;master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	&#91;slave  keyboard (3)]
+    ↳ Video Bus                               	id=6	&#91;slave  keyboard (3)]
+    ↳ Power Button                            	id=7	&#91;slave  keyboard (3)]
+    ↳ Sleep Button                            	id=8	&#91;slave  keyboard (3)]
+    ↳ Asus Keyboard                           	id=10	&#91;slave  keyboard (3)]
+    ↳ ELAN9008:00 04F3:2FC2 Stylus            	id=13	&#91;slave  keyboard (3)]
+    ↳ Asus WMI hotkeys                        	id=16	&#91;slave  keyboard (3)]
+    ↳ Asus Keyboard                           	id=17	&#91;slave  keyboard (3)]
+<strong>    ↳ input-remapper keyboard                 	id=18	&#91;slave  keyboard (3)]
+    ↳ input-remapper Asus Keyboard forwarded  	id=19	&#91;slave  keyboard (3)]
+    ↳ input-remapper Asus Keyboard forwarded</strong>  	<strong>id=21	&#91;slave  keyboard (3)]</strong></code></pre>
+
+
+
+<p>We can find the correct input type by disconnecting and connecting. If you are successful and the keyboard is disabled you need an external usb keyboard to start typing to reattach. So its best to use the below script to experiment which finishes in a certain time and you regain keyboard.</p>
+
+
+
+<pre class="wp-block-code"><code>#!/bin/bash
+
+#to disconnect by id
+#disconnect special key
+xinput float 18
+#disconnect main keyboard
+xinput float 19
+#disconnect special key
+xinput float 21
+#disconnect touch pad
+xinput float 15
+
+sleep 10s # Waits 10 seconds. 
+#Check if your keyboard and touchpad is disabled
+
+#to reconnecct by id to parent
+xinput reattach 18 3
+xinput reattach 19 3
+xinput reattach 21 3
+xinput reattach 15 2</code></pre>
+
+
+
+<p>Create a Gnome Panel applet to do the same. We need a dependency for this</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get install gir1.2-appindicator3-0.1 </code></pre>
+
+
+
+<p>Now the script</p>
+
+
+
+<pre class="wp-block-code"><code>#!/usr/bin/python3
+
+# This code is an example for a tutorial on Ubuntu Unity/Gnome AppIndicators:
+# http://candidtim.github.io/appindicator/2014/09/13/ubuntu-appindicator-step-by-step.html
+# https://gist.github.com/candidtim/7290a1ad6e465d680b68
+
+import os
+import signal
+import json
+import subprocess
+
+import gi
+gi.require_version('Gtk', '3.0') 
+from gi.repository import Gtk as gtk
+from gi.repository import AppIndicator3 as appindicator
+from gi.repository import Notify as notify
+
+
+
+APPINDICATOR_ID = 'tabletmodeindicator'
+
+def main():
+    indicator = appindicator.Indicator.new(APPINDICATOR_ID, os.path.abspath('<strong>/home/surajitray/TabletButton/tablet.svg</strong>'), appindicator.IndicatorCategory.SYSTEM_SERVICES)
+    indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
+    indicator.set_menu(build_menu())
+    notify.init(APPINDICATOR_ID)
+    gtk.main()
+
+def build_menu():
+    menu = gtk.Menu()
+
+    item_tbmode = gtk.MenuItem('TabletMode')
+    item_tbmode.connect('activate', tbmode)
+    menu.append(item_tbmode)
+
+
+    item_lpmode = gtk.MenuItem('LaptopMode')
+    item_lpmode.connect('activate', lpmode)
+    menu.append(item_lpmode)
+
+    item_quit = gtk.MenuItem('Quit')
+    item_quit.connect('activate', quit)
+    menu.append(item_quit)
+
+    menu.show_all()
+    return menu
+
+def tbmode(_):
+    subprocess.call("<strong>/home/surajitray/<strong>TabletButton</strong></strong>/<strong>keyboardtouchpaddisable.sh</strong>", shell=True)
+    return tbmode
+
+def lpmode(_):
+    subprocess.call("<strong>/home/surajitray/<strong>TabletButton</strong></strong>/<strong>keyboardtouchpadenable.sh</strong>", shell=True)
+    return lpmode
+
+def quit1(_):
+    notify.uninit()
+    gtk.main_quit()
+
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+    main()</code></pre>
+
+
+
+<p>The scripts are below</p>
+
+
+
+<p><strong>keyboardtouchpaddisable.sh</strong></p>
+
+
+
+<pre class="wp-block-code"><code>#!/bin/bash
+
+xinput float 18
+xinput float 19
+xinput float 21
+xinput float 15</code></pre>
+
+
+
+<p><strong>keyboardtouchpaddisable.sh</strong></p>
+
+
+
+<pre class="wp-block-code"><code>#!/bin/bash
+
+xinput reattach 18 3
+xinput reattach 19 3
+xinput reattach 21 3
+xinput reattach 15 2</code></pre>
+
+
+
+<p>You can use any svg for the image : <strong>/home/surajitray/TabletButton/tablet.svg</strong>, just make sure the image and path are correct. Now you can put this item in the startup applications</p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="717" src="/wp-content/uploads/2023/12/image-1024x717.png" alt="" class="wp-image-178" srcset="/wp-content/uploads/2023/12/image-1024x717.png 1024w, /wp-content/uploads/2023/12/image-300x210.png 300w, /wp-content/uploads/2023/12/image-768x538.png 768w, /wp-content/uploads/2023/12/image-1536x1075.png 1536w, /wp-content/uploads/2023/12/image.png 2024w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>WordPress Tip 101</title>
 		<link>/wordpress-tip-101/</link>
 		

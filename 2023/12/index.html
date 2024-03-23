@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="/xmlrpc.php">	
-<title>WordPress Tip 101 &#8211; Ray Sayz</title>
+<title>December 2023 &#8211; Ray Sayz</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="dns-prefetch" href="//localhost">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -51,13 +51,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 <script type="text/javascript" src="/wp-content/themes/attitude/library/js/scripts.js?ver=6.4.3" id="attitude-scripts-js"></script>
 <script type="text/javascript" src="/wp-content/themes/attitude/library/js/backtotop.js?ver=6.4.3" id="backtotop-js"></script>
 <link rel="https://api.w.org/" href="/wp-json/">
-<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/41">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
 <meta name="generator" content="WordPress 6.4.3">
-<link rel="canonical" href="/wordpress-tip-101/">
-<link rel="shortlink" href="/?p=41">
-<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=%2Fwordpress-tip-101%2F">
-<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=%2Fwordpress-tip-101%2F#038;format=xml">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LPBZ5W37R"></script>
@@ -82,7 +77,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 </head>
 
-<body class="post-template-default single single-post postid-41 single-format-standard ">
+<body class="archive date ">
 		
 	<div class="wrapper">
 				<header id="branding">
@@ -147,140 +142,36 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 	
 
 <div id="primary">
-   <div id="content">	<section id="post-41" class="post-41 post type-post status-publish format-standard hentry category-uncategorized">
+   <div id="content">	<section id="post-175" class="post-175 post type-post status-publish format-standard hentry category-uncategorized">
 		<article>
 
 			
 			<header class="entry-header">
-    			<h1 class="entry-title">
-    				WordPress Tip 101    			</h1>
+    			<h2 class="entry-title">
+    				<a href="/disable-keyboard-touch-pad-in-pop/" title="Disable keyboard touch pad in Pop!">Disable keyboard touch pad in Pop!</a>
+    			</h2>
 <!-- .entry-title -->
   			</header>
 
   			
   			
-  			<div class="entry-content clearfix">
-    			
-<h4 class="wp-block-heading" id="unhooking-a-function-from-the-parent-theme">Unhooking a Function from the Parent Theme<a class="anchor-hash" href="#unhooking-a-function-from-the-parent-theme" aria-hidden="true"></a>
-</h4>
-
-
-
-<p>If the function from the parent theme isn’t pluggable, you can still prevent it from running. Imagine your parent theme has a function called <code>parent_function()</code>, which is hooked to the <code>init</code> hook with a priority of <code>20</code>. You want to prevent it from running so you can replace it with a function of your own.</p>
-
-
-
-<p>Here’s what the parent theme function might look like:</p>
-
-
-
-<pre class="wp-block-code"><code><span class="token keyword">function</span> <span class="token function-definition function">parent_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
- <span class="token comment">//contents of function here</span>
-<span class="token punctuation">}</span>
-<span class="token function">add_action</span><span class="token punctuation">(</span> ‘init’<span class="token punctuation">,</span> ‘parent_function’<span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-
-
-<p>To unhook it, you’d code this in your child theme:</p>
-
-
-
-<pre class="wp-block-code"><code><span class="token keyword">function</span> <span class="token function-definition function">remove_parent_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
- <span class="token function">remove_action</span><span class="token punctuation">(</span> ‘init’<span class="token punctuation">,</span> ‘parent_function’<span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">add_action</span><span class="token punctuation">(</span> ‘wp_head’<span class="token punctuation">,</span> ‘remove_parent_function’ <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-
-
-<p>Note that you hook your second function to the wp_head hook which is run at the top of each page, and that you have to include the same value for the priority parameter as in the original function. If the original <code>add_action()</code> function didn’t have a priority, you can omit that from your child theme’s <code>remove_action()</code> function.</p>
-
-
-
-<p><em>Note: If the original function was hooked to a filter hook instead of an action hook, you would use <code>remove_filter()</code> in the same way.</em></p>
-
-
-
-<h4 class="wp-block-heading" id="augmenting-a-function-with-another-function">Augmenting a Function With Another Function<a class="anchor-hash" href="#augmenting-a-function-with-another-function" aria-hidden="true"></a>
-</h4>
-
-
-
-<p>Instead of overriding or removing a function, sometimes you might want to add to it instead. In this case, you’d write a new function with a different name, and attach it to the same hook.</p>
-
-
-
-<p>Let’s imagine there is an action hook for the footer in your parent theme called <code>parent_footer</code>. Any function you attach to that hook will run in the place where the hook is situated.</p>
-
-
-
-<p>In the parent theme, there’s already a function called <code>parent_footer_content()</code> that populates the footer. But what if you wanted to add some extra code to it?</p>
-
-
-
-<p>Here’s what the <code>parent_footer_content()</code> function might look like in the parent theme:</p>
-
-
-
-<pre class="wp-block-code"><code><span class="token keyword">function</span> <span class="token function-definition function">parent_footer_content</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
- <span class="token comment">// content of function here</span>
-<span class="token punctuation">}</span>
-<span class="token function">add_action</span><span class="token punctuation">(</span> ‘parent_footer’<span class="token punctuation">,</span> ‘parent_footer_content’ <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-
-
-<p>Now if you wanted to add additional content after that, you would create a function in your child theme, hooked to the same action hook, with a priority that meant it run after the first function. As the priority isn’t set for the parent theme’s function, it defaults to 10. So you need to use a higher number so it fires after that.</p>
-
-
-
-<pre class="wp-block-code"><code><span class="token keyword">function</span> <span class="token function-definition function">child_footer_extra_content</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
- <span class="token comment">// contents of function here</span>
-<span class="token punctuation">}</span>
-<span class="token function">add_action</span><span class="token punctuation">(</span> ‘parent_footer’<span class="token punctuation">,</span> ‘child_footer_extra_content’<span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-
-
-<p>This would add the code from your child theme’s function after the code from your parent theme’s function.</p>
-
-
-
-<h2 class="wp-block-heading">An Example</h2>
-
-
-
-<p> This is a snippet I used to get rid of the footer in the Attitude theme</p>
-
-
-
-<pre class="wp-block-code"><code>
-add_action( 'wp_head', 'remove_attitude_footer' );
-
-function remove_attitude_footer() {
- remove_action( 'attitude_footer', 'attitude_footer_info', 30 );
-}</code></pre>
+			              			<div class="entry-content clearfix">
+    			<p>In the case of convertible laptops the keyboard and touchpad needs to be disabled if the laptop screen is being used as a tablet and you dont want accidental keypresses. This happens automatically on windows but linux and Pop! does&hellip; </p>
   			</div>
+
+  			
+  			
   			<div class="entry-meta-bar clearfix">	        			
     			<div class="entry-meta">
     				<span class="by-author vcard author"><span class="fn">By <a href="/author/raysayz/">raysayz</a></span></span> |
-    				<span class="date updated"><a href="/wordpress-tip-101/" title="9:12 am">November 29, 2023</a></span> |
+    				<span class="date updated"><a href="/disable-keyboard-touch-pad-in-pop/" title="8:50 am">December 12, 2023</a></span> |
     				             		<span class="category"><a href="/category/uncategorized/" rel="category tag">Uncategorized</a></span> |
              	 
     				 		          				
     			</div>
 <!-- .entry-meta -->
-    		</div>
-
-  						<ul class="default-wp-page clearfix">
-				<li class="previous"><a href="/hello-world/" rel="prev"><span class="meta-nav">&larr;</span> Hello world!</a></li>
-				<li class="next"><a href="/disable-keyboard-touch-pad-in-pop/" rel="next">Disable keyboard touch pad in Pop! <span class="meta-nav">&rarr;</span></a></li>
-			</ul>
-		
-<div id="comments" class="comments-area">
-
-	
-	
-	
-</div>
-<!-- #comments .comments-area -->
+    			<a class="readmore" href="/disable-keyboard-touch-pad-in-pop/" title="Disable keyboard touch pad in Pop!">Read more</a>    		</div>
+			    		
 		</article>
 	</section>
 </div>
@@ -294,7 +185,7 @@ function remove_attitude_footer() {
 
 <aside id="block-5" class="widget widget_block"><div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="wp-block-group__inner-container">
 <h2 class="wp-block-heading">Archives</h2>
-<ul class="wp-block-archives-list wp-block-archives">	<li><a href="/2023/12/">December 2023</a></li>
+<ul class="wp-block-archives-list wp-block-archives">	<li><a href="/2023/12/" aria-current="page">December 2023</a></li>
 	<li><a href="/2023/11/">November 2023</a></li>
 </ul>
 </div></div></aside><aside id="block-6" class="widget widget_block"><div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="wp-block-group__inner-container">
