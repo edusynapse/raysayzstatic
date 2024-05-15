@@ -9,16 +9,16 @@
 
 <channel>
 	<title>Uncategorized &#8211; Ray Sayz</title>
-	<atom:link href="http://localhost/category/uncategorized/feed/?simply_static_page=1796" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/category/uncategorized/feed/?simply_static_page=1930" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Nowhere, everywhere ... now</description>
-	<lastBuildDate>Tue, 12 Dec 2023 08:50:08 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 15 May 2024 04:48:29 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.5</generator>
+	<generator>https://wordpress.org/?v=6.5.3</generator>
 
 <image>
 	<url>/wp-content/uploads/2023/11/cropped-raysayz-32x32.png</url>
@@ -28,6 +28,116 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>Installing Unity Hub on PopOs 22.04 LTS</title>
+		<link>/installing-unity-hub-on-popos-22-04-lts/</link>
+		
+		<dc:creator><![CDATA[raysayz]]></dc:creator>
+		<pubDate>Wed, 15 May 2024 04:48:28 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=206</guid>
+
+					<description><![CDATA[Based on various links mentioned below here is my guide to starting Unity Hub on PopOs 22.04 You have to install ssl 1 via First thing is official guide Debian or Ubuntu To install the Unity Hub on a Debian&#8230; ]]></description>
+										<content:encoded><![CDATA[
+<p>Based on various links mentioned below here is my guide to starting Unity Hub on PopOs 22.04</p>
+
+
+
+<p>You have to  install ssl 1 via</p>
+
+
+
+<pre class="wp-block-code"><code>sudo dpkg -i &lt;downloaded deb file&gt;</code></pre>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-ffb33b69-de3e-498e-b1d7-5c074c7e63a9" href="/wp-content/uploads/2024/05/libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb">libssl1.1_1.1.1f-1ubuntu2.22_amd64</a><a href="/wp-content/uploads/2024/05/libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-ffb33b69-de3e-498e-b1d7-5c074c7e63a9">Download</a></div>
+
+
+
+<p></p>
+
+
+
+<p>First thing is official guide</p>
+
+
+
+<h4 class="wp-block-heading" id="debian-or-ubuntu">Debian or Ubuntu</h4>
+
+
+
+<p>To install the Unity Hub on a Debian or Ubuntu Linux distribution, you need to add the Unity Hub Debian repository along with the public signing key to verify the integrity of the packages.</p>
+
+
+
+<ol>
+<li>To add the public signing key, run the following command:<code>$ wget -qO - https://hub.unity3d.com/linux/keys/public | gpg --dearmor | sudo tee /usr/share/keyrings/Unity_Technologies_ApS.gpg > /dev/null</code></li>
+
+
+
+<li>To add the Unity Hub repository, you need an entry in <code>/etc/apt/sources.list.d</code>. Run the following command to add the Unity Hub repository:<code>$ sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/Unity_Technologies_ApS.gpg] https://hub.unity3d.com/linux/repos/deb stable main" > /etc/apt/sources.list.d/unityhub.list'</code></li>
+
+
+
+<li>Update the package cache and install the package:<code>$ sudo apt update $ sudo apt-get install unityhub</code></li>
+</ol>
+
+
+
+<p>**Note: For some systems, you may need to ensure the following:</p>
+
+
+
+<ul>
+<li>The directory <code>/usr/share/keyrings</code> exists.</li>
+
+
+
+<li>The user or group installing the Hub has write permissions to the <code>/usr/share/keyrings</code> directory.</li>
+
+
+
+<li>The user or group installing Hub has at least read permissions to the resulting file <code>Unity_Technologies_ApS.gpg</code>.**</li>
+</ul>
+
+
+
+<p>To remove the Unity Hub from the system, run the following command:</p>
+
+
+
+<pre class="wp-block-code"><code>$ sudo apt-get remove unityhub
+
+</code></pre>
+
+
+
+<p>Now we have to start in a special way so you can set the unity temp folder</p>
+
+
+
+<pre class="wp-block-code"><code>#!/bin/bash
+
+TMPDIR=/home/surajitray/Development/unitytemp /opt/unityhub/unityhub %U
+</code></pre>
+
+
+
+<p>Links</p>
+
+
+
+<p><a href="https://docs.unity3d.com/hub/manual/InstallHub.html#install-hub-linux">https://docs.unity3d.com/hub/manual/InstallHub.html#install-hub-linux</a></p>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>Disable keyboard touch pad in Pop!</title>
 		<link>/disable-keyboard-touch-pad-in-pop/</link>
 		
