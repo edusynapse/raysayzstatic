@@ -139,8 +139,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <div id="container">
 	
 
-<div id="primary">
-   <div id="content">	<section id="post-44" class="post-44 page type-page status-publish hentry">
+<div id="content">	<section id="post-44" class="post-44 page type-page status-publish hentry">
 		<article>
 
 			
@@ -158,7 +157,11 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 
 
 <div class="wp-block-image">
-<figure class="alignleft size-large is-resized"><a href="/beauty-of-nature"><img fetchpriority="high" decoding="async" width="1024" height="684" src="/wp-content/uploads/2024/05/DSCF4171_web_best-1024x684.jpg" alt="" class="wp-image-435" style="width:310px;height:auto" srcset="/wp-content/uploads/2024/05/DSCF4171_web_best-1024x684.jpg 1024w, /wp-content/uploads/2024/05/DSCF4171_web_best-300x200.jpg 300w, /wp-content/uploads/2024/05/DSCF4171_web_best-768x513.jpg 768w, /wp-content/uploads/2024/05/DSCF4171_web_best-1536x1026.jpg 1536w, /wp-content/uploads/2024/05/DSCF4171_web_best-2048x1368.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></a><figcaption class="wp-element-caption">Beauty Of Nature</figcaption></figure>
+<figure class="alignleft size-large is-resized"><a href="/beauty-of-nature"><img fetchpriority="high" decoding="async" width="1024" height="684" src="/wp-content/uploads/2024/05/DSCF4171_web_best-1024x684.jpg" alt="" class="wp-image-435" style="width:393px;height:auto" srcset="/wp-content/uploads/2024/05/DSCF4171_web_best-1024x684.jpg 1024w, /wp-content/uploads/2024/05/DSCF4171_web_best-300x200.jpg 300w, /wp-content/uploads/2024/05/DSCF4171_web_best-768x513.jpg 768w, /wp-content/uploads/2024/05/DSCF4171_web_best-1536x1026.jpg 1536w, /wp-content/uploads/2024/05/DSCF4171_web_best-2048x1368.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></a><figcaption class="wp-element-caption">Beauty Of Nature</figcaption></figure>
+</div>
+
+<div class="wp-block-image">
+<figure class="alignleft size-large is-resized"><a href="/sun-and-sky"><img decoding="async" width="1024" height="684" src="/wp-content/uploads/2024/05/DSCF3802_web_best-1024x684.jpg" alt="" class="wp-image-467" style="width:390px;height:auto" srcset="/wp-content/uploads/2024/05/DSCF3802_web_best-1024x684.jpg 1024w, /wp-content/uploads/2024/05/DSCF3802_web_best-300x200.jpg 300w, /wp-content/uploads/2024/05/DSCF3802_web_best-768x513.jpg 768w, /wp-content/uploads/2024/05/DSCF3802_web_best-1536x1026.jpg 1536w, /wp-content/uploads/2024/05/DSCF3802_web_best-2048x1368.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></a><figcaption class="wp-element-caption">Sun And Sky</figcaption></figure>
 </div>    			  			</div>
 
   			
@@ -173,28 +176,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 	</section>
 </div>
 <!-- #content -->
-</div>
-<!-- #primary -->
-
-
-<div id="secondary">
-	
-
-<aside id="block-5" class="widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
-<h2 class="wp-block-heading">Archives</h2>
-<ul class="wp-block-archives-list wp-block-archives">	<li><a href="/2024/05/">May 2024</a></li>
-	<li><a href="/2023/12/">December 2023</a></li>
-	<li><a href="/2023/11/">November 2023</a></li>
-</ul>
-</div></div></aside><aside id="block-6" class="widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
-<h2 class="wp-block-heading">Categories</h2>
-<ul class="wp-block-categories-list wp-block-categories">	<li class="cat-item cat-item-1">
-<a href="/category/uncategorized/">Uncategorized</a>
-</li>
-</ul>
-</div></div></aside>
-</div>
-<!-- #secondary -->
 </div>
 <!-- #container -->
 
@@ -237,5 +218,31 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <script>fullscreen_galleria_postid=44;
 fsg_settings = {"theme":"b","transition":"slide","overlay_time":"2000","show_title":true,"show_description":true,"show_camera_info":true,"show_thumbnails":true,"show_permalink":"page","show_attachment":true,"show_map":true,"show_caption":false,"show_sharing":false,"image_nav":false,"auto_start_slideshow":false,"true_fullscreen":false,"load_on_demand":false,"w3tc":false,"load_in_header":false};
 fullscreen_galleria_attachment=false;</script>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>commentBox('5743785887662080-proj')</script>
+
+<script>jQuery(document).ready(function() {
+    Galleria.run('#customgallery', {
+        height: 600,
+        wait: true,
+        dataSort: 'random'
+    });
+    Galleria.ready(function() {
+        var gallery = this;
+        gallery.toggleFullscreen();
+	jQuery('header#branding').addClass("headeroverlay");
+	this.bind("image", function(e) {
+		imagename = e.imageTarget.currentSrc;
+		console.log(imagename);
+		let url = imagename;
+		let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
+		let image = urlKey.split('.').shift();
+		let finalimage = urlKey.split('_').shift();
+		console.log(finalimage)
+		jQuery(".commentbox").removeClass("commentboxshow");
+		jQuery('#' + finalimage ).addClass("commentboxshow");
+	}); 
+    });
+});</script>
 </body>
 </html>

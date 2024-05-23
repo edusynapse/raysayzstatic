@@ -251,5 +251,31 @@ window.open('mailto:surajit@edusynapse.com');
 <script>fullscreen_galleria_postid=15;
 fsg_settings = {"theme":"b","transition":"slide","overlay_time":"2000","show_title":true,"show_description":true,"show_camera_info":true,"show_thumbnails":true,"show_permalink":"page","show_attachment":true,"show_map":true,"show_caption":false,"show_sharing":false,"image_nav":false,"auto_start_slideshow":false,"true_fullscreen":false,"load_on_demand":false,"w3tc":false,"load_in_header":false};
 fullscreen_galleria_attachment=false;</script>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>commentBox('5743785887662080-proj')</script>
+
+<script>jQuery(document).ready(function() {
+    Galleria.run('#customgallery', {
+        height: 600,
+        wait: true,
+        dataSort: 'random'
+    });
+    Galleria.ready(function() {
+        var gallery = this;
+        gallery.toggleFullscreen();
+	jQuery('header#branding').addClass("headeroverlay");
+	this.bind("image", function(e) {
+		imagename = e.imageTarget.currentSrc;
+		console.log(imagename);
+		let url = imagename;
+		let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
+		let image = urlKey.split('.').shift();
+		let finalimage = urlKey.split('_').shift();
+		console.log(finalimage)
+		jQuery(".commentbox").removeClass("commentboxshow");
+		jQuery('#' + finalimage ).addClass("commentboxshow");
+	}); 
+    });
+});</script>
 </body>
 </html>
