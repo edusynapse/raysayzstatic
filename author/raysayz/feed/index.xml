@@ -9,10 +9,10 @@
 
 <channel>
 	<title>raysayz &#8211; Ray Sayz</title>
-	<atom:link href="http://localhost/author/raysayz/feed/?simply_static_page=2631" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/author/raysayz/feed/?simply_static_page=2776" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Nowhere, everywhere ... now</description>
-	<lastBuildDate>Wed, 15 May 2024 04:48:29 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 23 May 2024 12:31:05 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -431,23 +431,6 @@ add_action( 'wp_head', 'remove_attitude_footer' );
 function remove_attitude_footer() {
  remove_action( 'attitude_footer', 'attitude_footer_info', 30 );
 }</code></pre>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>Hello world!</title>
-		<link>/hello-world/</link>
-		
-		<dc:creator><![CDATA[raysayz]]></dc:creator>
-		<pubDate>Tue, 28 Nov 2023 14:04:45 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=1</guid>
-
-					<description><![CDATA[This is first post. That&#8217;s it.]]></description>
-										<content:encoded><![CDATA[
-<p>This is first post. That&#8217;s it. </p>
 ]]></content:encoded>
 					
 		
