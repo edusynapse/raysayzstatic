@@ -157,6 +157,10 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 
 
 
+<figure class="wp-block-image size-large"><a href="/rice-and-dall·e"><img fetchpriority="high" decoding="async" width="4096" height="4096" src="https://content.raysayz.com/photos/digitalart/DallE_00001.png" alt="" class="wp-image-529" srcset="https://content.raysayz.com/photos/digitalart/DallE_00001.png 150w, https://content.raysayz.com/photos/digitalart/DallE_00001.png 300w, https://content.raysayz.com/photos/digitalart/DallE_00001.png 768w, https://content.raysayz.com/photos/digitalart/DallE_00001.png 1024w" sizes="(max-width: 4096px) 100vw, 4096px"></a></figure>
+
+
+
 <h2 class="wp-block-heading">Audio</h2>
 
 
@@ -258,7 +262,12 @@ fullscreen_galleria_attachment=false;</script><script src="https://unpkg.com/com
 			let url = imagename;
 			let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
 			let image = urlKey.split('.').shift();
-			let finalimage = urlKey.split('_').shift();
+			var finalimage = '';
+			if (image.indexOf('_') > -1)	{
+			  finalimage = urlKey.split('_').shift();
+			} else {
+			  finalimage = image;
+			}
 			console.log(finalimage)
 			jQuery(".commentbox").removeClass("commentboxshow");
 			jQuery('#' + finalimage ).addClass("commentboxshow");

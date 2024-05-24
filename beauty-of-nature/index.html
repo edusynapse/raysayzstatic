@@ -339,7 +339,12 @@ fullscreen_galleria_attachment=false;</script><script src="https://unpkg.com/com
 			let url = imagename;
 			let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
 			let image = urlKey.split('.').shift();
-			let finalimage = urlKey.split('_').shift();
+			var finalimage = '';
+			if (image.indexOf('_') > -1)	{
+			  finalimage = urlKey.split('_').shift();
+			} else {
+			  finalimage = image;
+			}
 			console.log(finalimage)
 			jQuery(".commentbox").removeClass("commentboxshow");
 			jQuery('#' + finalimage ).addClass("commentboxshow");
