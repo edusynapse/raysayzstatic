@@ -32,7 +32,7 @@
     right: 2%;
     bottom: 80px;
     width: 25%;
-    height: 5%;
+    height: 4em;
     opacity: 0.6;
     overflow:hidden;
     border-radius:1em;
@@ -87,7 +87,6 @@
         width: 40%;
     }
     .commentboxshow:hover {
-	height: 40%;
         width: 40%;
     }
 }
@@ -109,7 +108,7 @@
 	width: 96%;
     }
     .commentboxshow:hover {
-	height: 40%;
+	height: 50%;
 	width: 96%;
     }
 }
@@ -131,7 +130,7 @@
         width: 96%;
     }
     .commentboxshow:hover {
-	height: 40%;	
+	height: 70%;	
 	width: 96%;
     }
 }
