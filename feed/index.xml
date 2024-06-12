@@ -9,7 +9,7 @@
 
 <channel>
 	<title>Ray Sayz</title>
-	<atom:link href="http://localhost/feed/?simply_static_page=5649" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/feed/?simply_static_page=5949" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Nowhere, everywhere ... now</description>
 	<lastBuildDate>Thu, 23 May 2024 12:31:05 +0000</lastBuildDate>
@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.5.3</generator>
+	<generator>https://wordpress.org/?v=6.5.4</generator>
 
 <image>
 	<url>/wp-content/uploads/2023/11/cropped-raysayz-32x32.png</url>

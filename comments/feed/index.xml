@@ -8,14 +8,14 @@
 <channel>
 	<title>
 	Comments for Ray Sayz	</title>
-	<atom:link href="http://localhost/comments/feed/?simply_static_page=5650" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/comments/feed/?simply_static_page=5950" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Nowhere, everywhere ... now</description>
-	<lastBuildDate>Mon, 27 May 2024 07:28:41 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 12 Jun 2024 02:32:36 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.5.3</generator>
+	<generator>https://wordpress.org/?v=6.5.4</generator>
 </channel>
 </rss>
