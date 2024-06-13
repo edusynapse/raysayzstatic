@@ -142,3 +142,15 @@ header#branding form {
 	width: 96%;
     }
 }
+
+#requestoriginallink {
+    z-index: 100000;
+    position: absolute;
+    left: 2%;
+    bottom: 100px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.2em;
+    text-shadow: 0.2em 0.2em 0.3em BLACK;
+}
