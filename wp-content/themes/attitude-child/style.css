@@ -154,10 +154,10 @@ header#branding form {
 }
 
 #requestoriginallink {
-    z-index: 100000;
+    z-index: 10001;
     position: absolute;
-    left: 2%;
-    bottom: 100px;
+    right: 4%;
+    top: 2%;
     color: white;
     font-weight: 900;
     text-align: center;
@@ -185,5 +185,27 @@ header#branding form {
     padding-top: 1em;
 	border: 0.2em solid #e0e0e0;
     border-radius: 1em;
-    box-shadow: 0em 0em 2em #d7cab1;
+    box-shadow: 0em 0em 1em #ffcaa0;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .one-column-template .wrapper, .wrapper {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .one-column-template .container, .container {
+        width: 90%;
+    }
+}
+
+.social-rocket-floating-buttons {
+	z-index: 10001 !important;
+}
+.social-rocket-more-buttons {
+    z-index: 10002 !important;
 }
