@@ -1,0 +1,2 @@
+{b}{span style="color:red;" }Err{/span}{/b}: on:28.11.2023 14:21:09: raysayz (771): Photo does not exists ( wppa_smx_photo() ), type = m, single_photo =  Stack: wppa-functions.php:531 wppa_smx_photo() &lt;- wppa-filter.php:700 wppa_albums() &lt;- shortcodes.php:433 wppa_shortcodes() &lt;- do_shortcode_tag() 
+{b}url{/b}: /wp-admin/admin-ajax.php?action=wppa&wppa-action=getshortcodedrendered&shortcode=[wppa%20type=%22mphoto%22]
