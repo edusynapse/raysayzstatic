@@ -9,7 +9,7 @@
 
 <channel>
 	<title>Uncategorized &#8211; Ray Sayz</title>
-	<atom:link href="http://localhost/category/uncategorized/feed/?simply_static_page=8136" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/category/uncategorized/feed/?simply_static_page=8298" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Nowhere, everywhere ... now</description>
 	<lastBuildDate>Thu, 23 May 2024 12:31:05 +0000</lastBuildDate>
@@ -132,7 +132,7 @@ TMPDIR=/home/surajitray/Development/unitytemp /opt/unityhub/unityhub %U
 
 
 <p></p>
-]]></content:encoded>
+<p><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share#url=%2Finstalling-unity-hub-on-popos-22-04-lts%2F&#038;title=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" data-a2a-url="/installing-unity-hub-on-popos-22-04-lts/" data-a2a-title="Installing Unity Hub on PopOs 22.04 LTS"></a></p>]]></content:encoded>
 					
 		
 		
@@ -321,7 +321,7 @@ xinput reattach 15 2</code></pre>
 
 
 <figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="717" src="/wp-content/uploads/2023/12/image-1024x717.png" alt="" class="wp-image-178" srcset="/wp-content/uploads/2023/12/image-1024x717.png 1024w, /wp-content/uploads/2023/12/image-300x210.png 300w, /wp-content/uploads/2023/12/image-768x538.png 768w, /wp-content/uploads/2023/12/image-1536x1075.png 1536w, /wp-content/uploads/2023/12/image.png 2024w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-]]></content:encoded>
+<p><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Fdisable-keyboard-touch-pad-in-pop%2F&amp;linkname=Disable%20keyboard%20touch%20pad%20in%20Pop%21" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Fdisable-keyboard-touch-pad-in-pop%2F&amp;linkname=Disable%20keyboard%20touch%20pad%20in%20Pop%21" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Fdisable-keyboard-touch-pad-in-pop%2F&amp;linkname=Disable%20keyboard%20touch%20pad%20in%20Pop%21" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share#url=%2Fdisable-keyboard-touch-pad-in-pop%2F&#038;title=Disable%20keyboard%20touch%20pad%20in%20Pop%21" data-a2a-url="/disable-keyboard-touch-pad-in-pop/" data-a2a-title="Disable keyboard touch pad in Pop!"></a></p>]]></content:encoded>
 					
 		
 		
@@ -431,7 +431,7 @@ add_action( 'wp_head', 'remove_attitude_footer' );
 function remove_attitude_footer() {
  remove_action( 'attitude_footer', 'attitude_footer_info', 30 );
 }</code></pre>
-]]></content:encoded>
+<p><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Fwordpress-tip-101%2F&amp;linkname=WordPress%20Tip%20101" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Fwordpress-tip-101%2F&amp;linkname=WordPress%20Tip%20101" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Fwordpress-tip-101%2F&amp;linkname=WordPress%20Tip%20101" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share#url=%2Fwordpress-tip-101%2F&#038;title=WordPress%20Tip%20101" data-a2a-url="/wordpress-tip-101/" data-a2a-title="WordPress Tip 101"></a></p>]]></content:encoded>
 					
 		
 		
