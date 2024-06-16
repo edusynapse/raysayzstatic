@@ -243,4 +243,5 @@ header#branding form {
 	top : 8px;
 	left: auto !important;
     opacity: 0.6;
+	z-index: 10001 !important
 }
