@@ -30,9 +30,9 @@
     z-index: 10001;
     position: absolute;
     right: 10px;
-    bottom: 60px;
+    bottom: 65px;
     width: 25%;
-    height: 4em;
+    height: 3em;
     opacity: 0.6;
     overflow:hidden;
     border-radius:1em;
@@ -42,6 +42,7 @@
     width: 40%;
     opacity:1;
     overflow:visible;
+    bottom: 10px;
 }
 
 .headeroverlay {
@@ -60,7 +61,7 @@
 .headeroverlay:hover {
     height: 210px;
     opacity: 1;
-    width:95%;
+    width : calc(100% - 20px);
     max-width:1038px;
 }
 .headeroverlay #logoimage {	
@@ -93,7 +94,7 @@ header#branding form {
     }
     .headeroverlay:hover { 
     	height: 60%;
-    	width : 96%;
+    	width : calc(100% - 20px);
     }
     #site-title > a {
     	pointer-events: none;
@@ -114,7 +115,7 @@ header#branding form {
     }    
     .headeroverlay:hover { 
     	height: 60%;
-    	width : 96%;
+    	width : calc(100% - 20px);
     }
     #site-title > a {
     	pointer-events: none;
@@ -127,7 +128,7 @@ header#branding form {
     }
     .commentboxshow:hover {
 	height: 50%;
-	width: 96%;
+	width : calc(100% - 20px);
     }
 }
 @media only screen and (max-width: 480px) {
@@ -136,7 +137,7 @@ header#branding form {
     }
     .headeroverlay:hover { 
     	height: 60%;
-    	width : 96%;
+    	width : calc(100% - 20px);
     }
     #site-title > a {
     	pointer-events: none;
@@ -149,19 +150,19 @@ header#branding form {
     }
     .commentboxshow:hover {
 	height: 70%;	
-	width: 96%;
+	width : calc(100% - 20px);
     }
 }
 
 #requestoriginallink {
     z-index: 10001;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 15px;
+    top: 15px;
     color: #e0bd91;
     font-weight: 900;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.8em;
     text-shadow: 0.1em 0.1em 0.3em BLACK;
 	padding: 0.8em;
     background: #66666678;
@@ -237,7 +238,8 @@ header#branding form {
 }
 
 .floatingshare {	
-	bottom : calc(60px + 4em)  !important;
-	right : 2px;
+	bottom : calc(65px + 3em)  !important;
+	right : 5.5em ;
+	top : 8px;
 	left: auto !important;
 }
