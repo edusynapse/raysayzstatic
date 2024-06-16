@@ -350,7 +350,7 @@ TMPDIR=/home/surajitray/Development/unitytemp /opt/unityhub/unityhub %U
 	 
 
 <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:transparent">
-<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D14028&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D14028&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D14028&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D14618&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D14618&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D14618&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
 </div>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-1.6.1.min.js?ver=1.6.1" id="galleria-js"></script>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-fs.js?ver=1.6.12-wrkHfY" id="galleria-fs-js"></script>
@@ -362,6 +362,7 @@ fullscreen_galleria_attachment=false;</script><script src="https://unpkg.com/com
 <script>commentBox('5743785887662080-proj')</script>
 <script>
 var galleriainstance;
+var gallery ;
 const baseurl = window.location.origin + window.location.pathname
 var lighboximageindex = 0;
 jQuery(document).ready(function() {
@@ -377,7 +378,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery(".commentbox").hide();
 		Galleria.ready(function() {
-			var gallery = this;
+			gallery = this;
 			jQuery('header#branding').addClass("headeroverlay");
 			this.bind("image", function(e) {
 				imagename = e.imageTarget.currentSrc;
@@ -460,6 +461,19 @@ jQuery(document).ready(function() {
 		}
 		
 		jQuery('header#branding').addClass('toggled-on');
+		
+		jQuery('.galleria-image').click(function(e) {	
+			//alert('here');		
+			e.preventDefault();
+			var currentIndex = gallery.getIndex();
+			console.log(currentIndex) ;
+			setTimeout(function() {
+				if($('.galleria-lightbox-box').css('display') == 'none') {
+					gallery.openLightbox(currentIndex);
+				}			
+			}, 1000);
+			return false;
+		});
 
 	}
 });
