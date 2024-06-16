@@ -207,9 +207,19 @@ header#branding form {
     }
 }
 
-.social-rocket-floating-buttons {
-	z-index: 10001 !important;
+@media (min-width: 600px) {
+    .frontpageblogsection .wp-block-latest-posts.columns-2 li {
+        width: calc(50% - 4em)  !important;
+    }
 }
-.social-rocket-more-buttons {
-    z-index: 10002 !important;
+
+
+.frontpageblogsection .wp-block-latest-posts.is-grid li {
+    background: #00000070 !important;
+    box-shadow: 0em 0em 3em black  !important;
+    padding: 1em !important;
+}
+
+.frontpageblogsection ul.wp-block-latest-posts.is-grid {
+    list-style-type: none !important;
 }
