@@ -223,3 +223,15 @@ header#branding form {
 .frontpageblogsection ul.wp-block-latest-posts.is-grid {
     list-style-type: none !important;
 }
+
+#customgallery {
+	position: absolute;
+    top: 0em;
+    left: 0em;
+    width: 100%;
+    height: 100%;
+}
+
+#customgallery .galleria-container {
+	height: 100% !important;
+}
