@@ -246,7 +246,7 @@ a2a_config.icon_color="#545454,#e8bc8b";
 	 
 
 <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:transparent">
-<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Frice-and-dall%25C2%25B7e%2F%3Fsimply_static_page%3D18243&amp;linkname=Rice%20and%20DALL%C2%B7E" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Frice-and-dall%25C2%25B7e%2F%3Fsimply_static_page%3D18243&amp;linkname=Rice%20and%20DALL%C2%B7E" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Frice-and-dall%25C2%25B7e%2F%3Fsimply_static_page%3D18243&amp;linkname=Rice%20and%20DALL%C2%B7E" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Frice-and-dall%25C2%25B7e%2F%3Fsimply_static_page%3D18833&amp;linkname=Rice%20and%20DALL%C2%B7E" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Frice-and-dall%25C2%25B7e%2F%3Fsimply_static_page%3D18833&amp;linkname=Rice%20and%20DALL%C2%B7E" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Frice-and-dall%25C2%25B7e%2F%3Fsimply_static_page%3D18833&amp;linkname=Rice%20and%20DALL%C2%B7E" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
 </div>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-1.6.1.min.js?ver=1.6.1" id="galleria-js"></script>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-fs.js?ver=1.6.12-wrkHfY" id="galleria-fs-js"></script>
@@ -265,6 +265,10 @@ jQuery(document).ready(function() {
 	if (jQuery("#customgallery").length) {	  
 	
 		jQuery('<div id="showlightbox">[ - ]<\/div>' ).appendTo( "body" );
+		jQuery("div.a2a_default_style").addClass("floatingshare");
+		jQuery(".commentbox").hide();
+		
+		
 		Galleria.run('#customgallery', {
 			height : 600,
 			wait: true,
@@ -272,21 +276,16 @@ jQuery(document).ready(function() {
 			transition :'fade',
 			transitionSpeed : 1000,
 			lightbox:true,
-			trueFullscreen:true
+			trueFullscreen:true,
+			lightboxTransitionSpeed:0,
+			lightboxFadeSpeed:0
 		});
 		
 			
-		jQuery('#showlightbox').click(function(e) {	
-			var currentIndex = gallery.getIndex();
-			//console.log(currentIndex) ;
-			gallery.openLightbox(currentIndex);
-			//return false;
-		});
-
-		jQuery(".commentbox").hide();
 		Galleria.ready(function() {
 			gallery = this;
 			jQuery('header#branding').addClass("headeroverlay");
+			jQuery('header#branding').addClass('toggled-on');
 			this.bind("image", function(e) {
 				imagename = e.imageTarget.currentSrc;
 				//console.log(imagename);
@@ -330,6 +329,7 @@ jQuery(document).ready(function() {
 				jQuery('.a2a_kit').show();		
 				jQuery('.commentboxshow').show();	
 				jQuery("#requestoriginallink").show();	
+				jQuery("#showlightbox").show();	
 				jQuery("header#branding").show();	
 				if (lighboximageindex >=0 ) 	{
 					this.show(lighboximageindex);				
@@ -339,17 +339,23 @@ jQuery(document).ready(function() {
 				jQuery('.a2a_kit').hide();		
 				jQuery('.commentboxshow').hide();	
 				jQuery("#requestoriginallink").hide();	
+				jQuery("#showlightbox").hide();	
 				jQuery("header#branding").hide();					
 			}); 
 			
 		});
 		    
-		//jQuery("div.a2a_default_style").css("bottom", "90px");
+		//jQuery("div.a2a_default_style").css("bottom", "90px");		
+		jQuery('#showlightbox').click(function(e) {	
+			var currentIndex = gallery.getIndex();
+			//console.log(currentIndex) ;
+			gallery.openLightbox(currentIndex);
+			//return false;
+		});
 		
-		jQuery("div.a2a_default_style").addClass("floatingshare");
 		//console.log(Galleria.get('stage')[0]['_original']['data']) ;		
 		var imageurl=decodeURIComponent(jQuery.urlParam('urldisplayencoded'));	
-		console.log(imageurl) ;
+		//console.log(imageurl) ;
 		
 		//console.log( Galleria.get('img')) ;
 		var bookmarkedimageindex = -1;
@@ -367,7 +373,6 @@ jQuery(document).ready(function() {
 			Galleria.run();
 		}
 		
-		jQuery('header#branding').addClass('toggled-on');
 		
 	}
 });
