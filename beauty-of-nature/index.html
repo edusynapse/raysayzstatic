@@ -326,7 +326,7 @@ a2a_config.icon_color="#545454,#e8bc8b";
 	 
 
 <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:transparent">
-<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Fbeauty-of-nature%2F%3Fsimply_static_page%3D18787&amp;linkname=Beauty%20of%20Nature" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Fbeauty-of-nature%2F%3Fsimply_static_page%3D18787&amp;linkname=Beauty%20of%20Nature" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Fbeauty-of-nature%2F%3Fsimply_static_page%3D18787&amp;linkname=Beauty%20of%20Nature" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Fbeauty-of-nature%2F%3Fsimply_static_page%3D19377&amp;linkname=Beauty%20of%20Nature" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Fbeauty-of-nature%2F%3Fsimply_static_page%3D19377&amp;linkname=Beauty%20of%20Nature" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Fbeauty-of-nature%2F%3Fsimply_static_page%3D19377&amp;linkname=Beauty%20of%20Nature" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
 </div>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-1.6.1.min.js?ver=1.6.1" id="galleria-js"></script>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-fs.js?ver=1.6.12-wrkHfY" id="galleria-fs-js"></script>
@@ -358,7 +358,8 @@ jQuery(document).ready(function() {
 			lightbox:true,
 			trueFullscreen:true,
 			lightboxTransitionSpeed:0,
-			lightboxFadeSpeed:0
+			lightboxFadeSpeed:0,
+			clicknext:true
 		});
 		
 			
@@ -368,7 +369,8 @@ jQuery(document).ready(function() {
 			jQuery('header#branding').addClass('toggled-on');
 			this.bind("image", function(e) {
 				imagename = e.imageTarget.currentSrc;
-				//console.log(imagename);
+				lighboximageindex = e.index;
+				console.log(e);
 				let url = imagename;
 				let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
 				let image = urlKey.split('.').shift();

@@ -263,6 +263,7 @@ header {
     border-bottom-left-radius: 1em;
     border: 0.5em solid white;
     font-weight: bolder;
+	z-index: 999991 !important;
 }
 
 #showlightbox {
