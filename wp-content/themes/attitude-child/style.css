@@ -256,3 +256,11 @@ header {
   z-index: 999;
     background: #fff9f5;
 }
+
+.galleria-lightbox-close {
+    text-align: center;
+    padding: 0.3em 0.5em;
+    border-bottom-left-radius: 1em;
+    border: 0.5em solid white;
+    font-weight: bolder;
+}
