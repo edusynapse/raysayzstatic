@@ -46,7 +46,6 @@
 }
 
 .headeroverlay {
-    background: white;
     z-index: 10001;
     position: absolute;
     left: 10px;
@@ -182,15 +181,15 @@ header#branding form {
 .fp_quote {
     font-size: 1.2em;
     width: 80%;
-    margin: 3em auto;
+    margin: 6em auto;
     background: #edecec;
     font-weight: 600;
     color: #818181;
     line-height: 2em;
-    padding-top: 1em;
+    padding-top: 2em;
 	border: 0.2em solid #e0e0e0;
     border-radius: 1em;
-    box-shadow: 0em 0em 1em #ffcaa0;
+    box-shadow: 0em 0em 1em #f1edea;
     padding-left: 1em;
     padding-right: 1em;
 }
@@ -244,4 +243,16 @@ header#branding form {
 	left: auto !important;
     opacity: 0.6;
 	z-index: 10001 !important
+}
+
+.wp-block-cover {
+	border: 0.2em solid #031b17;
+    border-radius: 0.5em;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+    background: #fff9f5;
 }
