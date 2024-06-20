@@ -86,6 +86,11 @@ header#branding form {
     #site-logo {
         margin-top: 0px;
     }
+	
+	#branding {
+		margin-top: 0px !important;	
+	}
+	
 }
 @media only screen and (max-width: 1078px) {
     .headeroverlay {
@@ -151,6 +156,11 @@ header#branding form {
 	height: 70%;	
 	width : calc(100% - 20px);
     }
+	
+	#branding {
+		margin-top: 0px !important;	
+	}
+	
 }
 
 #requestoriginallink {
@@ -301,4 +311,21 @@ header {
     border: 0.5em solid white;
     font-weight: bolder;
 	z-index: 999991 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+
+.galleria-lightbox-close .fa {
+    font-size: 2em;
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1077px) {
+    .container {
+        width: 96%;
+    }
+    .wrapper {
+        width: 94%;
+    }
 }
