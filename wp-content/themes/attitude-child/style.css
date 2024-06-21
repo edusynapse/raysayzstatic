@@ -43,7 +43,7 @@
     background: #66666678;
     border-radius: 0.5em;
     box-shadow: 0em 0em 1em #000000;
-	border:3px solid  #515151;
+	border: 2px solid   #e0bd917d;
 	width:1.2em;
 }
 .commentboxshow:hover {
@@ -85,10 +85,10 @@
     font-size: 2em;
     text-shadow: 0.1em 0.1em 0.3em BLACK;
     padding: 0.1em 0.4em;
-	background: #66666678;
+	background: #bebebe78;
     border-radius: 0.5em;
     box-shadow: 0em 0em 1em #000000;
-	border:3px solid  #515151;
+	border: 2px solid   #e0bd917d;
 	width:1.2em;
 	right:70px;
 	bottom:60px;
@@ -97,7 +97,7 @@
 #fullscreen:hover {
     opacity: 1;
     background: #00000078;
-	border:3px solid  #e0bd91;
+	border: 2px solid  #e0bd91;
 }
 
 #playpause {	
@@ -113,10 +113,10 @@
     font-size: 2em;
     text-shadow: 0.1em 0.1em 0.3em BLACK;
     padding: 0.1em 0.4em;
-	background: #66666678;
+	background: #bebebe78;
     border-radius: 0.5em;
     box-shadow: 0em 0em 1em #000000;
-	border:3px solid  #515151;
+	border: 2px solid   #e0bd917d;
 	width:1.2em;
 	right:135px;
 	bottom:60px;
@@ -126,7 +126,7 @@
 #playpause:hover {
     opacity: 1;
     background: #00000078;
-	border:3px solid  #e0bd91;
+	border: 2px solid  #e0bd91;
 }
 
 
@@ -251,18 +251,18 @@ header#branding form {
     font-size: 2em;
     text-shadow: 0.1em 0.1em 0.3em BLACK;
     padding: 0.1em 0.4em;
-    background: #66666678;
+    background: #bebebe78;
     border-radius: 0.5em;
     box-shadow: 0em 0em 1em #000000;
-	cursor: s-resize;
-	border:3px solid  #515151;
+	cursor: s-resize;	
+	border: 2px solid   #e0bd917d;
 	width:1.2em;
 }
 
 #requestoriginallink:hover {
     opacity: 1;
     background: #00000078;
-	border:3px solid  #e0bd91;
+	border:2px solid  #e0bd91;
 }
 
 
@@ -278,11 +278,11 @@ header#branding form {
     font-size: 2em;
     text-shadow: 0.1em 0.1em 0.3em BLACK;
     padding: 0.1em 0.4em;
-    background: #66666678;
+    background: #bebebe78;
     border-radius: 0.5em;
     box-shadow: 0em 0em 1em #000000;
 	cursor: nesw-resize;
-	border:3px solid  #515151;
+	border: 2px solid   #e0bd917d;
 	width:1.2em;
 }
 #showexif {	
@@ -309,7 +309,7 @@ header#branding form {
 #showlightbox:hover, #showexif:hover {
     opacity: 1;
 	background: #00000078;
-	border:3px solid  #e0bd91;
+	border:2px solid  #e0bd91;
 }
 
 .page .entry-title {
