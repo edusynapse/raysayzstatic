@@ -385,7 +385,8 @@ header#branding form {
 	top : -3px;
 	left: auto !important;
     opacity: 0.6;
-	z-index: 10001 !important
+	z-index: 10001 !important;
+	height: 4em;
 }
 
 .wp-block-cover {
