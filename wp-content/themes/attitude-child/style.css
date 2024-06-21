@@ -29,7 +29,7 @@
     background: black;
     z-index: 10002;
     position: absolute;
-    right: 10px;
+    right: 5px;
     bottom: 60px;
     opacity: 0.6;
     overflow:hidden;
@@ -47,12 +47,14 @@
 	width:1.2em;
 }
 .commentboxshow:hover {
-    height: 40%;
+    height: 80%;
     width: 40%;
     opacity:1;
-    overflow:visible;
-    bottom: 10px;
+    overflow:scroll;
+    bottom: 0px;
     background: #fff9f5;
+	right:0px;
+	border:0px;
 }
 
 .commentboxshow iframe {
@@ -60,7 +62,7 @@
 }
 .commentboxshow:hover iframe {
     display:inline-block;
-	height:100%;
+	height:1000px;
 }
 .commentboxshow .commentsicon {
     display:inline-block;
@@ -88,7 +90,7 @@
     box-shadow: 0em 0em 1em #000000;
 	border:3px solid  #515151;
 	width:1.2em;
-	right:75px;
+	right:70px;
 	bottom:60px;
 }
 
@@ -116,8 +118,9 @@
     box-shadow: 0em 0em 1em #000000;
 	border:3px solid  #515151;
 	width:1.2em;
-	right:140px;
+	right:135px;
 	bottom:60px;
+    cursor: e-resize;
 }
 
 #playpause:hover {
@@ -130,8 +133,8 @@
 .headeroverlay {
     z-index: 10001;
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 5px;
+    top: 5px;
     width: 6em;
     opacity: 0.3;
     overflow: hidden;
@@ -189,7 +192,7 @@ header#branding form {
    	display: none !important;
     }
     .commentboxshow:hover {
-        width: 40%;
+        width: 80%;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -207,7 +210,7 @@ header#branding form {
    	display: none !important;
     }
     .commentboxshow:hover {
-	height: 50%;
+	height: 80%;
 	width : calc(100% - 20px);
     }
 }
@@ -226,7 +229,7 @@ header#branding form {
    	display: none !important;
     }
     .commentboxshow:hover {
-	height: 70%;	
+	height: 80%;	
 	width : calc(100% - 20px);
     }
 	
@@ -239,20 +242,21 @@ header#branding form {
 #requestoriginallink {
     z-index: 10001;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 5px;
+    top: 5px;
     opacity: 0.6;
     color: #e0bd91;
     font-weight: 900;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 1.2em;
     text-shadow: 0.1em 0.1em 0.3em BLACK;
-	padding: 0.8em;
+    padding: 0.8em 1.1em;
     background: #66666678;
     border-radius: 0.5em;
     box-shadow: 0em 0em 1em #000000;
-	cursor: cell;
+	cursor: s-resize;
 	border:3px solid  #515151;
+	width:1.2em;
 }
 
 #requestoriginallink:hover {
@@ -263,8 +267,8 @@ header#branding form {
 
 
 #showlightbox, #showexif {
-    right: 10px;
-    top: 70px;
+    right: 5px;
+    top: 65px;
     z-index: 10001;
     position: absolute;
     opacity: 0.6;
@@ -282,7 +286,8 @@ header#branding form {
 	width:1.2em;
 }
 #showexif {	
-    top: 130px;
+    top: 125px;
+    cursor: help;
 }
 #showexif .cameradetails {	
     display: none;
@@ -375,8 +380,8 @@ header#branding form {
 
 .floatingshare {	
 	bottom : calc(65px + 3em)  !important;
-	right : 70px ;
-	top : 2px;
+	right : 65px ;
+	top : -3px;
 	left: auto !important;
     opacity: 0.6;
 	z-index: 10001 !important
