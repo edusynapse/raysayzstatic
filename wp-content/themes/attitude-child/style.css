@@ -166,8 +166,8 @@ header#branding form {
 #requestoriginallink {
     z-index: 10001;
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: 10px;
+    top: 10px;
     opacity: 0.6;
     color: #e0bd91;
     font-weight: 900;
@@ -191,8 +191,8 @@ header#branding form {
 
 
 #showlightbox, #showexif {
-    right: 15px;
-    top: 80px;
+    right: 10px;
+    top: 70px;
     z-index: 10001;
     position: absolute;
     opacity: 0.6;
@@ -207,10 +207,10 @@ header#branding form {
     box-shadow: 0em 0em 1em #000000;
 	cursor: nesw-resize;
 	border:3px solid  #515151;
+	width:1.2em;
 }
-
 #showexif {	
-    top: 150px;
+    top: 130px;
 }
 #showexif .cameradetails {	
     display: none;
@@ -224,7 +224,9 @@ header#branding form {
 #showexif:hover .cameraicon {	
     display: none;
 }
-
+#showexif:hover {	
+    width: auto;
+}
 
 #showlightbox:hover, #showexif:hover {
     opacity: 1;
