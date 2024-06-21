@@ -303,6 +303,7 @@ header#branding form {
 }
 #showexif:hover {	
     width: auto;
+    font-size: 1.2em;
 }
 
 #showlightbox:hover, #showexif:hover {
