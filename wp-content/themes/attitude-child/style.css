@@ -190,7 +190,7 @@ header#branding form {
 }
 
 
-#showlightbox {
+#showlightbox, #showexif {
     right: 15px;
     top: 80px;
     z-index: 10001;
@@ -209,8 +209,24 @@ header#branding form {
 	border:3px solid  #515151;
 }
 
+#showexif {	
+    top: 150px;
+}
+#showexif .cameradetails {	
+    display: none;
+}
+#showexif .cameraicon {	
+    display: inline-block;
+}
+#showexif:hover .cameradetails {	
+    display: inline-block;
+}
+#showexif:hover .cameraicon {	
+    display: none;
+}
 
-#showlightbox:hover {
+
+#showlightbox:hover, #showexif:hover {
     opacity: 1;
 	background: #00000078;
 	border:3px solid  #e0bd91;

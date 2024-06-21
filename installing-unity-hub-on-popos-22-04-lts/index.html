@@ -90,7 +90,7 @@ a2a_config.icon_color="#545454,#e8bc8b";
 <meta name="msapplication-config" content="/wp-content/uploads/fbrfg/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 <script defer data-domain="raysayz.com" src="https://plausible.io/js/script.js"></script>
-<link rel="icon" href="/wp-content/uploads/2023/11/cropped-raysayz-32x32.png" sizes="32x32">
+<script type="text/javascript" src="/wp-content/themes/attitude-child/js/exif.js" id="jquery-exif"></script><link rel="icon" href="/wp-content/uploads/2023/11/cropped-raysayz-32x32.png" sizes="32x32">
 <link rel="icon" href="/wp-content/uploads/2023/11/cropped-raysayz-192x192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="/wp-content/uploads/2023/11/cropped-raysayz-180x180.png">
 <meta name="msapplication-TileImage" content="/wp-content/uploads/2023/11/cropped-raysayz-270x270.png">
@@ -351,7 +351,7 @@ TMPDIR=/home/surajitray/Development/unitytemp /opt/unityhub/unityhub %U
 	 
 
 <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:transparent">
-<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D24710&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D24710&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D24710&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D25364&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D25364&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D25364&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
 </div>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-1.6.1.min.js?ver=1.6.1" id="galleria-js"></script>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-fs.js?ver=1.6.12-wrkHfY" id="galleria-fs-js"></script>
@@ -370,6 +370,7 @@ jQuery(document).ready(function() {
 	if (jQuery("#customgallery").length) {	  
 	
 		jQuery('<div id="showlightbox"><i class="fa fa-expand" aria-hidden="true"><\/i><\/div>' ).appendTo( "body" );
+		jQuery('<div id="showexif"><i class="fa fa-camera-retro cameraicon" aria-hidden="true"><\/i><\/div>' ).appendTo( "body" );
 		jQuery("div.a2a_default_style").addClass("floatingshare");
 		jQuery(".commentbox").hide();
 		
@@ -384,7 +385,9 @@ jQuery(document).ready(function() {
 			trueFullscreen:true,
 			lightboxTransitionSpeed:0,
 			lightboxFadeSpeed:0,
-			clicknext:true
+			clicknext:true,
+			imagePan : true,
+			autoplay : true
 		});
 		
 			
@@ -395,7 +398,7 @@ jQuery(document).ready(function() {
 			this.bind("image", function(e) {
 				imagename = e.imageTarget.currentSrc;
 				lighboximageindex = e.index;
-				console.log(e);
+				//console.log(e);
 				let url = imagename;
 				let urlKey = url.replace(/\/\s*$/, "").split('/').pop();
 				let image = urlKey.split('.').shift();
@@ -421,24 +424,56 @@ jQuery(document).ready(function() {
 				jQuery('.a2a_kit').attr("data-a2a-title",jQuery(document).find("title").text());
 				//console.log(bookmarkurl);
 				//console.log(jQuery(document).find("title").text());
-				/**
-				curl -i -X POST https://plausible.io/api/event \
-				  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36 OPR/71.0.3770.284' \
-				  -H 'X-Forwarded-For: 127.0.0.1' \
-				  -H 'Content-Type: application/json' \
-				  --data '{"name":"pageview","url":"http://dummy.site","domain":"dummy.site"}'
-				  
-				  **/				
+				
+				
+				var img = this.getActiveImage();
+				EXIF.getData(img, function() {
+					//var allMetaData = EXIF.getAllTags(this);
+					//console.log( allMetaData);					
+					jQuery('.cameradetails').remove();
+					var imageexifdata = {};
+					imageexifdata['make'] = EXIF.getTag(this, "Make");
+					imageexifdata['model']  = EXIF.getTag(this, "Model");
+					imageexifdata['fnumber']  = 'F'+EXIF.getTag(this, "FNumber");
+					imageexifdata['focallength']  = EXIF.getTag(this, "FocalLength") + 'mm';
+					imageexifdata['iso']  = 'ISO-' + EXIF.getTag(this, "ISOSpeedRatings");
+					imageexifdata['whitebalance']  = 'White Balance : ' + EXIF.getTag(this, "WhiteBalance");
+					imageexifdata['shutterspeed']  = 'Shutter Speed : 1/' + Math.round(1/(EXIF.getTag(this, "ExposureTime"))) + ' seconds';
+					//console.log( imageexifdata);
+					
+					var cameraDetailsHTML = '<div class="cameradetails">' 	+ imageexifdata['make'] 
+												+ '&nbsp;<i class="fa fa-circle" aria-hidden="true"><\/i>&nbsp;' 
+												+ imageexifdata['model'] + '<br/>';
+					cameraDetailsHTML = cameraDetailsHTML + imageexifdata['shutterspeed'] + '<br/>';
+					cameraDetailsHTML = cameraDetailsHTML 
+										+ imageexifdata['fnumber'] 
+										+ '&nbsp;<i class="fa fa-circle" aria-hidden="true"><\/i>&nbsp;' 
+										+ imageexifdata['focallength'] 
+										+ '&nbsp;<i class="fa fa-circle" aria-hidden="true"><\/i>&nbsp;' 
+										+ imageexifdata['iso'] + '<br/>';
+					cameraDetailsHTML = cameraDetailsHTML + imageexifdata['whitebalance'] + '<br/>' + '<\/div>';
+					var exifHTML = JSON
+							.stringify(imageexifdata, null, 6)
+							.replace(/\n( *)/g, function (match, p1) {
+								 return '<br/>' + '&nbsp;'.repeat(p1.length);
+							     });
+					//console.log(cameraDetailsHTML);	
+					jQuery(cameraDetailsHTML).appendTo( "#showexif" );
+					
+					//var allMetaDataSpan = document.getElementById("allMetaDataSpan");
+					//allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
+				});
+		
 			}); 
 			this.bind("lightbox_image", function(e) {
 				var imgurl  = e.imageTarget.currentSrc;
-				console.log(imgurl);
+				//console.log(imgurl);
 				jQuery.each(galleriainstance, function(index){
 					//console.log(this.big);
 					var checkequal = this.big.search(imgurl);
 					if (checkequal >=0) lighboximageindex = index;
 				});
-				console.log(lighboximageindex);
+				//console.log(lighboximageindex);
 				let urlKey = imgurl.replace(/\/\s*$/, "").split('/').pop();
 				let image = urlKey.split('.').shift();
 				var finalimage = '';
@@ -463,7 +498,7 @@ jQuery(document).ready(function() {
 					    console.log("error" + error);
 					}
 				}); 	
-			}); 
+							}); 
 			this.bind("lightbox_close", function(e) {	
 				jQuery('.a2a_kit').show();		
 				jQuery('.commentboxshow').show();	
@@ -492,7 +527,7 @@ jQuery(document).ready(function() {
 			gallery.openLightbox(currentIndex);
 			//return false;
 		});
-		
+				
 		//console.log(Galleria.get('stage')[0]['_original']['data']) ;		
 		var imageurl=decodeURIComponent(jQuery.urlParam('urldisplayencoded'));	
 		//console.log(imageurl) ;
@@ -525,6 +560,7 @@ jQuery.urlParam = function(name){
 	return decodeURI(results[1]) || 0;
 }
 </script>
+
 
 </body>
 </html>
