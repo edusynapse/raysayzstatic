@@ -26,16 +26,25 @@
 }
 
 .commentboxshow {
-    background: white;
-    z-index: 10001;
+    background: black;
+    z-index: 10002;
     position: absolute;
     right: 10px;
-    bottom: 65px;
-    width: 25%;
-    height: 3em;
+    bottom: 60px;
     opacity: 0.6;
     overflow:hidden;
     border-radius:1em;
+    color: #e0bd91;
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.2em;
+    text-shadow: 0.1em 0.1em 0.3em BLACK;
+    padding: 0.8em 1.1em;
+    background: #66666678;
+    border-radius: 0.5em;
+    box-shadow: 0em 0em 1em #000000;
+	border:3px solid  #515151;
+	width:1.2em;
 }
 .commentboxshow:hover {
     height: 40%;
@@ -43,6 +52,50 @@
     opacity:1;
     overflow:visible;
     bottom: 10px;
+    background: #fff9f5;
+}
+
+.commentboxshow iframe {
+    display:none;
+}
+.commentboxshow:hover iframe {
+    display:inline-block;
+	height:100%;
+}
+.commentboxshow .commentsicon {
+    display:inline-block;
+}
+.commentboxshow:hover .commentsicon {
+    display:none;
+}
+
+
+#fullscreen {	
+    background: black;
+    z-index: 10001;
+    position: absolute;
+    opacity: 0.6;
+    overflow:hidden;
+    border-radius:1em;
+    color: #e0bd91;
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.2em;
+    text-shadow: 0.1em 0.1em 0.3em BLACK;
+    padding: 0.8em 1.1em;
+    background: #66666678;
+    border-radius: 0.5em;
+    box-shadow: 0em 0em 1em #000000;
+	border:3px solid  #515151;
+	width:1.2em;
+	right:75px;
+	bottom:60px;
+}
+
+#fullscreen:hover {
+    opacity: 1;
+    background: #00000078;
+	border:3px solid  #e0bd91;
 }
 
 .headeroverlay {
@@ -106,9 +159,6 @@ header#branding form {
     .headeroverlay:hover #logoimage {	
    	display: none !important;
     }
-    .commentboxshow {
-        width: 40%;
-    }
     .commentboxshow:hover {
         width: 40%;
     }
@@ -126,9 +176,6 @@ header#branding form {
     }
     .headeroverlay:hover #logoimage {	
    	display: none !important;
-    }
-    .commentboxshow {
-	width: 10em;
     }
     .commentboxshow:hover {
 	height: 50%;
@@ -148,9 +195,6 @@ header#branding form {
     }
     .headeroverlay:hover #logoimage {	
    	display: none !important;
-    }
-    .commentboxshow {
-        width: 10em;
     }
     .commentboxshow:hover {
 	height: 70%;	
@@ -181,7 +225,6 @@ header#branding form {
 	cursor: cell;
 	border:3px solid  #515151;
 }
-
 
 #requestoriginallink:hover {
     opacity: 1;
@@ -303,8 +346,8 @@ header#branding form {
 
 .floatingshare {	
 	bottom : calc(65px + 3em)  !important;
-	right : 5.5em ;
-	top : 8px;
+	right : 70px ;
+	top : 2px;
 	left: auto !important;
     opacity: 0.6;
 	z-index: 10001 !important
@@ -346,4 +389,8 @@ header {
     .wrapper {
         width: 94%;
     }
+}
+
+.galleria-stage {
+  border-radius: 0.5em;
 }
