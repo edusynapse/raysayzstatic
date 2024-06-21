@@ -351,7 +351,7 @@ TMPDIR=/home/surajitray/Development/unitytemp /opt/unityhub/unityhub %U
 	 
 
 <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:transparent">
-<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D26674&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D26674&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D26674&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D27329&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D27329&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=%2Finstalling-unity-hub-on-popos-22-04-lts%2F%3Fsimply_static_page%3D27329&amp;linkname=Installing%20Unity%20Hub%20on%20PopOs%2022.04%20LTS" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
 </div>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-1.6.1.min.js?ver=1.6.1" id="galleria-js"></script>
 <script type="text/javascript" src="/wp-content/plugins/fullscreen-galleria/galleria-fs.js?ver=1.6.12-wrkHfY" id="galleria-fs-js"></script>
@@ -398,6 +398,7 @@ jQuery(document).ready(function() {
 		jQuery('<div id="showlightbox"><i class="fa fa-picture-o" aria-hidden="true"><\/i><\/div>' ).appendTo( "body" );
 		jQuery('<div id="showexif"><i class="fa fa-camera-retro cameraicon" aria-hidden="true"><\/i><\/div>' ).appendTo( "body" );
 		jQuery('<div id="fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"><\/i><\/div>' ).appendTo( "body" );
+		jQuery('<div id="playpause"><i class="fa fa-play play" aria-hidden="true"><\/i><i class="fa fa-pause pause" aria-hidden="true"><\/i><\/div>' ).appendTo( "body" );
 		jQuery("div.a2a_default_style").addClass("floatingshare");
 		jQuery(".commentbox").hide();
 		
@@ -414,7 +415,7 @@ jQuery(document).ready(function() {
 			lightboxFadeSpeed:0,
 			clicknext:true,
 			imagePan : true,
-			autoplay : false
+			autoplay : true
 		});
 		
 			
@@ -549,7 +550,10 @@ jQuery(document).ready(function() {
 				jQuery("#requestoriginallink").hide();	
 				jQuery("#showlightbox").hide();	
 				jQuery("header#branding").hide();	
-				jQuery(".galleria-lightbox-close").html('<i class="fa fa-times-circle" aria-hidden="true"><\/i>');				
+				jQuery(".galleria-lightbox-close").html('<i class="fa fa-times-circle" aria-hidden="true"><\/i>');
+				this.pause() ;
+				jQuery('#playpause .play').show();
+				jQuery('#playpause .pause').hide();						
 			}); 
 			
 		});
@@ -566,6 +570,37 @@ jQuery(document).ready(function() {
 			toggleFullScreen() ;
 			//return false;
 		});
+		
+		
+		jQuery('#playpause .play').hide();
+				
+		jQuery('#playpause').click(function(e) {			
+			if (jQuery('.play').is(":visible")) {
+				gallery.play(2200) ;
+				jQuery('#playpause .play').hide();
+				jQuery('#playpause .pause').show();
+				gallery.next();
+			} else {
+				gallery.pause() ;
+				jQuery('#playpause .play').show();
+				jQuery('#playpause .pause').hide();				
+			}
+			//return false;
+		});
+
+
+		jQuery('.commentbox').on("mouseover", function() {
+			gallery.pause() ;
+			jQuery('#playpause .play').show();
+			jQuery('#playpause .pause').hide();				
+		});
+
+		jQuery('#showexif').on("mouseover", function() {
+			gallery.pause() ;
+			jQuery('#playpause .play').show();
+			jQuery('#playpause .pause').hide();				
+		});
+
 						
 		//console.log(Galleria.get('stage')[0]['_original']['data']) ;		
 		var imageurl=decodeURIComponent(jQuery.urlParam('urldisplayencoded'));	
