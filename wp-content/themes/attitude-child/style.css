@@ -421,5 +421,7 @@ header {
 }
 
 .galleria-stage {
-  border-radius: 0.5em;
+	right : 0px;
+	left: 0px;
+	top:0px;
 }
