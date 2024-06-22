@@ -1,6 +1,3 @@
-<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-<script>commentBox('5743785887662080-proj')</script>
-<script>
 var galleriainstance;
 var gallery ;
 const baseurl = window.location.origin + window.location.pathname
@@ -353,4 +350,3 @@ jQuery.urlParam = function(name){
 	}
 	return decodeURI(results[1]) || 0;
 }
-</script>
