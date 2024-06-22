@@ -74,7 +74,7 @@ body, input, textarea, select {
 	word-wrap: break-word;
 }
 body {
-	background: url("/wp-content/themes/attitude/images/body-bg.png") #ececec;
+	background: url("https://raysayz.com/wp-content/themes/attitude/images/body-bg.png") #ececec;
 }
 .wrapper {
 	max-width: 1038px;
@@ -586,7 +586,7 @@ a.more-link:hover {
 	width:30px;
 	height:30px;
 	text-indent: -99999px;
-	background-image: url("/wp-content/themes/attitude/images/social-icons.png");
+	background-image: url("https://raysayz.com/wp-content/themes/attitude/images/social-icons.png");
 	background-position: right bottom;
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
@@ -901,7 +901,7 @@ a.more-link:hover {
 
 /* Search Form */
 input.s {
-	background: url(/wp-content/themes/attitude/images/search.png) no-repeat right 6px #fff;
+	background: url(https://raysayz.com/wp-content/themes/attitude/images/search.png) no-repeat right 6px #fff;
 	-webkit-transition-duration: 400ms;
 	-webkit-transition-property: width, background;
 	-webkit-transition-timing-function: ease;
@@ -3363,7 +3363,7 @@ blockquote.wp-block-quote,
 /* All Retina Ready devices larger than 1.5 pixel ratio */
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
 	input.s { 
-		background-image: url('/wp-content/themes/attitude/images/search@2x.png');		
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/search@2x.png');		
 		background-size: 24px 15px;
 	}
 	.social-profiles ul li a {
@@ -3371,91 +3371,91 @@ blockquote.wp-block-quote,
 		background-size: 30px 30px;
 	}
 	.social-profiles ul li.facebook a {
-		background-image: url('/wp-content/themes/attitude/images/facebook@2x.png');		
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/facebook@2x.png');		
 		background-position: 0 0;		
 	}
 	.social-profiles ul li.facebook a:hover {
-		background-image: url('/wp-content/themes/attitude/images/facebook@2x-hover.png');		
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/facebook@2x-hover.png');		
 		background-position: 0 0;
 	}
 	.social-profiles ul li.twitter a {
-		background-image: url('/wp-content/themes/attitude/images/twitter@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/twitter@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.twitter a:hover {
-		background-image: url('/wp-content/themes/attitude/images/twitter@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/twitter@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.google-plus a {
-		background-image: url('/wp-content/themes/attitude/images/google-plus@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/google-plus@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.google-plus a:hover {
-		background-image: url('/wp-content/themes/attitude/images/google-plus@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/google-plus@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.pinterest a {
-		background-image: url('/wp-content/themes/attitude/images/pinterest@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/pinterest@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.pinterest a:hover {
-		background-image: url('/wp-content/themes/attitude/images/pinterest@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/pinterest@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.linked a {
-		background-image: url('/wp-content/themes/attitude/images/linked@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/linked@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.linked a:hover {
-		background-image: url('/wp-content/themes/attitude/images/linked@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/linked@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.tumblr a {
-		background-image: url('/wp-content/themes/attitude/images/tumblr@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/tumblr@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.tumblr a:hover {
-		background-image: url('/wp-content/themes/attitude/images/tumblr@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/tumblr@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.vimeo a {
-		background-image: url('/wp-content/themes/attitude/images/vimeo@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/vimeo@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.vimeo a:hover {
-		background-image: url('/wp-content/themes/attitude/images/vimeo@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/vimeo@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.my-space a {
-		background-image: url('/wp-content/themes/attitude/images/my-space@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/my-space@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.my-space a:hover {
-		background-image: url('/wp-content/themes/attitude/images/my-space@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/my-space@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.flickr a {
-		background-image: url('/wp-content/themes/attitude/images/flickr@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/flickr@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.flickr a:hover {
-		background-image: url('/wp-content/themes/attitude/images/flickr@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/flickr@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.you-tube a {
-		background-image: url('/wp-content/themes/attitude/images/you-tube@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/you-tube@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.you-tube a:hover {
-		background-image: url('/wp-content/themes/attitude/images/you-tube@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/you-tube@2x-hover.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.rss a {
-		background-image: url('/wp-content/themes/attitude/images/rss@2x.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/rss@2x.png');
 		background-position: 0 0;
 	}
 	.social-profiles ul li.rss a:hover {
-		background-image: url('/wp-content/themes/attitude/images/rss@2x-hover.png');
+		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/rss@2x-hover.png');
 		background-position: 0 0;
 	}
 }  	

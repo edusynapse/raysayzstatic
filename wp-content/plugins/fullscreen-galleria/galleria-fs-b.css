@@ -23,7 +23,7 @@
 .galleria-info-close,
 .galleria-image-nav-left,
 .galleria-image-nav-right {
-  background-image: url(/wp-content/plugins/fullscreen-galleria/fs-map.svg);
+  background-image: url(https://raysayz.com/wp-content/plugins/fullscreen-galleria/fs-map.svg);
 }
 .galleria-info-title, .galleria-layer h1 {
     color: #fff;
