@@ -301,19 +301,6 @@ jQuery(document).ready(function() {
 			}	
 		});
 
-
-		jQuery('.galleria-image-nav-right').on("click", function() {		
-			setTimeout(function(){					
-				gallery.play() ;
-			}, 10000);		
-		});
-
-		jQuery('.galleria-image-nav-left').on("click", function() {
-			setTimeout(function(){					
-				gallery.play() ;		
-			}, 10000);			
-		});
-
 						
 		//console.log(Galleria.get('stage')[0]['_original']['data']) ;		
 		var imageurl=decodeURIComponent(jQuery.urlParam('urldisplayencoded'));	
