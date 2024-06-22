@@ -52,17 +52,36 @@ jQuery(document).ready(function() {
 			dataSort: 'random',
 			transition :'fade',
 			transitionSpeed : 1000,
-			lightbox:true,
+			lightbox:false,
 			trueFullscreen:true,
 			lightboxTransitionSpeed:0,
 			lightboxFadeSpeed:0,
 			imagePan : true,
-			autoplay : true
+			autoplay : true,
+			fullscreenDoubleTap : false
 		});
 		
 			
 		Galleria.ready(function() {
 			gallery = this;
+			// keyboard navigation 
+			this.attachKeyboard({
+				right: this.next,
+				left: this.prev,
+				down: function() {
+					// custom up action
+					this.pause();
+				},
+				up: function() {
+					// custom up action
+					this.play(2200);
+				},
+				13: function() {
+					// start playing when return (keyCode 13) is pressed:
+					this.playToggle();
+				}
+			});
+
 			this.bind("image", function(e) {
 				imagename = e.imageTarget.currentSrc;
 				lighboximageindex = e.index;
@@ -191,7 +210,7 @@ jQuery(document).ready(function() {
 					this.show(lighboximageindex);				
 				}				
 				if (lightboxgalleryplaystatus) {
-					this.play() ;
+					this.play(2200) ;
 					lightboxgalleryplaystatus = false;
 				}					
 			}); 
@@ -260,7 +279,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery('.commentbox').on("mouseout", function() {
 			if (commenthoveroutgalleryplaystatus) {
-				gallery.play() ;
+				gallery.play(2200) ;
 				commenthoveroutgalleryplaystatus = false;
 			}	
 		});
@@ -272,7 +291,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery('#showexif').on("mouseout", function() {
 			if (showexifhoveroutgalleryplaystatus) {
-				gallery.play() ;
+				gallery.play(2200) ;
 				showexifhoveroutgalleryplaystatus = false;
 			}				
 		});
@@ -284,7 +303,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery('.floatingshare').on("mouseout", function() {
 			if (sharebuttonhoveroutgalleryplaystatus) {
-				gallery.play() ;
+				gallery.play(2200) ;
 				sharebuttonhoveroutgalleryplaystatus = false;
 			}				
 		});
@@ -296,7 +315,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery('.headeroverlay').on("mouseout", function() {
 			if (headerhovergalleryplaystatus) {
-				gallery.play() ;
+				gallery.play(2200) ;
 				headerhovergalleryplaystatus = false;
 			}	
 		});
@@ -321,8 +340,8 @@ jQuery(document).ready(function() {
 			});
 			Galleria.run();
 		}
-		
-		
+		gallery.plause() ;
+		gallery.play(2200) ;
 		
 		
 	}
