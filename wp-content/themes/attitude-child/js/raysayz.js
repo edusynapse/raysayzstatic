@@ -8,6 +8,7 @@ var showexifhoveroutgalleryplaystatus = false;
 var sharebuttonhoveroutgalleryplaystatus = false;
 var lightboxgalleryplaystatus = false;
 var headerhovergalleryplaystatus = false;
+
 function toggleFullScreen() {
   if (!document.fullscreenElement &&    // alternative standard method
       !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
@@ -44,7 +45,8 @@ jQuery(document).ready(function() {
 		jQuery('header#branding').addClass("headeroverlay");
 		jQuery('header#branding').addClass('toggled-on');
 		jQuery('.menu-toggle').hide();
-		
+
+		jQuery('.galleria-stage').hammer().on("doubletap", function(){window.toggleFullScreen() ;}); 
 		
 		Galleria.run('#customgallery', {
 			height : 600,
@@ -340,7 +342,7 @@ jQuery(document).ready(function() {
 			});
 			Galleria.run();
 		}
-		gallery.plause() ;
+		gallery.pause() ;
 		gallery.play(2200) ;
 		
 		
