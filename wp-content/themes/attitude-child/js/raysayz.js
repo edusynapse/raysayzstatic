@@ -32,7 +32,6 @@ function toggleFullScreen() {
     }
   }
 }
-
 jQuery(document).ready(function() {
 	if (jQuery("#customgallery").length) {	  
 	
@@ -57,7 +56,6 @@ jQuery(document).ready(function() {
 			trueFullscreen:true,
 			lightboxTransitionSpeed:0,
 			lightboxFadeSpeed:0,
-			clicknext:true,
 			imagePan : true,
 			autoplay : true
 		});
@@ -231,7 +229,7 @@ jQuery(document).ready(function() {
 		});
 
 		jQuery('#fullscreen').click(function(e) {	
-			toggleFullScreen() ;
+			window.toggleFullScreen() ;
 			//return false;
 		});
 		
