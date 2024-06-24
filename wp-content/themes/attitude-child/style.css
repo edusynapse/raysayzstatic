@@ -300,8 +300,7 @@ header#branding form {
 }
 #showexif:hover pre {	
     background-color: transparent !important;
-	font-size:1em;
-	max-width:600px;
+	font-size:0.7em !important;
 }
 .shaker { 
 	animation: tilt-n-move-shaking 0.25s linear 4;
@@ -311,8 +310,8 @@ header#branding form {
 }
 #showexif:hover {	
     width: auto;
-    font-size: 1.2em;
-	margin-top : -100px;
+	margin-top : -30px;
+	max-width:80%;
 }
 
 #showlightbox:hover, #showexif:hover {
@@ -355,9 +354,6 @@ header#branding form {
     .one-column-template .wrapper, .wrapper {
         width: 100%;
     }
-}
-
-@media only screen and (max-width: 767px) {
     .one-column-template .container, .container {
         width: 90%;
     }
@@ -367,6 +363,14 @@ header#branding form {
     .frontpageblogsection .wp-block-latest-posts.columns-2 li {
         width: calc(50% - 4em)  !important;
     }
+}
+
+
+@media (min-width: 1024px) {    
+	#showexif:hover pre {	
+		max-width:auto;
+		width:700px;
+	}
 }
 
 
@@ -452,4 +456,9 @@ header {
   50% { transform: translate(0, 0) rotate(0eg); }
   75% { transform: translate(-5px, 5px) rotate(-5deg); }
   100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@font-face {
+    font-family: RaySayz;
+    src: url('https://raysayz.com/wp-content/themes/attitude-child/fonts/RaySayz.ttf');
 }
