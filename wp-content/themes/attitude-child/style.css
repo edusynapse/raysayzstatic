@@ -289,27 +289,40 @@ header#branding form {
     top: 125px;
     cursor: help;
 }
-#showexif .cameradetails {	
+#showexif .cameradetails, #showexif pre {	
     display: none;
 }
 #showexif .cameraicon {	
     display: inline-block;
 }
-#showexif:hover .cameradetails {	
-    display: inline-block;
+#showexif:hover .cameradetails, #showexif:hover pre {	
+    display: block;
 }
-#showexif:hover .cameraicon {	
+#showexif:hover pre {	
+    background-color: transparent !important;
+	font-size:1em;
+	max-width:600px;
+}
+.shaker { 
+	animation: tilt-n-move-shaking 0.25s linear 4;
+}
+#showexif:hover i {	
     display: none;
 }
 #showexif:hover {	
     width: auto;
     font-size: 1.2em;
+	margin-top : -100px;
 }
 
 #showlightbox:hover, #showexif:hover {
     opacity: 1;
 	background: #00000078;
 	border:2px solid  #e0bd91;
+}
+
+#showexif:hover {
+  background: #000000c4;
 }
 
 .page .entry-title {
@@ -431,4 +444,12 @@ header {
 	right : 0px;
 	left: 0px;
 	top:0px;
+}
+
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }

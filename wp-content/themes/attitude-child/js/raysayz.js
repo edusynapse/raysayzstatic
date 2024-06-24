@@ -159,11 +159,28 @@ jQuery(document).ready(function() {
 						
 						//var allMetaDataSpan = document.getElementById("allMetaDataSpan");
 						//allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
-						jQuery('#showexif').show();
+						jQuery('#showexif').show();						
+						jQuery('#showexif i.fa').removeClass('fa-lightbulb-o')
+												.removeClass('fa-camera-retro')
+												.removeClass('cameraicon')
+												.addClass('cameraicon')
+												.addClass('fa-camera-retro');
+					} else {		
+						var koan = jQuery('pre.'+finalimage);									
+						if ( koan != null) {
+							jQuery('#showexif pre').remove();
+							jQuery('#showexif i.fa').removeClass('fa-camera-retro')
+													.removeClass('cameraicon')
+													.removeClass('fa-lightbulb-o')
+													.addClass('fa-lightbulb-o');
+							koan.appendTo('#showexif');				
+							jQuery('#showexif').show();		
+							jQuery('#showexif').addClass('shaker'); 
+							setTimeout(function(){
+								jQuery('#showexif').removeClass('shaker'); 
+							   },500000);
+						} else jQuery('#showexif').hide();
 						
-					} else {
-						jQuery('#showexif').hide();
-					
 					}
 				});
 		
