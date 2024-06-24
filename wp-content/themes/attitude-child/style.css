@@ -308,20 +308,19 @@ header#branding form {
 #showexif:hover i {	
     display: none;
 }
-#showexif:hover {	
-    width: auto;
-	margin-top : -30px;
-	max-width:80%;
-}
 
 #showlightbox:hover, #showexif:hover {
     opacity: 1;
 	background: #00000078;
 	border:2px solid  #e0bd91;
 }
-
-#showexif:hover {
-  background: #000000c4;
+#showexif:hover {	
+    width: auto;
+    top: 40px;
+	max-width:80%;
+    background: #0000008f;
+	max-height:  calc(100% - 200px)  !important;;
+	overflow:scroll;
 }
 
 .page .entry-title {
