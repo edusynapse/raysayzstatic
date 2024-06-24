@@ -9,6 +9,16 @@ var sharebuttonhoveroutgalleryplaystatus = false;
 var lightboxgalleryplaystatus = false;
 var headerhovergalleryplaystatus = false;
 
+jQuery.fn.randomize = function(selector){
+    (selector ? this.find(selector) : this).parent().each(function(){
+        jQuery(this).children(selector).sort(function(){
+            return Math.random() - 0.5;
+        }).detach().appendTo(this);
+    });
+
+    return this;
+}
+
 function toggleFullScreen() {
   if (!document.fullscreenElement &&    // alternative standard method
       !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
@@ -134,8 +144,8 @@ jQuery(document).ready(function() {
 						imageexifdata['fnumber']  = 'F'+EXIF.getTag(this, "FNumber");
 						imageexifdata['focallength']  = EXIF.getTag(this, "FocalLength") + 'mm';
 						imageexifdata['iso']  = 'ISO-' + EXIF.getTag(this, "ISOSpeedRatings");
-						imageexifdata['whitebalance']  = 'White Balance : ' + EXIF.getTag(this, "WhiteBalance");
-						imageexifdata['shutterspeed']  = 'Shutter Speed : 1/' + Math.round(1/(EXIF.getTag(this, "ExposureTime"))) + ' seconds';
+						imageexifdata['whitebalance']  = EXIF.getTag(this, "WhiteBalance");
+						imageexifdata['shutterspeed']  = 'Shutter : 1/' + Math.round(1/(EXIF.getTag(this, "ExposureTime"))) + ' s';
 						//console.log( imageexifdata);
 						
 						var cameraDetailsHTML = '<div class="cameradetails">' 	+ imageexifdata['make'] 
@@ -166,7 +176,7 @@ jQuery(document).ready(function() {
 												.addClass('cameraicon')
 												.addClass('fa-camera-retro');
 					} else {		
-						var koan = jQuery('pre.'+finalimage);									
+						var koan = jQuery('pre.'+finalimage).clone();									
 						if ( koan != null) {
 							jQuery('#showexif pre').remove();
 							jQuery('#showexif i.fa').removeClass('fa-camera-retro')

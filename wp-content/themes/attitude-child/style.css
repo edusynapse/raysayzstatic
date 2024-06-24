@@ -291,6 +291,7 @@ header#branding form {
 }
 #showexif .cameradetails, #showexif pre {	
     display: none;
+	font-size: 0.7em !important;
 }
 #showexif .cameraicon {	
     display: inline-block;
@@ -300,7 +301,6 @@ header#branding form {
 }
 #showexif:hover pre {	
     background-color: transparent !important;
-	font-size:0.7em !important;
 }
 .shaker { 
 	animation: tilt-n-move-shaking 0.25s linear 4;
