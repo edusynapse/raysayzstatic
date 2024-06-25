@@ -45,43 +45,64 @@ function toggleFullScreen() {
   }
 }
 
+
 jQuery(document).ready(function() {
-	var text = jQuery('#site-title a').text();
-	var text2 = jQuery('#site-description').text();
-	var length = text.length;
-	var length2 = text2.length;
-	var timeOut;
-	var timeOut2;
+	jQuery('#site-title a').css('opacity','0');
+	jQuery('#site-title').css('opacity','1');
+	jQuery('#site-description').css('opacity','0');
+	jQuery('.logoimage').css('opacity','0.01');
+	var sitetitle = jQuery('#site-title a').text();
+	var sitedescription = jQuery('#site-description').text();
+	var sitetitle_length = sitetitle.length;
+	var sitedescription_length = sitedescription.length;
+	var site_title_type_in_timeoutt;
+	var site_description_type_in_timeoutt;
+	var sitelogo_opacity_fadein_timeout;
 	var character = 10;
 	var character2 = 1;
-	jQuery('#site-title a').css('opacity','0');
-	jQuery('#site-description').css('opacity','0');
-	(function typeWriter() { 
-		timeOut = setTimeout(function() {
-			character++;
-			var type = text.substring(0, character);
-			jQuery('#site-title a').text(type);
-			jQuery('#site-title a').css('opacity','1');
-			typeWriter();
-			if (character == length) {
-				clearTimeout(timeOut);
-				(function typeWriter2() { 
-					timeOut2 = setTimeout(function() {
-						character2++;
-						var type = text2.substring(0, character2);
-						jQuery('#site-description').text(type);
-						jQuery('#site-description').css('opacity','1');
-						typeWriter2();
-						if (character2 == length2) {
-							clearTimeout(timeOut2);
+	var fadeinopacityincrement = 0.1;
+	var fadeinopacity = 0.1;
+	var sitetitle_textfadein_opacityincrement = 1/sitetitle_length;
+	var sitedescription_textfadein_opacityincrement = 1/sitedescription_length;
+	(function fadeinlogo() { 
+		sitelogo_opacity_fadein_timeout = setTimeout(function() {
+			fadeinopacity = fadeinopacityincrement + fadeinopacity;
+			jQuery('.logoimage').css('opacity',fadeinopacity);
+			fadeinlogo();
+			if (fadeinopacity > 1) {
+				clearTimeout(sitelogo_opacity_fadein_timeout);
+				fadeinopacity = 0.1;
+				(function typeWriter() { 
+					site_title_type_in_timeoutt = setTimeout(function() {
+						character++;
+						var type = sitetitle.substring(0, character);
+						jQuery('#site-title a').text(type);
+						jQuery('#site-title a').css('opacity',fadeinopacity);
+						fadeinopacity = fadeinopacity + sitetitle_textfadein_opacityincrement;
+						typeWriter();
+						if (character == sitetitle_length) {
+							clearTimeout(site_title_type_in_timeoutt);
+							fadeinopacity = 0.1;
+							(function typeWriter2() { 
+								site_description_type_in_timeoutt = setTimeout(function() {
+									character2++;
+									var type = sitedescription.substring(0, character2);
+									jQuery('#site-description').text(type);
+									jQuery('#site-description').css('opacity',fadeinopacity);
+									fadeinopacity = fadeinopacity + sitedescription_textfadein_opacityincrement;
+									typeWriter2();
+									if (character2 == sitedescription_length) {
+										clearTimeout(site_description_type_in_timeoutt);
+									}
+								}, 100);
+							}());
 						}
 					}, 100);
 				}());
 			}
-		}, 150);
+		}, 100);
 	}());
 });
-
 jQuery(document).ready(function() {
 	if (jQuery("#customgallery").length) {	  
 	
