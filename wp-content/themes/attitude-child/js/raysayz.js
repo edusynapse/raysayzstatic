@@ -133,7 +133,6 @@ jQuery(document).ready(function() {
 				//console.log(jQuery(document).find("title").text());
 				
 				
-				jQuery("#showexif").remove();
 				
 				
 				var img = this.getActiveImage();
@@ -168,13 +167,15 @@ jQuery(document).ready(function() {
 								.replace(/\n( *)/g, function (match, p1) {
 									 return '<br>' + ' '.repeat(p1.length);
 								     });
-						//console.log(cameraDetailsHTML);
+						//console.log(cameraDetailsHTML);						
+						jQuery("#showexif").remove();
 						jQuery('<div id="showexif"><i class="fa fa-camera-retro cameraicon" aria-hidden="true"></i></div>' ).appendTo( "body" );
 						
 						jQuery(cameraDetailsHTML).appendTo( "#showexif" );
 					} else {		
-						var koan = jQuery('pre.'+finalimage).clone();									
-						if ( koan != null) {							
+						var koan = jQuery('pre.'+finalimage).clone();													//console.log(koan);
+						if ( koan.length > 0 ) {	
+							jQuery("#showexif").remove();						
 							jQuery('<div id="showexif"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
 							koan.appendTo('#showexif');				
 							jQuery('#showexif').show();		
