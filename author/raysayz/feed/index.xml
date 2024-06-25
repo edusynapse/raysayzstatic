@@ -9,7 +9,7 @@
 
 <channel>
 	<title>raysayz &#8211; Ray Sayz</title>
-	<atom:link href="http://localhost/author/raysayz/feed/?simply_static_page=50153" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/author/raysayz/feed/?simply_static_page=50952" rel="self" type="application/rss+xml" />
 	<link>https://raysayz.com/</link>
 	<description>Nowhere, everywhere ... now</description>
 	<lastBuildDate>Sun, 23 Jun 2024 03:48:17 +0000</lastBuildDate>
@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.5.4</generator>
+	<generator>https://wordpress.org/?v=6.5.5</generator>
 
 <image>
 	<url>https://raysayz.com/wp-content/uploads/2023/11/cropped-raysayz-32x32.png</url>
