@@ -303,7 +303,7 @@ header#branding form {
     background-color: transparent !important;
 }
 .shaker { 
-	animation: tilt-n-move-shaking 0.25s linear 4;
+	animation: tilt-n-move-shaking 0.25s linear infinite;
 }
 #showexif:hover i {	
     display: none;

@@ -8,6 +8,7 @@ var showexifhoveroutgalleryplaystatus = false;
 var sharebuttonhoveroutgalleryplaystatus = false;
 var lightboxgalleryplaystatus = false;
 var headerhovergalleryplaystatus = false;
+var gallerypicturepausemilliseconds = 2200;
 
 jQuery.fn.randomize = function(selector){
     (selector ? this.find(selector) : this).parent().each(function(){
@@ -47,7 +48,6 @@ jQuery(document).ready(function() {
 	if (jQuery("#customgallery").length) {	  
 	
 		jQuery('<div id="showlightbox"><i class="fa fa-picture-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
-		jQuery('<div id="showexif"><i class="fa fa-camera-retro cameraicon" aria-hidden="true"></i></div>' ).appendTo( "body" );
 		jQuery('<div id="fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></div>' ).appendTo( "body" );
 		jQuery('<div id="playpause"><i class="fa fa-play play" aria-hidden="true"></i><i class="fa fa-pause pause" aria-hidden="true"></i></div>' ).appendTo( "body" );
 		jQuery('div.a2a_default_style').addClass("floatingshare");
@@ -70,7 +70,8 @@ jQuery(document).ready(function() {
 			lightboxFadeSpeed:0,
 			imagePan : true,
 			autoplay : true,
-			fullscreenDoubleTap : false
+			fullscreenDoubleTap : false,
+			carouselSpeed : gallerypicturepausemilliseconds
 		});
 		
 			
@@ -86,7 +87,7 @@ jQuery(document).ready(function() {
 				},
 				up: function() {
 					// custom up action
-					this.play(2200);
+					this.play(gallerypicturepausemilliseconds);
 				},
 				13: function() {
 					// start playing when return (keyCode 13) is pressed:
@@ -132,6 +133,9 @@ jQuery(document).ready(function() {
 				//console.log(jQuery(document).find("title").text());
 				
 				
+				jQuery("#showexif").remove();
+				
+				
 				var img = this.getActiveImage();
 				EXIF.getData(img, function() {
 					//var allMetaData = EXIF.getAllTags(this);
@@ -164,34 +168,36 @@ jQuery(document).ready(function() {
 								.replace(/\n( *)/g, function (match, p1) {
 									 return '<br>' + ' '.repeat(p1.length);
 								     });
-						//console.log(cameraDetailsHTML);	
-						jQuery(cameraDetailsHTML).appendTo( "#showexif" );
+						//console.log(cameraDetailsHTML);
+						jQuery('<div id="showexif"><i class="fa fa-camera-retro cameraicon" aria-hidden="true"></i></div>' ).appendTo( "body" );
 						
-						//var allMetaDataSpan = document.getElementById("allMetaDataSpan");
-						//allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
-						jQuery('#showexif').show();						
-						jQuery('#showexif i.fa').removeClass('fa-lightbulb-o')
-												.removeClass('fa-camera-retro')
-												.removeClass('cameraicon')
-												.addClass('cameraicon')
-												.addClass('fa-camera-retro');
+						jQuery(cameraDetailsHTML).appendTo( "#showexif" );
 					} else {		
 						var koan = jQuery('pre.'+finalimage).clone();									
-						if ( koan != null) {
-							jQuery('#showexif pre').remove();
-							jQuery('#showexif i.fa').removeClass('fa-camera-retro')
-													.removeClass('cameraicon')
-													.removeClass('fa-lightbulb-o')
-													.addClass('fa-lightbulb-o');
+						if ( koan != null) {							
+							jQuery('<div id="showexif"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
 							koan.appendTo('#showexif');				
 							jQuery('#showexif').show();		
 							jQuery('#showexif').addClass('shaker'); 
 							setTimeout(function(){
 								jQuery('#showexif').removeClass('shaker'); 
-							   },500000);
-						} else jQuery('#showexif').hide();
+							   },1500);
+							gallerypicturepausemilliseconds = 5000;	
+						} else jQuery('#showexif').remove();
 						
 					}
+					jQuery('#showexif').on("mouseover", function() {
+						if (galleryplaystatus) {
+							gallery.pause() ;
+							showexifhoveroutgalleryplaystatus = true;
+						}			
+					});
+					jQuery('#showexif').on("mouseout", function() {
+						if (showexifhoveroutgalleryplaystatus) {
+							gallery.play(gallerypicturepausemilliseconds) ;
+							showexifhoveroutgalleryplaystatus = false;
+						}				
+					});
 				});
 		
 			}); 
@@ -239,7 +245,7 @@ jQuery(document).ready(function() {
 					this.show(lighboximageindex);				
 				}				
 				if (lightboxgalleryplaystatus) {
-					this.play(2200) ;
+					this.play(gallerypicturepausemilliseconds) ;
 					lightboxgalleryplaystatus = false;
 				}					
 			}); 
@@ -286,7 +292,7 @@ jQuery(document).ready(function() {
 				
 		jQuery('#playpause').click(function(e) {			
 			if (jQuery('.play').is(":visible")) {
-				gallery.play(2200) ;
+				gallery.play(gallerypicturepausemilliseconds) ;
 				gallery.next();
 			} else {
 				gallery.pause() ;				
@@ -308,7 +314,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery('.commentbox').on("mouseout", function() {
 			if (commenthoveroutgalleryplaystatus) {
-				gallery.play(2200) ;
+				gallery.play(gallerypicturepausemilliseconds) ;
 				commenthoveroutgalleryplaystatus = false;
 			}	
 		});
@@ -320,7 +326,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery('#showexif').on("mouseout", function() {
 			if (showexifhoveroutgalleryplaystatus) {
-				gallery.play(2200) ;
+				gallery.play(gallerypicturepausemilliseconds) ;
 				showexifhoveroutgalleryplaystatus = false;
 			}				
 		});
@@ -332,7 +338,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery('.floatingshare').on("mouseout", function() {
 			if (sharebuttonhoveroutgalleryplaystatus) {
-				gallery.play(2200) ;
+				gallery.play(gallerypicturepausemilliseconds) ;
 				sharebuttonhoveroutgalleryplaystatus = false;
 			}				
 		});
@@ -344,7 +350,7 @@ jQuery(document).ready(function() {
 		});
 		jQuery('.headeroverlay').on("mouseout", function() {
 			if (headerhovergalleryplaystatus) {
-				gallery.play(2200) ;
+				gallery.play(gallerypicturepausemilliseconds) ;
 				headerhovergalleryplaystatus = false;
 			}	
 		});
@@ -370,7 +376,7 @@ jQuery(document).ready(function() {
 			Galleria.run();
 		}
 		gallery.pause() ;
-		gallery.play(2200) ;
+		gallery.play(gallerypicturepausemilliseconds) ;
 		
 		
 	}
