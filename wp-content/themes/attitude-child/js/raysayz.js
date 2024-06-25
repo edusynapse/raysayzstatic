@@ -44,6 +44,44 @@ function toggleFullScreen() {
     }
   }
 }
+
+jQuery(document).ready(function() {
+	var text = jQuery('#site-title a').text();
+	var text2 = jQuery('#site-description').text();
+	var length = text.length;
+	var length2 = text2.length;
+	var timeOut;
+	var timeOut2;
+	var character = 10;
+	var character2 = 1;
+	jQuery('#site-title a').css('opacity','0');
+	jQuery('#site-description').css('opacity','0');
+	(function typeWriter() { 
+		timeOut = setTimeout(function() {
+			character++;
+			var type = text.substring(0, character);
+			jQuery('#site-title a').text(type);
+			jQuery('#site-title a').css('opacity','1');
+			typeWriter();
+			if (character == length) {
+				clearTimeout(timeOut);
+				(function typeWriter2() { 
+					timeOut2 = setTimeout(function() {
+						character2++;
+						var type = text2.substring(0, character2);
+						jQuery('#site-description').text(type);
+						jQuery('#site-description').css('opacity','1');
+						typeWriter2();
+						if (character2 == length2) {
+							clearTimeout(timeOut2);
+						}
+					}, 100);
+				}());
+			}
+		}, 150);
+	}());
+});
+
 jQuery(document).ready(function() {
 	if (jQuery("#customgallery").length) {	  
 	
@@ -382,6 +420,7 @@ jQuery(document).ready(function() {
 		
 	}
 });
+
 
 jQuery.urlParam = function(name){
 	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
