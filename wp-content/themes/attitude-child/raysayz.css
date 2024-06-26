@@ -137,8 +137,9 @@
 .headeroverlay:hover {
     height: auto;
     opacity: 1;
-    width : calc(100% - 20px);
+    width : calc(100% - 80px);
     max-width:1038px;
+    z-index: 10005;
 }
 .headeroverlay #logoimage {	
    	display: inline-block !important;
@@ -297,7 +298,7 @@ header#branding form {
     background-color: transparent !important;
 }
 .shaker { 
-	animation: tilt-n-move-shaking 0.25s linear infinite;
+	animation: tilt-n-move-shaking 0.15s linear infinite;
 }
 .shaker:hover { 
 	animation: none !important;
@@ -456,11 +457,15 @@ header {
 	top:0px;
 }
 
+#customgallery img {
+	display:none;
+	
+}
 @keyframes tilt-n-move-shaking {
   0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(5px, 5px) rotate(5deg); }
+  25% { transform: translate(3px, 3px) rotate(5deg); }
   50% { transform: translate(0, 0) rotate(0eg); }
-  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  75% { transform: translate(-3px, 3px) rotate(-5deg); }
   100% { transform: translate(0, 0) rotate(0deg); }
 }
 

@@ -48,7 +48,7 @@ function toggleFullScreen() {
 
 jQuery(document).ready(function() {
 	jQuery('#site-description').css('opacity','0');
-	jQuery('.logoimage').css('opacity','0.1');
+	jQuery('.logoimage').css('opacity','0.5');
 	var sitedescription = jQuery('#site-description').text();
 	var sitedescription_length = sitedescription.length;
 	var animation_timeout;
@@ -84,7 +84,6 @@ jQuery(document).ready(function() {
 		jQuery('#fullscreen').css('opacity','0');
 		jQuery('#playpause').css('opacity','0');
 		jQuery('div.a2a_default_style').css('opacity','0');
-		
 		
 		jQuery('.commentbox').hide();
 		jQuery('header#branding').addClass("headeroverlay");
@@ -226,7 +225,7 @@ jQuery(document).ready(function() {
 							jQuery('#showexif').addClass('shaker'); 
 							setTimeout(function(){
 								jQuery('#showexif').removeClass('shaker'); 
-							   },1500);
+							   },700);
 							gallerypicturepausemilliseconds = 5000;	
 						} else jQuery('#showexif').remove();
 						
