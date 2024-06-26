@@ -90,6 +90,7 @@ jQuery(document).ready(function() {
 		jQuery('header#branding').addClass("headeroverlay");
 		jQuery('header#branding').addClass('toggled-on');
 		jQuery('.menu-toggle').hide();
+		jQuery('pre').css('height','0px');
 
 		jQuery('.galleria-stage').hammer().on("doubletap", function(){window.toggleFullScreen() ;}); 
 		
@@ -221,6 +222,7 @@ jQuery(document).ready(function() {
 							jQuery('<div id="showexif"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
 							koan.appendTo('#showexif');				
 							jQuery('#showexif').show();		
+							koan.css('height','auto');
 							jQuery('#showexif').addClass('shaker'); 
 							setTimeout(function(){
 								jQuery('#showexif').removeClass('shaker'); 
