@@ -9,6 +9,7 @@ var sharebuttonhoveroutgalleryplaystatus = false;
 var lightboxgalleryplaystatus = false;
 var headerhovergalleryplaystatus = false;
 var gallerypicturepausemilliseconds = 2200;
+var buttonsvisibile = false; 
 
 jQuery.fn.randomize = function(selector){
     (selector ? this.find(selector) : this).parent().each(function(){
@@ -45,60 +46,26 @@ function toggleFullScreen() {
   }
 }
 
-
 jQuery(document).ready(function() {
-	jQuery('#site-title a').css('opacity','0');
-	jQuery('#site-title').css('opacity','1');
 	jQuery('#site-description').css('opacity','0');
-	jQuery('.logoimage').css('opacity','0.01');
-	var sitetitle = jQuery('#site-title a').text();
+	jQuery('.logoimage').css('opacity','0.1');
 	var sitedescription = jQuery('#site-description').text();
-	var sitetitle_length = sitetitle.length;
 	var sitedescription_length = sitedescription.length;
-	var site_title_type_in_timeoutt;
-	var site_description_type_in_timeoutt;
-	var sitelogo_opacity_fadein_timeout;
-	var character = 10;
-	var character2 = 1;
-	var fadeinopacityincrement = 0.1;
+	var animation_timeout;
+	var sitedescription_type_substring_index = 1;
 	var fadeinopacity = 0.1;
-	var sitetitle_textfadein_opacityincrement = 1/sitetitle_length;
-	var sitedescription_textfadein_opacityincrement = 1/sitedescription_length;
-	(function fadeinlogo() { 
-		sitelogo_opacity_fadein_timeout = setTimeout(function() {
-			fadeinopacity = fadeinopacityincrement + fadeinopacity;
+	var fadein_opacityincrement = 1/sitedescription_length;
+	(function animationMaker() { 
+		animation_timeout = setTimeout(function() {
+			sitedescription_type_substring_index++;
+			var type = sitedescription.substring(0, sitedescription_type_substring_index);
+			jQuery('#site-description').text(type);
+			jQuery('#site-description').css('opacity',fadeinopacity);
 			jQuery('.logoimage').css('opacity',fadeinopacity);
-			fadeinlogo();
-			if (fadeinopacity > 1) {
-				clearTimeout(sitelogo_opacity_fadein_timeout);
-				fadeinopacity = 0.1;
-				(function typeWriter() { 
-					site_title_type_in_timeoutt = setTimeout(function() {
-						character++;
-						var type = sitetitle.substring(0, character);
-						jQuery('#site-title a').text(type);
-						jQuery('#site-title a').css('opacity',fadeinopacity);
-						fadeinopacity = fadeinopacity + sitetitle_textfadein_opacityincrement;
-						typeWriter();
-						if (character == sitetitle_length) {
-							clearTimeout(site_title_type_in_timeoutt);
-							fadeinopacity = 0.1;
-							(function typeWriter2() { 
-								site_description_type_in_timeoutt = setTimeout(function() {
-									character2++;
-									var type = sitedescription.substring(0, character2);
-									jQuery('#site-description').text(type);
-									jQuery('#site-description').css('opacity',fadeinopacity);
-									fadeinopacity = fadeinopacity + sitedescription_textfadein_opacityincrement;
-									typeWriter2();
-									if (character2 == sitedescription_length) {
-										clearTimeout(site_description_type_in_timeoutt);
-									}
-								}, 100);
-							}());
-						}
-					}, 100);
-				}());
+			fadeinopacity = fadeinopacity + fadein_opacityincrement;
+			animationMaker();
+			if (sitedescription_type_substring_index == sitedescription_length) {
+				clearTimeout(animation_timeout);
 			}
 		}, 100);
 	}());
@@ -110,6 +77,15 @@ jQuery(document).ready(function() {
 		jQuery('<div id="fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></div>' ).appendTo( "body" );
 		jQuery('<div id="playpause"><i class="fa fa-play play" aria-hidden="true"></i><i class="fa fa-pause pause" aria-hidden="true"></i></div>' ).appendTo( "body" );
 		jQuery('div.a2a_default_style').addClass("floatingshare");
+		
+		
+		//mute the buttons till everything loaded
+		jQuery('#showlightbox').css('opacity','0');
+		jQuery('#fullscreen').css('opacity','0');
+		jQuery('#playpause').css('opacity','0');
+		jQuery('div.a2a_default_style').css('opacity','0');
+		
+		
 		jQuery('.commentbox').hide();
 		jQuery('header#branding').addClass("headeroverlay");
 		jQuery('header#branding').addClass('toggled-on');
@@ -191,7 +167,14 @@ jQuery(document).ready(function() {
 				//console.log(bookmarkurl);
 				//console.log(jQuery(document).find("title").text());
 				
-				
+				if (!buttonsvisibile) {
+					jQuery('#showlightbox').css('opacity','0.7');
+					jQuery('#fullscreen').css('opacity','0.7');
+					jQuery('#playpause').css('opacity','0.7');
+					jQuery('div.a2a_default_style').css('opacity','0.7');
+		
+					buttonsvisibile = true;
+				}
 				
 				
 				var img = this.getActiveImage();
