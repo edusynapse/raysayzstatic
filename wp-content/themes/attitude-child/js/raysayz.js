@@ -89,19 +89,21 @@ jQuery(document).ready(function() {
 		jQuery('<div id="showlightbox" class="galleryuibutton"><i class="fa fa-picture-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
 		jQuery('<div id="fullscreen" class="galleryuibutton"><i class="fa fa-arrows-alt" aria-hidden="true"></i></div>' ).appendTo( "body" );
 		jQuery('<div id="playpause" class="galleryuibutton"><i class="fa fa-play play" aria-hidden="true"></i><i class="fa fa-pause pause" aria-hidden="true"></i></div>' ).appendTo( "body" );
-		jQuery('div.a2a_default_style').addClass("floatingshare");
-		jQuery('div.a2a_default_style').addClass("galleryuibutton");
-		
-		
+		jQuery('div.a2a_default_style').addClass("floatingshare").addClass("galleryuibutton");
+		jQuery('<a id="requestoriginallink"  class="galleryuibutton" target="_blank" href=""><i class="fa fa-download" aria-hidden="true"></i></a>' 
+).appendTo( "body" );
+		jQuery('<div id="showexif"  class="galleryuibutton"></div>' ).appendTo( "body" );
 		//mute the buttons till everything loaded
 		jQuery('#showlightbox').css('opacity','0');
 		jQuery('#fullscreen').css('opacity','0');
 		jQuery('#playpause').css('opacity','0');
 		jQuery('div.a2a_default_style').css('opacity','0');
 		
+		
+		jQuery('<i class="fa fa-comments commentsicon" aria-hidden="true"></i>').prependTo('.commentbox');
 		jQuery('.commentbox').hide();
-		jQuery('header#branding').addClass("headeroverlay").addClass("galleryuibutton");
-		jQuery('header#branding').addClass('toggled-on');
+		jQuery('#showexif').hide();
+		jQuery('header#branding').addClass("headeroverlay").addClass("galleryuibutton").addClass('toggled-on');
 		jQuery('.menu-toggle').hide();
 		jQuery('pre').css('height','0px');
 
@@ -160,19 +162,14 @@ jQuery(document).ready(function() {
 				//console.log(finalimage)
 				let urldisplay = e.imageTarget.currentSrc;
 				let urldisplayencoded = encodeURIComponent(urldisplay);
-				jQuery("#requestoriginallink").remove();
-				jQuery(".commentsicon").remove();
 				jQuery(".commentbox").hide();
 				jQuery(".commentbox").removeClass("commentboxshow");
 				jQuery('#' + finalimage ).addClass("commentboxshow").addClass("galleryuibutton");
-				jQuery(".commentbox.commentboxshow").show();
-				jQuery('<a id="requestoriginallink"  class="galleryuibutton" target="_blank" href="/request-original-images/?photoname='
+				jQuery(".commentbox.commentboxshow").show();				
+				jQuery("#requestoriginallink").attr('href', '/request-original-images/?photoname='
 									+ finalimage 
 									+'&urldisplayencoded='
-									+ urldisplayencoded 
-									+'"><i class="fa fa-download" aria-hidden="true"></i></a>' 
-					).insertBefore('.commentboxshow');
-				jQuery('<i class="fa fa-comments commentsicon" aria-hidden="true"></i>').prependTo('.commentboxshow');
+									+ urldisplayencoded);
 				//make sure the bookmark url points to right image
 				var bookmarkurl = baseurl + '?urldisplayencoded='+ urldisplayencoded;
 				//add to any update
@@ -194,8 +191,7 @@ jQuery(document).ready(function() {
 				var img = this.getActiveImage();
 				EXIF.getData(img, function() {
 					//var allMetaData = EXIF.getAllTags(this);
-					//console.log( allMetaData);					
-					jQuery('.cameradetails').remove();
+					//console.log( allMetaData);		
 					var imageexifdata = {};
 					imageexifdata['make'] = EXIF.getTag(this, "Make");
 					if ( imageexifdata['make'] != null) {
@@ -207,9 +203,10 @@ jQuery(document).ready(function() {
 						imageexifdata['shutterspeed']  = 'Shutter : 1/' + Math.round(1/(EXIF.getTag(this, "ExposureTime"))) + ' s';
 						//console.log( imageexifdata);
 						
-						var cameraDetailsHTML = '<div class="cameradetails">' 	+ imageexifdata['make'] 
-													+ ' <i class="fa fa-circle" aria-hidden="true"></i> ' 
-													+ imageexifdata['model'] + '<br/>';
+						var cameraDetailsHTML = '<div class="cameradetails">' 	
+										+ imageexifdata['make'] 
+										+ ' <i class="fa fa-circle" aria-hidden="true"></i> ' 
+										+ imageexifdata['model'] + '<br/>';
 						cameraDetailsHTML = cameraDetailsHTML + imageexifdata['shutterspeed'] + '<br/>';
 						cameraDetailsHTML = cameraDetailsHTML 
 											+ imageexifdata['fnumber'] 
@@ -223,42 +220,33 @@ jQuery(document).ready(function() {
 								.replace(/\n( *)/g, function (match, p1) {
 									 return '<br>' + ' '.repeat(p1.length);
 								     });
-						//console.log(cameraDetailsHTML);						
-						jQuery("#showexif").remove();
-						jQuery('<div id="showexif" class="galleryuibutton"><i class="fa fa-camera-retro cameraicon" aria-hidden="true"></i></div>' ).appendTo( "body" );
-						
+						//console.log(cameraDetailsHTML);		
+						jQuery("#showexif").children('i').remove();				
+						jQuery("#showexif").children('.cameradetails').remove();			
+						jQuery("#showexif").children('.koandetails').remove();
+						jQuery('<i class="fa fa-camera-retro cameraicon" aria-hidden="true"></i></div>' ).appendTo( "#showexif" );
 						jQuery(cameraDetailsHTML).appendTo( "#showexif" );
+						jQuery('#showexif').show();
 					} else {		
-						var koan = jQuery('pre.'+finalimage).clone();													//console.log(koan);
-						if ( koan.length > 0 ) {	
-							jQuery("#showexif").remove();						
-							jQuery('<div id="showexif"  class="galleryuibutton"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
-							koan.appendTo('#showexif');				
-							jQuery('#showexif').show();		
-							koan.css('height','auto');
+						var koan = jQuery('pre.'+finalimage).clone();
+						koan.addClass('koandetails');
+						//console.log(koan);
+						if ( koan.length > 0 ) {				
+							koan.css('height','auto');			
+							jQuery("#showexif").children('i').remove();				
+							jQuery("#showexif").children('.cameradetails').remove();			
+							jQuery("#showexif").children('.koandetails').remove();						
+							jQuery('<i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>' ).appendTo( "#showexif" );
+							koan.appendTo('#showexif');	
 							jQuery('#showexif').addClass('shaker'); 
 							setTimeout(function(){
 								jQuery('#showexif').removeClass('shaker'); 
 							   },700);
 							gallerypicturepausemilliseconds = 5000;	
-						} else jQuery('#showexif').remove();
+							jQuery('#showexif').show();
+						} else jQuery('#showexif').hide();
 						
 					}
-					jQuery('#showexif').on("mouseover", function() {
-						console.log("hello");
-						jQuery('#showexif').hideuibuttons();	
-						if (galleryplaystatus) {
-							gallery.pause() ;
-							showexifhoveroutgalleryplaystatus = true;
-						}		
-					});
-					jQuery('#showexif').on("mouseout", function() {
-						jQuery('#showexif').showuibuttons();	
-						if (showexifhoveroutgalleryplaystatus) {
-							gallery.play(gallerypicturepausemilliseconds) ;
-							showexifhoveroutgalleryplaystatus = false;
-						}				
-					});
 				});
 		
 			}); 
@@ -301,7 +289,9 @@ jQuery(document).ready(function() {
 				jQuery('.commentboxshow').show();	
 				jQuery("#requestoriginallink").show();	
 				jQuery("#showlightbox").show();	
-				jQuery("header#branding").show();	
+				jQuery("header#branding").show();
+				jQuery("#fullscreen").show();	
+				jQuery("#showexif").show();	
 				if (lighboximageindex >=0 ) 	{
 					this.show(lighboximageindex);				
 				}				
@@ -316,6 +306,8 @@ jQuery(document).ready(function() {
 				jQuery("#requestoriginallink").hide();	
 				jQuery("#showlightbox").hide();	
 				jQuery("header#branding").hide();	
+				jQuery("#fullscreen").hide();	
+				jQuery("#showexif").hide();	
 				jQuery(".galleria-lightbox-close").html('<i class="fa fa-times-circle" aria-hidden="true"></i>');		
 				if (galleryplaystatus) {
 					this.pause() ;
@@ -409,8 +401,22 @@ jQuery(document).ready(function() {
 				headerhovergalleryplaystatus = false;
 			}	
 		});
-
-						
+		
+		jQuery('#showexif').on("mouseover", function() {
+			console.log("hello");
+			jQuery('#showexif').hideuibuttons();	
+			if (galleryplaystatus) {
+				gallery.pause() ;
+				showexifhoveroutgalleryplaystatus = true;
+			}		
+		});
+		jQuery('#showexif').on("mouseout", function() {
+			jQuery('#showexif').showuibuttons();	
+			if (showexifhoveroutgalleryplaystatus) {
+				gallery.play(gallerypicturepausemilliseconds) ;
+				showexifhoveroutgalleryplaystatus = false;
+			}				
+		});				
 		//console.log(Galleria.get('stage')[0]['_original']['data']) ;		
 		var imageurl=decodeURIComponent(jQuery.urlParam('urldisplayencoded'));	
 		//console.log(imageurl) ;
