@@ -21,6 +21,18 @@ jQuery.fn.randomize = function(selector){
     return this;
 }
 
+jQuery.fn.hideuibuttons = function(){
+    jQuery('.galleryuibutton').css('opacity','0');
+    this.css('opacity','1');
+}
+jQuery.fn.showuibuttons = function(){
+    jQuery('.galleryuibutton').css('opacity','0.7');
+    jQuery('.galleryuibutton:hover').css('opacity','1');
+}
+
+
+
+
 function toggleFullScreen() {
   if (!document.fullscreenElement &&    // alternative standard method
       !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
@@ -45,6 +57,7 @@ function toggleFullScreen() {
     }
   }
 }
+
 
 jQuery(document).ready(function() {
 	jQuery('#site-description').css('opacity','0');
@@ -73,10 +86,11 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function() {
 	if (jQuery("#customgallery").length) {	  
 	
-		jQuery('<div id="showlightbox"><i class="fa fa-picture-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
-		jQuery('<div id="fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></div>' ).appendTo( "body" );
-		jQuery('<div id="playpause"><i class="fa fa-play play" aria-hidden="true"></i><i class="fa fa-pause pause" aria-hidden="true"></i></div>' ).appendTo( "body" );
+		jQuery('<div id="showlightbox" class="galleryuibutton"><i class="fa fa-picture-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
+		jQuery('<div id="fullscreen" class="galleryuibutton"><i class="fa fa-arrows-alt" aria-hidden="true"></i></div>' ).appendTo( "body" );
+		jQuery('<div id="playpause" class="galleryuibutton"><i class="fa fa-play play" aria-hidden="true"></i><i class="fa fa-pause pause" aria-hidden="true"></i></div>' ).appendTo( "body" );
 		jQuery('div.a2a_default_style').addClass("floatingshare");
+		jQuery('div.a2a_default_style').addClass("galleryuibutton");
 		
 		
 		//mute the buttons till everything loaded
@@ -86,7 +100,7 @@ jQuery(document).ready(function() {
 		jQuery('div.a2a_default_style').css('opacity','0');
 		
 		jQuery('.commentbox').hide();
-		jQuery('header#branding').addClass("headeroverlay");
+		jQuery('header#branding').addClass("headeroverlay").addClass("galleryuibutton");
 		jQuery('header#branding').addClass('toggled-on');
 		jQuery('.menu-toggle').hide();
 		jQuery('pre').css('height','0px');
@@ -150,9 +164,9 @@ jQuery(document).ready(function() {
 				jQuery(".commentsicon").remove();
 				jQuery(".commentbox").hide();
 				jQuery(".commentbox").removeClass("commentboxshow");
-				jQuery('#' + finalimage ).addClass("commentboxshow");
+				jQuery('#' + finalimage ).addClass("commentboxshow").addClass("galleryuibutton");
 				jQuery(".commentbox.commentboxshow").show();
-				jQuery('<a id="requestoriginallink" target="_blank" href="/request-original-images/?photoname='
+				jQuery('<a id="requestoriginallink"  class="galleryuibutton" target="_blank" href="/request-original-images/?photoname='
 									+ finalimage 
 									+'&urldisplayencoded='
 									+ urldisplayencoded 
@@ -211,14 +225,14 @@ jQuery(document).ready(function() {
 								     });
 						//console.log(cameraDetailsHTML);						
 						jQuery("#showexif").remove();
-						jQuery('<div id="showexif"><i class="fa fa-camera-retro cameraicon" aria-hidden="true"></i></div>' ).appendTo( "body" );
+						jQuery('<div id="showexif" class="galleryuibutton"><i class="fa fa-camera-retro cameraicon" aria-hidden="true"></i></div>' ).appendTo( "body" );
 						
 						jQuery(cameraDetailsHTML).appendTo( "#showexif" );
 					} else {		
 						var koan = jQuery('pre.'+finalimage).clone();													//console.log(koan);
 						if ( koan.length > 0 ) {	
 							jQuery("#showexif").remove();						
-							jQuery('<div id="showexif"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
+							jQuery('<div id="showexif"  class="galleryuibutton"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>' ).appendTo( "body" );
 							koan.appendTo('#showexif');				
 							jQuery('#showexif').show();		
 							koan.css('height','auto');
@@ -231,12 +245,15 @@ jQuery(document).ready(function() {
 						
 					}
 					jQuery('#showexif').on("mouseover", function() {
+						console.log("hello");
+						jQuery('#showexif').hideuibuttons();	
 						if (galleryplaystatus) {
 							gallery.pause() ;
 							showexifhoveroutgalleryplaystatus = true;
-						}			
+						}		
 					});
 					jQuery('#showexif').on("mouseout", function() {
+						jQuery('#showexif').showuibuttons();	
 						if (showexifhoveroutgalleryplaystatus) {
 							gallery.play(gallerypicturepausemilliseconds) ;
 							showexifhoveroutgalleryplaystatus = false;
@@ -351,48 +368,42 @@ jQuery(document).ready(function() {
 
 **/
 		jQuery('.commentbox').on("mouseover", function() {
+			jQuery('.commentbox').hideuibuttons();	
 			if (galleryplaystatus) {
 				gallery.pause() ;
 				commenthoveroutgalleryplaystatus = true;
 			}	
 		});
 		jQuery('.commentbox').on("mouseout", function() {
+			jQuery('.commentbox').showuibuttons();	
 			if (commenthoveroutgalleryplaystatus) {
 				gallery.play(gallerypicturepausemilliseconds) ;
 				commenthoveroutgalleryplaystatus = false;
 			}	
 		});
-		jQuery('#showexif').on("mouseover", function() {
-			if (galleryplaystatus) {
-				gallery.pause() ;
-				showexifhoveroutgalleryplaystatus = true;
-			}			
-		});
-		jQuery('#showexif').on("mouseout", function() {
-			if (showexifhoveroutgalleryplaystatus) {
-				gallery.play(gallerypicturepausemilliseconds) ;
-				showexifhoveroutgalleryplaystatus = false;
-			}				
-		});
 		jQuery('.floatingshare').on("mouseover", function() {
+			jQuery('.floatingshare').hideuibuttons();	
 			if (galleryplaystatus) {
 				gallery.pause() ;
 				sharebuttonhoveroutgalleryplaystatus = true;
 			}				
 		});
 		jQuery('.floatingshare').on("mouseout", function() {
+			jQuery('.floatingshare').showuibuttons();	
 			if (sharebuttonhoveroutgalleryplaystatus) {
 				gallery.play(gallerypicturepausemilliseconds) ;
 				sharebuttonhoveroutgalleryplaystatus = false;
 			}				
 		});
 		jQuery('.headeroverlay').on("mouseover", function() {
+			jQuery('.headeroverlay').hideuibuttons();	
 			if (galleryplaystatus) {
 				gallery.pause() ;
 				headerhovergalleryplaystatus = true;
 			}	
 		});
 		jQuery('.headeroverlay').on("mouseout", function() {
+			jQuery('.headeroverlay').showuibuttons();	
 			if (headerhovergalleryplaystatus) {
 				gallery.play(gallerypicturepausemilliseconds) ;
 				headerhovergalleryplaystatus = false;
