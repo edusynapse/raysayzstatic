@@ -9,7 +9,7 @@
 
 <channel>
 	<title>Ray Sayz</title>
-	<atom:link href="http://localhost/feed/?simply_static_page=76201" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/feed/?simply_static_page=77105" rel="self" type="application/rss+xml" />
 	<link>https://raysayz.com/</link>
 	<description>Nowhere, everywhere ... now</description>
 	<lastBuildDate>Sun, 23 Jun 2024 03:48:17 +0000</lastBuildDate>
@@ -36,7 +36,9 @@
 				<category><![CDATA[Linux]]></category>
 		<guid isPermaLink="false">https://raysayz.com/?p=206</guid>
 
-					<description><![CDATA[Based on various links mentioned below here is my guide to starting Unity Hub on PopOs 22.04 You have to install ssl 1 via First thing is official guide Debian or Ubuntu To install the Unity Hub on a Debian&#8230; ]]></description>
+					<description><![CDATA[<p>Based on various links mentioned below here is my guide to starting Unity Hub on PopOs 22.04 You have to install ssl 1 via First thing is official guide Debian or Ubuntu To install the Unity Hub on a Debian&#8230; </p>
+<p>The post <a href="https://raysayz.com/installing-unity-hub-on-popos-22-04-lts/">Installing Unity Hub on PopOs 22.04 LTS</a> appeared first on <a href="https://raysayz.com/">Ray Sayz</a>.</p>
+]]></description>
 										<content:encoded><![CDATA[
 <p>Based on various links mentioned below here is my guide to starting Unity Hub on PopOs 22.04</p>
 
@@ -132,6 +134,7 @@ TMPDIR=/home/surajitray/Development/unitytemp /opt/unityhub/unityhub %U
 
 
 <p></p>
+<p>The post <a href="https://raysayz.com/installing-unity-hub-on-popos-22-04-lts/">Installing Unity Hub on PopOs 22.04 LTS</a> appeared first on <a href="https://raysayz.com/">Ray Sayz</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -146,7 +149,9 @@ TMPDIR=/home/surajitray/Development/unitytemp /opt/unityhub/unityhub %U
 				<category><![CDATA[Linux]]></category>
 		<guid isPermaLink="false">https://raysayz.com/?p=175</guid>
 
-					<description><![CDATA[In the case of convertible laptops the keyboard and touchpad needs to be disabled if the laptop screen is being used as a tablet and you dont want accidental keypresses. This happens automatically on windows but linux and Pop! does&#8230; ]]></description>
+					<description><![CDATA[<p>In the case of convertible laptops the keyboard and touchpad needs to be disabled if the laptop screen is being used as a tablet and you dont want accidental keypresses. This happens automatically on windows but linux and Pop! does&#8230; </p>
+<p>The post <a href="https://raysayz.com/disable-keyboard-touch-pad-in-pop/">Disable keyboard touch pad in Pop!</a> appeared first on <a href="https://raysayz.com/">Ray Sayz</a>.</p>
+]]></description>
 										<content:encoded><![CDATA[
 <p>In the case of convertible laptops the keyboard and touchpad needs to be disabled if the laptop screen is being used as a tablet and you dont want accidental keypresses. This happens automatically on windows but linux and Pop! does not detect the switch which allows it to know that the laptop os being flipped. Some laptops show up this key , some dont.</p>
 
@@ -321,6 +326,7 @@ xinput reattach 15 2</code></pre>
 
 
 <figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="717" src="https://raysayz.com/wp-content/uploads/2023/12/image-1024x717.png" alt="" class="wp-image-178" srcset="https://raysayz.com/wp-content/uploads/2023/12/image-1024x717.png 1024w, https://raysayz.com/wp-content/uploads/2023/12/image-300x210.png 300w, https://raysayz.com/wp-content/uploads/2023/12/image-768x538.png 768w, https://raysayz.com/wp-content/uploads/2023/12/image-1536x1075.png 1536w, https://raysayz.com/wp-content/uploads/2023/12/image.png 2024w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<p>The post <a href="https://raysayz.com/disable-keyboard-touch-pad-in-pop/">Disable keyboard touch pad in Pop!</a> appeared first on <a href="https://raysayz.com/">Ray Sayz</a>.</p>
 ]]></content:encoded>
 					
 		
@@ -335,7 +341,9 @@ xinput reattach 15 2</code></pre>
 				<category><![CDATA[Linux]]></category>
 		<guid isPermaLink="false">https://raysayz.com/?p=41</guid>
 
-					<description><![CDATA[Unhooking a Function from the Parent Theme If the function from the parent theme isn’t pluggable, you can still prevent it from running. Imagine your parent theme has a function called parent_function(), which is hooked to the init hook with&#8230; ]]></description>
+					<description><![CDATA[<p>Unhooking a Function from the Parent Theme If the function from the parent theme isn’t pluggable, you can still prevent it from running. Imagine your parent theme has a function called parent_function(), which is hooked to the init hook with&#8230; </p>
+<p>The post <a href="https://raysayz.com/wordpress-tip-101/">WordPress Tip 101</a> appeared first on <a href="https://raysayz.com/">Ray Sayz</a>.</p>
+]]></description>
 										<content:encoded><![CDATA[
 <h4 class="wp-block-heading" id="unhooking-a-function-from-the-parent-theme">Unhooking a Function from the Parent Theme<a class="anchor-hash" href="#unhooking-a-function-from-the-parent-theme" aria-hidden="true"></a></h4>
 
@@ -431,6 +439,7 @@ add_action( 'wp_head', 'remove_attitude_footer' );
 function remove_attitude_footer() {
  remove_action( 'attitude_footer', 'attitude_footer_info', 30 );
 }</code></pre>
+<p>The post <a href="https://raysayz.com/wordpress-tip-101/">WordPress Tip 101</a> appeared first on <a href="https://raysayz.com/">Ray Sayz</a>.</p>
 ]]></content:encoded>
 					
 		
