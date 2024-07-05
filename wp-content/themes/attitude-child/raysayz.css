@@ -462,6 +462,27 @@ header {
 	display:none;
 	
 }
+
+.footer_menu .widget_nav_menu {	
+	width:33.1% !important;
+}
+
+#block-19.widget.widget_block {
+	width:100% !important;
+	text-align:center;
+	margin:0px !important;
+}
+#block-19.widget.widget_block .widget.widget_nav_menu {
+	text-align:center;
+	margin:2em 0em !important
+}
+#block-19.widget.widget_block .widget.widget_nav_menu .menu {
+	background:white;
+	padding:1em;
+}
+footer .widget-area {
+	margin:auto !important;	
+}
 @keyframes tilt-n-move-shaking {
   0% { transform: translate(0, 0) rotate(0deg); }
   25% { transform: translate(3px, 3px) rotate(5deg); }
