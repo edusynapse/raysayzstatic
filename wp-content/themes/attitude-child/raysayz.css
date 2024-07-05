@@ -161,16 +161,7 @@
 header#branding form {
    display : none;
 }
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    #site-logo {
-        margin-top: 0px;
-    }
-	
-	#branding {
-		margin-top: 0px !important;	
-	}
-	
-}
+
 @media only screen and (max-width: 1078px) {
     .headeroverlay {
     	z-index: 10002;
@@ -188,6 +179,61 @@ header#branding form {
     .commentboxshow:hover {
         width: 80%;
     }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1077px) {
+    .container {
+        width: 96%;
+    }
+    .wrapper {
+        width: 94%;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .one-column-template .wrapper, .wrapper {
+        width: 100%;
+    }
+    .one-column-template .container, .container {
+        width: 90%;
+    }
+	.hgroup-right {
+		margin-top: 15px !important;
+	}
+	hgroup#site-logo #site-title {
+		line-height:1 !important;
+		margin-top: 10px;
+		font: 28px 'Philosopher', sans-serif;
+	}
+	figure.front-page-figure {
+		width:45% !important;
+	}
+}
+
+@media (min-width: 600px) {
+    .frontpageblogsection .wp-block-latest-posts.columns-2 li {
+        width: calc(50% - 4em)  !important;
+    }
+}
+
+
+@media (min-width: 1024px) {    
+	#showexif:hover pre {	
+		max-width:auto;
+		width:700px;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    #site-logo {
+        margin-top: 0px;
+    }
+	
+	#branding {
+		margin-top: 0px !important;	
+	}
+	
 }
 @media only screen and (max-width: 767px) {
     .headeroverlay {
@@ -232,7 +278,9 @@ header#branding form {
 	#branding {
 		margin-top: 0px !important;	
 	}
-	
+	figure.front-page-figure {
+		width:90% !important;
+	}
 }
 
 #requestoriginallink {
@@ -358,28 +406,6 @@ header#branding form {
 }
 
 
-@media only screen and (max-width: 767px) {
-    .one-column-template .wrapper, .wrapper {
-        width: 100%;
-    }
-    .one-column-template .container, .container {
-        width: 90%;
-    }
-}
-
-@media (min-width: 600px) {
-    .frontpageblogsection .wp-block-latest-posts.columns-2 li {
-        width: calc(50% - 4em)  !important;
-    }
-}
-
-
-@media (min-width: 1024px) {    
-	#showexif:hover pre {	
-		max-width:auto;
-		width:700px;
-	}
-}
 
 
 .frontpageblogsection .wp-block-latest-posts.is-grid li {
@@ -443,14 +469,6 @@ header {
 }
 
 
-@media only screen and (min-width: 768px) and (max-width: 1077px) {
-    .container {
-        width: 96%;
-    }
-    .wrapper {
-        width: 94%;
-    }
-}
 
 .galleria-stage {
 	right : 0px;
@@ -474,7 +492,7 @@ header {
 }
 #block-19.widget.widget_block .widget.widget_nav_menu {
 	text-align:center;
-	margin:2em 0em !important
+	margin:2em 0em !important;
 }
 #block-19.widget.widget_block .widget.widget_nav_menu .menu {
 	background:white;
@@ -483,6 +501,35 @@ header {
 footer .widget-area {
 	margin:auto !important;	
 }
+.side_padding_custom_1 {
+	padding-left:1em !important;
+	padding-right:1em !important;	
+    border-radius: 1em;
+    border: 2px solid #ffffff57;
+	color:#fef9f5;
+}
+figure.front-page-figure {
+    background: #0000004d;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 0.9em;
+	width:29%;
+	text-align:center;
+    margin-left: 0.9%;
+    margin-right: 0.9%;
+}
+figure.front-page-figure img {
+	width:90%;
+    border-radius: 0.9em;
+    border: 3px solid #ffad0038;
+}
+figure.front-page-figure figcaption {
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+	color:#fef9f5;
+}
+
 @keyframes tilt-n-move-shaking {
   0% { transform: translate(0, 0) rotate(0deg); }
   25% { transform: translate(3px, 3px) rotate(5deg); }
