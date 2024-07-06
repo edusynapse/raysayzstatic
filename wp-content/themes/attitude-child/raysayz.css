@@ -8,15 +8,6 @@
   padding-bottom: 0.1em;
 }
 
-@media screen and (max-width: 782px) {
-  #logoimage {
-    display:none;
-  }
-  .hgroup-wrap {
-    padding-bottom: 1em;
-  }
-}
-
 .commentboxshow {
     background: black;
     z-index: 10002;
@@ -191,6 +182,16 @@ header#branding form {
 }
 
 
+@media screen and (max-width: 782px) {
+  #logoimage {
+    display:none;
+  }
+  .hgroup-wrap {
+    padding-bottom: 1em;
+  }
+}
+
+
 @media only screen and (max-width: 767px) {
     .one-column-template .wrapper, .wrapper {
         width: 100%;
@@ -281,8 +282,33 @@ header#branding form {
 	figure.front-page-figure {
 		width:90% !important;
 	}
-}
 
+	.product_page_cover_text.has-x-large-font-size {
+		font-size:30px !important;
+	}
+	.product_page_cover_text.has-large-font-size {
+		font-size:20px !important;
+	}
+	.product_page_cover_text.has-medium-font-size {
+		font-size:15px !important;
+	}
+	.product_page_cover_text.has-small-font-size {
+		font-size:10px !important;
+	}
+
+	.wp-block-button.has-x-large-font-size {
+		font-size:30px !important;
+	}
+	.wp-block-button.has-large-font-size {
+		font-size:20px !important;
+	}
+	.wp-block-button.has-medium-font-size {
+		font-size:15px !important;
+	}
+	.wp-block-button.has-small-font-size {
+		font-size:10px !important;
+	}
+}
 #requestoriginallink {
     z-index: 10001;
     position: absolute;
@@ -521,7 +547,7 @@ figure.front-page-figure {
 figure.front-page-figure img {
 	width:90%;
     border-radius: 0.9em;
-    border: 3px solid #ffad0038;
+    border: 1px solid #ffad0038;
 }
 figure.front-page-figure figcaption {
     font-size: 1.2em;
@@ -529,7 +555,6 @@ figure.front-page-figure figcaption {
     letter-spacing: 0.1em;
 	color:#fef9f5;
 }
-
 @keyframes tilt-n-move-shaking {
   0% { transform: translate(0, 0) rotate(0deg); }
   25% { transform: translate(3px, 3px) rotate(5deg); }
