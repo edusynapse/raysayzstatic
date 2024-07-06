@@ -139,12 +139,19 @@
     margin: 0.5em;
     float: left;
 }
+.headeroverlay .container {	
+   	display: none;
+}
 
 .headeroverlay:hover #logoimage {	
-   	display: inline-block !important;
+   	display: none !important;
     height: 6em;
     margin: 0.5em;
     float: left;
+}
+
+.headeroverlay:hover .container {	
+   	display: block;
 }
 .galleria-close {
     display:none;
@@ -193,6 +200,27 @@ header#branding form {
 
 
 @media only screen and (max-width: 767px) {
+    .headeroverlay {
+    	z-index: 10002;
+    }    
+    .headeroverlay:hover { 
+    	height: auto;
+    	width : 15em;
+    	border: 1em solid #fef9f5;
+    }
+    #site-title > a {
+    	pointer-events: none;
+    }
+    .headeroverlay:hover #logoimage {	
+   	display: none !important;
+    }
+    .commentboxshow:hover {
+	height: 80%;
+	width : calc(100% - 20px);
+    }
+    .headeroverlay:hover #site-description{ 
+    	display:none;
+    }
     .one-column-template .wrapper, .wrapper {
         width: 100%;
     }
@@ -204,7 +232,7 @@ header#branding form {
 	}
 	hgroup#site-logo #site-title {
 		line-height:1 !important;
-		margin-top: 10px;
+		margin-top: 5px;
 		font: 28px 'Philosopher', sans-serif;
 	}
 	figure.front-page-figure {
@@ -232,29 +260,9 @@ header#branding form {
     }
 	
 	#branding {
-		margin-top: 0px !important;	
+		margin-top: 5px !important;	
 	}
 	
-}
-@media only screen and (max-width: 767px) {
-    .headeroverlay {
-    	z-index: 10002;
-    }    
-    .headeroverlay:hover { 
-    	height: auto;
-    	width : 15em;
-    	border: 1em solid #fef9f5;
-    }
-    #site-title > a {
-    	pointer-events: none;
-    }
-    .headeroverlay:hover #logoimage {	
-   	display: none !important;
-    }
-    .commentboxshow:hover {
-	height: 80%;
-	width : calc(100% - 20px);
-    }
 }
 @media only screen and (max-width: 480px) {
     .headeroverlay {
@@ -277,7 +285,7 @@ header#branding form {
     }
 	
 	#branding {
-		margin-top: 0px !important;	
+		margin-top: 5px !important;	
 	}
 	figure.front-page-figure {
 		width:90% !important;
@@ -412,7 +420,11 @@ header#branding form {
 
 
  #site-logo {
-	margin-top:0px !important
+	margin-top:0px !important;
+    background: url(https://raysayz.com/wp-content/uploads/2024/06/raysayz.png);
+    background-repeat: no-repeat;
+    background-size: 60px;
+    padding-left: 70px;
 }
 
 .fp_quote {
@@ -554,6 +566,9 @@ figure.front-page-figure figcaption {
     font-weight: bold;
     letter-spacing: 0.1em;
 	color:#fef9f5;
+}
+.container {
+    max-width: 90%;
 }
 @keyframes tilt-n-move-shaking {
   0% { transform: translate(0, 0) rotate(0deg); }

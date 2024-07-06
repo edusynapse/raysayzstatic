@@ -61,7 +61,6 @@ function toggleFullScreen() {
 
 jQuery(document).ready(function() {
 	jQuery('#site-description').css('opacity','0');
-	jQuery('.logoimage').css('opacity','0.5');
 	var sitedescription = jQuery('#site-description').text();
 	var sitedescription_length = sitedescription.length;
 	var animation_timeout;
@@ -74,7 +73,6 @@ jQuery(document).ready(function() {
 			var type = sitedescription.substring(0, sitedescription_type_substring_index);
 			jQuery('#site-description').text(type);
 			jQuery('#site-description').css('opacity',fadeinopacity);
-			jQuery('.logoimage').css('opacity',fadeinopacity);
 			fadeinopacity = fadeinopacity + fadein_opacityincrement;
 			animationMaker();
 			if (sitedescription_type_substring_index == sitedescription_length) {
@@ -97,8 +95,8 @@ jQuery(document).ready(function() {
 		jQuery('#showlightbox').css('opacity','0');
 		jQuery('#fullscreen').css('opacity','0');
 		jQuery('#playpause').css('opacity','0');
-		jQuery('div.a2a_default_style').css('opacity','0');
-		
+		jQuery('div.a2a_default_style').css('opacity','0');		
+		jQuery('<img id="logoimage" class="logoimage" src="/wp-content/uploads/2024/06/raysayz.png" />' ).prependTo( "header#branding" );
 		
 		jQuery('<i class="fa fa-comments commentsicon" aria-hidden="true"></i>').prependTo('.commentbox');
 		jQuery('.commentbox').hide();
