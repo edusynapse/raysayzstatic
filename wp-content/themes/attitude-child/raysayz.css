@@ -570,6 +570,10 @@ figure.front-page-figure figcaption {
 .container {
     max-width: 90%;
 }
+pre.wp-block-verse.koan {
+	display:none;
+}
+
 @keyframes tilt-n-move-shaking {
   0% { transform: translate(0, 0) rotate(0deg); }
   25% { transform: translate(3px, 3px) rotate(5deg); }

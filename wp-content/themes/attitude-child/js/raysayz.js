@@ -104,7 +104,8 @@ jQuery(document).ready(function() {
 		jQuery('header#branding').addClass("headeroverlay").addClass("galleryuibutton").addClass('toggled-on');
 		jQuery('.menu-toggle').hide();
 		jQuery('pre').css('height','0px');
-
+		
+		
 		jQuery('.galleria-stage').hammer().on("doubletap", function(){window.toggleFullScreen() ;}); 
 		
 		Galleria.run('#customgallery', {
