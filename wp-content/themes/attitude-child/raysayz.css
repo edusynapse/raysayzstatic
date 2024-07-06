@@ -4,6 +4,18 @@
     float: left;
 }
 
+#site-logo {
+	margin-top:0px !important;
+    background: url(https://raysayz.com/wp-content/uploads/2024/06/raysayz.png);
+    background-repeat: no-repeat;
+    background-size: 60px;
+    padding-left: 70px;
+}
+
+.container {
+    max-width: 90%;
+}
+
 .hgroup-wrap {
   padding-bottom: 0.1em;
 }
@@ -160,163 +172,7 @@ header#branding form {
    display : none;
 }
 
-@media only screen and (max-width: 1078px) {
-    .headeroverlay {
-    	z-index: 10002;
-    }
-    .headeroverlay:hover { 
-    	height: auto;
-    	width : calc(100% - 20px);
-    }
-    #site-title > a {
-    	pointer-events: none;
-    }    
-    .headeroverlay:hover #logoimage {	
-   	display: none !important;
-    }
-    .commentboxshow:hover {
-        width: 80%;
-    }
-}
 
-@media only screen and (min-width: 768px) and (max-width: 1077px) {
-    .container {
-        width: 96%;
-    }
-    .wrapper {
-        width: 94%;
-    }
-}
-
-
-@media screen and (max-width: 782px) {
-  #logoimage {
-    display:none;
-  }
-  .hgroup-wrap {
-    padding-bottom: 1em;
-  }
-}
-
-
-@media only screen and (max-width: 767px) {
-    .headeroverlay {
-    	z-index: 10002;
-    }    
-    .headeroverlay:hover { 
-    	height: auto;
-    	width : 15em;
-    	border: 1em solid #fef9f5;
-    }
-    #site-title > a {
-    	pointer-events: none;
-    }
-    .headeroverlay:hover #logoimage {	
-   	display: none !important;
-    }
-    .commentboxshow:hover {
-	height: 80%;
-	width : calc(100% - 20px);
-    }
-    .headeroverlay:hover #site-description{ 
-    	display:none;
-    }
-    .one-column-template .wrapper, .wrapper {
-        width: 100%;
-    }
-    .one-column-template .container, .container {
-        width: 90%;
-    }
-	.hgroup-right {
-		margin-top: 15px !important;
-	}
-	hgroup#site-logo #site-title {
-		line-height:1 !important;
-		margin-top: 5px;
-		font: 28px 'Philosopher', sans-serif;
-	}
-	figure.front-page-figure {
-		width:45% !important;
-	}
-}
-
-@media (min-width: 600px) {
-    .frontpageblogsection .wp-block-latest-posts.columns-2 li {
-        width: calc(50% - 4em)  !important;
-    }
-}
-
-
-@media (min-width: 1024px) {    
-	#showexif:hover pre {	
-		max-width:auto;
-		width:700px;
-	}
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    #site-logo {
-        margin-top: 0px;
-    }
-	
-	#branding {
-		margin-top: 5px !important;	
-	}
-	
-}
-@media only screen and (max-width: 480px) {
-    .headeroverlay {
-    	z-index: 10002;
-    }
-    .headeroverlay:hover { 
-    	height: auto;
-    	width : 15em;
-    	border: 1em solid #fef9f5;
-    }
-    #site-title > a {
-    	pointer-events: none;
-    }
-    .headeroverlay:hover #logoimage {	
-   	display: none !important;
-    }
-    .commentboxshow:hover {
-	height: 80%;	
-	width : calc(100% - 20px);
-    }
-	
-	#branding {
-		margin-top: 5px !important;	
-	}
-	figure.front-page-figure {
-		width:90% !important;
-	}
-
-	.product_page_cover_text.has-x-large-font-size {
-		font-size:30px !important;
-	}
-	.product_page_cover_text.has-large-font-size {
-		font-size:20px !important;
-	}
-	.product_page_cover_text.has-medium-font-size {
-		font-size:15px !important;
-	}
-	.product_page_cover_text.has-small-font-size {
-		font-size:10px !important;
-	}
-
-	.wp-block-button.has-x-large-font-size {
-		font-size:30px !important;
-	}
-	.wp-block-button.has-large-font-size {
-		font-size:20px !important;
-	}
-	.wp-block-button.has-medium-font-size {
-		font-size:15px !important;
-	}
-	.wp-block-button.has-small-font-size {
-		font-size:10px !important;
-	}
-}
 #requestoriginallink {
     z-index: 10001;
     position: absolute;
@@ -418,14 +274,6 @@ header#branding form {
   display: none;
 }
 
-
- #site-logo {
-	margin-top:0px !important;
-    background: url(https://raysayz.com/wp-content/uploads/2024/06/raysayz.png);
-    background-repeat: no-repeat;
-    background-size: 60px;
-    padding-left: 70px;
-}
 
 .fp_quote {
     font-size: 1.2em;
@@ -567,11 +415,176 @@ figure.front-page-figure figcaption {
     letter-spacing: 0.1em;
 	color:#fef9f5;
 }
-.container {
-    max-width: 90%;
-}
 pre.wp-block-verse.koan {
 	display:none;
+}
+
+
+@media only screen and (max-width: 1078px) {
+    .headeroverlay {
+    	z-index: 10002;
+    }
+    .headeroverlay:hover { 
+    	height: auto;
+    	width : calc(100% - 20px);
+    }
+    #site-title > a {
+    	pointer-events: none;
+    }    
+    .headeroverlay:hover #logoimage {	
+   	display: none !important;
+    }
+    .commentboxshow:hover {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1077px) {
+    .container {
+        width: 96%;
+    }
+    .wrapper {
+        width: 94%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .headeroverlay {
+    	z-index: 10002;
+    }    
+    .headeroverlay:hover { 
+    	height: auto;
+    	width : 15em;
+    	border: 1em solid #fef9f5;
+    }
+    #site-title > a {
+    	pointer-events: none;
+    }
+    .headeroverlay:hover #logoimage {	
+   	display: none !important;
+    }
+    .commentboxshow:hover {
+	height: 80%;
+	width : calc(100% - 20px);
+    }
+    .headeroverlay:hover #site-description{ 
+    	display:none;
+    }
+    .one-column-template .wrapper, .wrapper {
+        width: 100%;
+    }
+    .one-column-template .container, #main.container {
+        width: 98%;
+		max-width: 98%;
+		padding-top:10px;
+    }
+	.hgroup-right {
+		margin-top: 15px !important;
+	}
+	hgroup#site-logo #site-title {
+		line-height:1 !important;
+		margin-top: 5px;
+		font: 28px 'Philosopher', sans-serif;
+	}
+	figure.front-page-figure {
+		width:45% !important;
+	}
+	#branding .hgroup-wrap {
+		padding-top: 1em !important;	
+    	padding-bottom: 1em !important;	
+    	padding-left: 10px !important;	
+	}
+	#logoimage {
+		display:none;
+	 }
+    #site-logo {
+        margin-top: 0px;
+		background-size: 45px;
+   		padding-left: 55px
+    }
+	#branding .container {
+        width: 98%;
+		max-width: 98%;		
+	}	
+    .menu-toggle {
+        margin-right: 10px;
+    }
+    .toggled-on .root {
+        margin: 0em 1em;
+    }
+}
+
+@media (min-width: 600px) {
+    .frontpageblogsection .wp-block-latest-posts.columns-2 li {
+        width: calc(50% - 4em)  !important;
+    }
+}
+
+
+@media (min-width: 1024px) {    
+	#showexif:hover pre {	
+		max-width:auto;
+		width:700px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+    .headeroverlay {
+    	z-index: 10002;
+    }
+    .headeroverlay:hover { 
+    	height: auto;
+    	width : 15em;
+    	border: 1em solid #fef9f5;
+    }
+    #site-title > a {
+    	pointer-events: none;
+    }
+    .headeroverlay:hover #logoimage {	
+   		display: none !important;
+    }
+    .commentboxshow:hover {
+		height: 80%;	
+		width : calc(100% - 20px);
+    }
+	figure.front-page-figure {
+		width:90% !important;
+	}
+
+	.product_page_cover_text.has-x-large-font-size {
+		font-size:30px !important;
+	}
+	.product_page_cover_text.has-large-font-size {
+		font-size:20px !important;
+	}
+	.product_page_cover_text.has-medium-font-size {
+		font-size:15px !important;
+	}
+	.product_page_cover_text.has-small-font-size {
+		font-size:10px !important;
+	}
+
+	.wp-block-button.has-x-large-font-size {
+		font-size:30px !important;
+	}
+	.wp-block-button.has-large-font-size {
+		font-size:20px !important;
+	}
+	.wp-block-button.has-medium-font-size {
+		font-size:15px !important;
+	}
+	.wp-block-button.has-small-font-size {
+		font-size:10px !important;
+	}
+    .one-column-template .container, #main.container {
+        width: 100%;
+		max-width: 100%;
+		padding-top:0px;
+    }
+	.wp-block-cover {
+		 border: 0em ; 
+		 border-radius: 0em; 
+	}
 }
 
 @keyframes tilt-n-move-shaking {
