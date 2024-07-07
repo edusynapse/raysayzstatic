@@ -1,0 +1,6 @@
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: http://localhost:9090/sitemap_index.xml
+# ---------------------------
