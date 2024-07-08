@@ -390,8 +390,8 @@ footer .widget-area {
 .side_padding_custom_1 {
 	padding-left:1em !important;
 	padding-right:1em !important;	
-    border-radius: 1em;
-    border: 2px solid #ffffff57;
+    border-radius: 0.5em;
+    border: 15px solid #00000017;
 	color:#fef9f5;
 }
 figure.front-page-figure {

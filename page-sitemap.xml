@@ -143,31 +143,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://raysayz.com/photography/</loc>
-		<lastmod>2024-06-27T12:10:40+00:00</lastmod>
-		<image:image>
-			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF4145-edited-scaled.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF3409_web_best-edited-1.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF2055_web_best-edited.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DCF10139_web_best-edited.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF6273_web_best-edited.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF1347_web_best-edited.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF3802_web_best-edited-1.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://raysayz.com/sketches/</loc>
 		<lastmod>2024-07-03T12:05:31+00:00</lastmod>
 		<image:image>
@@ -240,6 +215,31 @@
 		<lastmod>2024-07-06T06:51:28+00:00</lastmod>
 		<image:image>
 			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/raysayz.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://raysayz.com/photography/</loc>
+		<lastmod>2024-07-07T07:16:58+00:00</lastmod>
+		<image:image>
+			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF4145-edited-scaled.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF3409_web_best-edited-1.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF2055_web_best-edited.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DCF10139_web_best-edited.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF6273_web_best-edited.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF1347_web_best-edited.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://raysayz.com/wp-content/uploads/2024/06/DSCF3802_web_best-edited-1.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
