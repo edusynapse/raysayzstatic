@@ -4,9 +4,9 @@ Theme URI: https://www.themehorse.com/themes/attitude
 Author: Theme Horse
 Author URI: https://www.themehorse.com
 Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options via Customize. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like WooCommerce, bbPress and many more. It is also translation ready. Available Translation: Traditional Chinese (Taiwan), Spanish, Norwegian (Nynorsk), German, Russian, Dutch, Italian and Danish. Get free support at https://www.themehorse.com/support-forum/ and view beautiful demo site at https://www.themehorse.com/preview/attitude
-Version: 4.0.4
+Version: 4.0.5
 Requires PHP: 5.2
-Tested up to: 6.0
+Tested up to: 6.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, e-commerce, news, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -575,90 +575,104 @@ a.more-link:hover {
 }
 .social-profiles ul {
 	margin: -10px 0 0;
-	float:right;
+	float: right;
 }
 .social-profiles ul li {
-	margin-top:10px;
-	float:left;
+	margin-top: 10px;
+	float: left;
 }
 .social-profiles ul li a {
-	display:block;
-	width:30px;
-	height:30px;
-	text-indent: -99999px;
-	background-image: url("https://raysayz.com/wp-content/themes/attitude/images/social-icons.png");
-	background-position: right bottom;
+	display: block;
+	width: 30px;
+	height: 30px;
+	font-size: 0;
+	color: #CCCCCC;
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	-ms-transition: all 0.2s linear;
 	transition: all 0.2s linear;
 	-webkit-transition: all 0.2s linear;
 }
-.social-profiles ul li.facebook a {
-	background-position: 0 0;		
+.social-profiles ul li a:before {
+	font-family: 'FontAwesome';
+	font-size: 15px;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-top: 3px;
+	display: block;
+}
+.social-profiles ul li.facebook a:before {
+	content: '\f39e';
 }
 .social-profiles ul li.facebook a:hover {
-	background-position: 0 -40px;
+	color: #3c5a99;
 }
-.social-profiles ul li.twitter a {
-	background-position: -40px 0;
+.social-profiles ul li.twitter a:before {
+	content: '\e61b';
 }
 .social-profiles ul li.twitter a:hover {
-	background-position: -40px -40px;
+	color: #000;
 }
-.social-profiles ul li.google-plus a {
-	background-position: -80px 0;
+.social-profiles ul li.threads a:before {
+	content: '\e618';
+}
+.social-profiles ul li.threads a:hover {
+	color: #000;
+}
+.social-profiles ul li.google-plus a:before {
+	content: '\f0d5';
 }
 .social-profiles ul li.google-plus a:hover {
-	background-position: -80px -40px;
+	color: #D54836;
 }
-.social-profiles ul li.pinterest a {
-	background-position: -120px 0 ;
+.social-profiles ul li.pinterest a:before {
+	content: '\f231';
 }
 .social-profiles ul li.pinterest a:hover {
-	background-position: -120px -40px ;
+	color: #cc2026;
 }
-.social-profiles ul li.linked a {
-	background-position: -160px 0;
+.social-profiles ul li.linked a:before {
+	content: '\f0e1';
 }
 .social-profiles ul li.linked a:hover {
-	background-position: -160px -40px;
+	color: #047cb1;
 }
-.social-profiles ul li.tumblr a {
-	background-position: -200px 0 ;
+.social-profiles ul li.tumblr a:before {
+	content: '\f173';
 }
 .social-profiles ul li.tumblr a:hover {
-	background-position: -200px -40px;
+	color: #35465c;
 }
-.social-profiles ul li.vimeo a {
-	background-position: -240px 0;
+.social-profiles ul li.vimeo a:before {
+	content: '\f27d';
 }
 .social-profiles ul li.vimeo a:hover {
-	background-position: -240px -40px;
+	color: #1ab7ea;
 }
-.social-profiles ul li.my-space a {
-	background-position: -280px 0;
+.social-profiles ul li.my-space a:before {
+	content: '\f0c0';
 }
 .social-profiles ul li.my-space a:hover {
-	background-position: -280px -40px;
+	color: #0137C1;
 }
-.social-profiles ul li.flickr a {
-	background-position: -320px 0;
+.social-profiles ul li.flickr a:before {
+	content: '\f16e';
 }
 .social-profiles ul li.flickr a:hover {
-	background-position: -320px -40px;
+	color: #F8007B;
 }
-.social-profiles ul li.you-tube a {
-	background-position: -360px 0;
+.social-profiles ul li.you-tube a:before {
+	content: '\f167';
 }
 .social-profiles ul li.you-tube a:hover {
-	background-position: -360px -40px;
+	color: #cd201f;
 }
-.social-profiles ul li.rss a {
-	background-position: -400px 0;
+.social-profiles ul li.rss a:before {
+	content: '\f09e';
 }
 .social-profiles ul li.rss a:hover {
-	background-position: -400px -40px;
+	color: #ff6600;
 }
 
 /* Header Image */
@@ -901,21 +915,20 @@ a.more-link:hover {
 
 /* Search Form */
 input.s {
-	background: url(https://raysayz.com/wp-content/themes/attitude/images/search.png) no-repeat right 6px #fff;
-	-webkit-transition-duration: 400ms;
-	-webkit-transition-property: width, background;
-	-webkit-transition-timing-function: ease;
-	-moz-transition-duration: 400ms;
-	-moz-transition-property: width, background;
-	-moz-transition-timing-function: ease;
-	-o-transition-duration: 400ms;
-	-o-transition-property: width, background;
-	-o-transition-timing-function: ease;
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23CCCCCC" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>');
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	background-size: 15px;
+	background-color: #fff;
+	-webkit-transition: width 400ms ease;
+	-moz-transition: width 400ms ease;
+	-o-transition: width 400ms ease;
+	transition: width 400ms ease;
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 	width: 0;
-	padding: 3px 33px 3px 0;
+	padding: 3px 30px 3px 0;
 	height: 22px;
 	color: #bbb;
 	font-style: italic;
@@ -2593,13 +2606,13 @@ blockquote.wp-block-quote,
 	padding: 0 35px 0 15px; 
 	color: #777;
 	background-color: #f9f9f9;
-	background-position: right 10px; 
 	border-color: #eaeaea;
 	cursor: text;
 	text-indent: 0;
 }
 .widget_search input.s:focus { 
 	border-color: rgba(0, 0, 0, 0.15);
+	width: 100%;
 }
 
 /* Widget Tag Cloud */
@@ -3098,10 +3111,6 @@ blockquote.wp-block-quote,
 	.entry-meta {
 		width: 80%;
 	}
-   .widget_search input.s, 
-   .widget_search input.s:focus {
-		width: 280px;
-	}
    #wp_page_numbers, 
    .wp-pagenavi, 
    #content ul.default-wp-page, 
@@ -3357,105 +3366,3 @@ blockquote.wp-block-quote,
    	width: 95%; 
    }        
 }
-
-/* =Retina Ready Structure
------------------------------------------------ */
-/* All Retina Ready devices larger than 1.5 pixel ratio */
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-	input.s { 
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/search@2x.png');		
-		background-size: 24px 15px;
-	}
-	.social-profiles ul li a {
-		background-image: none;					
-		background-size: 30px 30px;
-	}
-	.social-profiles ul li.facebook a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/facebook@2x.png');		
-		background-position: 0 0;		
-	}
-	.social-profiles ul li.facebook a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/facebook@2x-hover.png');		
-		background-position: 0 0;
-	}
-	.social-profiles ul li.twitter a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/twitter@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.twitter a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/twitter@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.google-plus a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/google-plus@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.google-plus a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/google-plus@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.pinterest a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/pinterest@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.pinterest a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/pinterest@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.linked a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/linked@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.linked a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/linked@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.tumblr a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/tumblr@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.tumblr a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/tumblr@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.vimeo a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/vimeo@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.vimeo a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/vimeo@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.my-space a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/my-space@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.my-space a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/my-space@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.flickr a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/flickr@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.flickr a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/flickr@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.you-tube a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/you-tube@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.you-tube a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/you-tube@2x-hover.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.rss a {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/rss@2x.png');
-		background-position: 0 0;
-	}
-	.social-profiles ul li.rss a:hover {
-		background-image: url('https://raysayz.com/wp-content/themes/attitude/images/rss@2x-hover.png');
-		background-position: 0 0;
-	}
-}  	

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
+<html lang="en-US" itemscope itemtype="https://schema.org/BlogPosting">
 <head>
 
 		<meta charset="UTF-8">
@@ -10,65 +10,77 @@
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 	
 	<!-- This site is optimized with the Yoast SEO plugin v24.8.1 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>X - Ray Sayz</title>
-	<link rel="canonical" href="https://raysayz.com/x/">
+	<title>WireGuard Access to Digital Ocean DBs - Ray Sayz</title>
+	<link rel="canonical" href="https://raysayz.com/wireguard-access-to-digital-ocean-dbs/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="X - Ray Sayz">
-	<meta property="og:description" content="My Twitter Feed">
-	<meta property="og:url" content="https://raysayz.com/x/">
+	<meta property="og:title" content="WireGuard Access to Digital Ocean DBs - Ray Sayz">
+	<meta property="og:description" content="End-to-End WireGuard &amp; NGINX Proxy Setup Manual This document provides a comprehensive, step-by-step guide to: By following this manual, you will be able to connect to your databases (Redis, PostgreSQL) via the WireGuard VPN (using IP 10.0.0.1) as well as&hellip;">
+	<meta property="og:url" content="https://raysayz.com/wireguard-access-to-digital-ocean-dbs/">
 	<meta property="og:site_name" content="Ray Sayz">
-	<meta property="article:modified_time" content="2024-06-23T03:40:05+00:00">
-	<meta property="og:image" content="https://raysayz.com/wp-content/uploads/2024/06/raysayz_upscaled.png">
-	<meta property="og:image:width" content="800">
-	<meta property="og:image:height" content="800">
-	<meta property="og:image:type" content="image/png">
+	<meta property="article:published_time" content="2025-04-14T11:10:23+00:00">
+	<meta property="article:modified_time" content="2025-04-14T13:42:12+00:00">
+	<meta property="og:image" content="https://raysayz.com/wp-content/uploads/2024/06/DSCF0270_web_best-scaled.jpg">
+	<meta property="og:image:width" content="2560">
+	<meta property="og:image:height" content="1710">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="raysayz">
 	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="raysayz">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="4 minutes">
 	<script type="application/ld+json" class="yoast-schema-graph">{
 	    "@context": "https://schema.org",
 	    "@graph": [
 	        {
+	            "@type": "Article",
+	            "@id": "https://raysayz.com/wireguard-access-to-digital-ocean-dbs/#article",
+	            "isPartOf": {
+	                "@id": "https://raysayz.com/wireguard-access-to-digital-ocean-dbs/"
+	            },
+	            "author": {
+	                "name": "raysayz",
+	                "@id": "https://raysayz.com/#/schema/person/00e3de6ea3cf1408f8378a99a51d1ed9"
+	            },
+	            "headline": "WireGuard Access to Digital Ocean DBs",
+	            "datePublished": "2025-04-14T11:10:23+00:00",
+	            "dateModified": "2025-04-14T13:42:12+00:00",
+	            "mainEntityOfPage": {
+	                "@id": "https://raysayz.com/wireguard-access-to-digital-ocean-dbs/"
+	            },
+	            "wordCount": 812,
+	            "publisher": {
+	                "@id": "https://raysayz.com/#/schema/person/00e3de6ea3cf1408f8378a99a51d1ed9"
+	            },
+	            "inLanguage": "en-US"
+	        },
+	        {
 	            "@type": "WebPage",
-	            "@id": "https://raysayz.com/x/",
-	            "url": "https://raysayz.com/x/",
-	            "name": "X - Ray Sayz",
+	            "@id": "https://raysayz.com/wireguard-access-to-digital-ocean-dbs/",
+	            "url": "https://raysayz.com/wireguard-access-to-digital-ocean-dbs/",
+	            "name": "WireGuard Access to Digital Ocean DBs - Ray Sayz",
 	            "isPartOf": {
 	                "@id": "https://raysayz.com/#website"
 	            },
-	            "primaryImageOfPage": {
-	                "@id": "https://raysayz.com/x/#primaryimage"
-	            },
-	            "image": {
-	                "@id": "https://raysayz.com/x/#primaryimage"
-	            },
-	            "thumbnailUrl": "https://raysayz.com/wp-content/uploads/2024/06/raysayz_upscaled.png",
-	            "datePublished": "2024-06-23T03:35:45+00:00",
-	            "dateModified": "2024-06-23T03:40:05+00:00",
+	            "datePublished": "2025-04-14T11:10:23+00:00",
+	            "dateModified": "2025-04-14T13:42:12+00:00",
 	            "breadcrumb": {
-	                "@id": "https://raysayz.com/x/#breadcrumb"
+	                "@id": "https://raysayz.com/wireguard-access-to-digital-ocean-dbs/#breadcrumb"
 	            },
 	            "inLanguage": "en-US",
 	            "potentialAction": [
 	                {
 	                    "@type": "ReadAction",
 	                    "target": [
-	                        "https://raysayz.com/x/"
+	                        "https://raysayz.com/wireguard-access-to-digital-ocean-dbs/"
 	                    ]
 	                }
 	            ]
 	        },
 	        {
-	            "@type": "ImageObject",
-	            "inLanguage": "en-US",
-	            "@id": "https://raysayz.com/x/#primaryimage",
-	            "url": "https://raysayz.com/wp-content/uploads/2024/06/raysayz_upscaled.png",
-	            "contentUrl": "https://raysayz.com/wp-content/uploads/2024/06/raysayz_upscaled.png",
-	            "width": 800,
-	            "height": 800
-	        },
-	        {
 	            "@type": "BreadcrumbList",
-	            "@id": "https://raysayz.com/x/#breadcrumb",
+	            "@id": "https://raysayz.com/wireguard-access-to-digital-ocean-dbs/#breadcrumb",
 	            "itemListElement": [
 	                {
 	                    "@type": "ListItem",
@@ -79,7 +91,13 @@
 	                {
 	                    "@type": "ListItem",
 	                    "position": 2,
-	                    "name": "X"
+	                    "name": "Updates",
+	                    "item": "https://raysayz.com/updates/"
+	                },
+	                {
+	                    "@type": "ListItem",
+	                    "position": 3,
+	                    "name": "WireGuard Access to Digital Ocean DBs"
 	                }
 	            ]
 	        },
@@ -130,7 +148,8 @@
 	            },
 	            "sameAs": [
 	                "https://raysayz.com"
-	            ]
+	            ],
+	            "url": "https://raysayz.com/author/raysayz/"
 	        }
 	    ]
 	}</script>
@@ -142,6 +161,7 @@
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="alternate" type="application/rss+xml" title="Ray Sayz &raquo; Feed" href="https://raysayz.com/feed/">
 <link rel="alternate" type="application/rss+xml" title="Ray Sayz &raquo; Comments Feed" href="https://raysayz.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Ray Sayz &raquo; WireGuard Access to Digital Ocean DBs Comments Feed" href="https://raysayz.com/wireguard-access-to-digital-ocean-dbs/feed/">
 <script type="text/javascript">
 /* <![CDATA[ */
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/raysayz.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.7.2"}};
@@ -193,43 +213,38 @@ a2a_config.icon_color="#545454,#e8bc8b";
 <script type="text/javascript" src="https://raysayz.com/wp-content/themes/attitude/library/js/backtotop.js?ver=6.7.2" id="backtotop-js"></script>
 
 <!-- OG: 3.3.4 -->
-<meta property="og:image" content="https://raysayz.com/wp-content/uploads/2024/06/raysayz_upscaled.png">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="800">
-<meta property="og:image:alt" content="raysayz_upscaled">
-<meta property="og:image:type" content="image/png">
-<meta property="og:description" content="My Twitter Feed">
+<meta property="og:image" content="https://raysayz.com/wp-content/uploads/2023/11/cropped-raysayz.png">
+<meta property="og:description" content="End-to-End WireGuard &amp; NGINX Proxy Setup Manual This document provides a comprehensive, step-by-step guide to: Install and configure WireGuard on a DigitalOcean Droplet (Public IP: 165.**.***.***) Install and configure WireGuard on a Pop!_OS 22.04 laptop Configure partial traffic routing so only 10.0.0.0/24 travels through WireGuard Set up NGINX stream proxy to forward traffic to Redis...">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ray Sayz">
-<meta property="og:title" content="X">
-<meta property="og:url" content="https://raysayz.com/x/">
-<meta property="og:updated_time" content="2024-06-23T03:40:05+00:00">
-<meta property="article:published_time" content="2024-06-23T03:35:45+00:00">
-<meta property="article:modified_time" content="2024-06-23T03:40:05+00:00">
+<meta property="og:title" content="WireGuard Access to Digital Ocean DBs">
+<meta property="og:url" content="https://raysayz.com/wireguard-access-to-digital-ocean-dbs/">
+<meta property="og:updated_time" content="2025-04-14T13:42:12+00:00">
+<meta property="article:published_time" content="2025-04-14T11:10:23+00:00">
+<meta property="article:modified_time" content="2025-04-14T13:42:12+00:00">
+<meta property="article:section" content="Uncategorized">
 <meta property="article:author:username" content="raysayz">
 <meta property="twitter:partner" content="ogwp">
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://raysayz.com/wp-content/uploads/2024/06/raysayz_upscaled.png">
-<meta property="twitter:image:alt" content="raysayz_upscaled">
-<meta property="twitter:title" content="X">
-<meta property="twitter:description" content="My Twitter Feed">
-<meta property="twitter:url" content="https://raysayz.com/x/">
-<meta itemprop="image" content="https://raysayz.com/wp-content/uploads/2024/06/raysayz_upscaled.png">
-<meta itemprop="name" content="X">
-<meta itemprop="description" content="My Twitter Feed">
-<meta itemprop="datePublished" content="2024-06-23">
-<meta itemprop="dateModified" content="2024-06-23T03:40:05+00:00">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="WireGuard Access to Digital Ocean DBs">
+<meta property="twitter:description" content="End-to-End WireGuard &amp; NGINX Proxy Setup Manual This document provides a comprehensive, step-by-step guide to: Install and configure WireGuard on a DigitalOcean Droplet (Public IP:...">
+<meta property="twitter:url" content="https://raysayz.com/wireguard-access-to-digital-ocean-dbs/">
+<meta itemprop="image" content="https://raysayz.com/wp-content/uploads/2023/11/cropped-raysayz.png">
+<meta itemprop="name" content="WireGuard Access to Digital Ocean DBs">
+<meta itemprop="description" content="End-to-End WireGuard &amp; NGINX Proxy Setup Manual This document provides a comprehensive, step-by-step guide to: Install and configure WireGuard on a DigitalOcean Droplet (Public IP: 165.**.***.***) Install and configure WireGuard on a Pop!_OS 22.04 laptop Configure partial traffic routing so only 10.0.0.0/24 travels through WireGuard Set up NGINX stream proxy to forward traffic to Redis...">
+<meta itemprop="datePublished" content="2025-04-14">
+<meta itemprop="dateModified" content="2025-04-14T13:42:12+00:00">
 <meta property="profile:username" content="raysayz">
 <!-- /OG -->
 
 <link rel="https://api.w.org/" href="https://raysayz.com/wp-json/">
-<link rel="alternate" title="JSON" type="application/json" href="https://raysayz.com/wp-json/wp/v2/pages/975">
+<link rel="alternate" title="JSON" type="application/json" href="https://raysayz.com/wp-json/wp/v2/posts/1507">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://raysayz.com/xmlrpc.php?rsd">
 <meta name="generator" content="WordPress 6.7.2">
-<link rel="shortlink" href="https://raysayz.com/?p=975">
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://raysayz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fraysayz.com%2Fx%2F">
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://raysayz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fraysayz.com%2Fx%2F#038;format=xml">
+<link rel="shortlink" href="https://raysayz.com/?p=1507">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://raysayz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fraysayz.com%2Fwireguard-access-to-digital-ocean-dbs%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://raysayz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fraysayz.com%2Fwireguard-access-to-digital-ocean-dbs%2F#038;format=xml">
 <script>fsg_json = {}; fsg_photobox = {}; fsg_photolist = {};</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LPBZ5W37R"></script>
@@ -259,7 +274,7 @@ a2a_config.icon_color="#545454,#e8bc8b";
 
 </head>
 
-<body class="page-template-default page page-id-975  wide-layout">
+<body class="post-template-default single single-post postid-1507 single-format-standard  wide-layout">
 		
 	<div class="wrapper">
 				<header id="branding">
@@ -298,7 +313,7 @@ a2a_config.icon_color="#545454,#e8bc8b";
 	<nav id="access" class="clearfix">
 					<div class="container clearfix"><ul class="root">
 <li id="menu-item-623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-623"><a href="https://raysayz.com/">Home</a></li>
-<li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="https://raysayz.com/updates/">Latest</a></li>
+<li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-160"><a href="https://raysayz.com/updates/">Latest</a></li>
 <li id="menu-item-151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151"><a href="https://raysayz.com/photography/">Photography</a></li>
 <li id="menu-item-173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-173">
 <a href="https://raysayz.com/digital-art/">Digital Art</a>
@@ -325,13 +340,13 @@ a2a_config.icon_color="#545454,#e8bc8b";
 	
 
 <div id="primary">
-   <div id="content">	<section id="post-975" class="post-975 page type-page status-publish has-post-thumbnail hentry">
+   <div id="content">	<section id="post-1507" class="post-1507 post type-post status-publish format-standard hentry category-uncategorized">
 		<article>
 
 			
 			<header class="entry-header">
     			<h1 class="entry-title">
-    				X    			</h1>
+    				WireGuard Access to Digital Ocean DBs    			</h1>
 <!-- .entry-title -->
   			</header>
 
@@ -339,14 +354,581 @@ a2a_config.icon_color="#545454,#e8bc8b";
   			
   			<div class="entry-content clearfix">
     			
-<p>Feed on my X !</p>
+<h1 class="wp-block-heading">End-to-End WireGuard &amp; NGINX Proxy Setup Manual</h1>
 
 
 
-<a class="twitter-timeline" href="https://twitter.com/surajitray?ref_src=twsrc%5Etfw">Tweets by surajitray</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    			  			</div>
+<p>
+This document provides a comprehensive, step-by-step guide to:
+</p>
 
-  			
+
+
+<ul class="wp-block-list">
+<li>Install and configure WireGuard on a DigitalOcean Droplet (Public IP: <code>165.**.***.***</code>)</li>
+
+
+
+<li>Install and configure WireGuard on a Pop!_OS 22.04 laptop</li>
+
+
+
+<li>Configure partial traffic routing so only <code>10.0.0.0/24</code> travels through WireGuard</li>
+
+
+
+<li>Set up NGINX stream proxy to forward traffic to Redis and PostgreSQL over both the public interface <em>and</em> the WireGuard interface</li>
+</ul>
+
+
+
+<p>
+By following this manual, you will be able to connect to your databases (Redis, PostgreSQL) via the WireGuard VPN (using IP <code>10.0.0.1</code>) as well as the public IP (<code>165.**.***.***</code>) if needed.
+</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity">
+
+
+
+<h2 class="wp-block-heading" id="overview">1. Overview of the Setup</h2>
+
+
+
+<ul class="wp-block-list">
+<li>
+<strong>Droplet IP:</strong> <code>165.**.***.***</code>
+</li>
+
+
+
+<li>
+<strong>WireGuard (Server Interface) IP:</strong> <code>10.0.0.1/24</code>
+</li>
+
+
+
+<li>
+<strong>WireGuard (Laptop/Client Interface) IP:</strong> <code>10.0.0.2/24</code>
+</li>
+
+
+
+<li>
+<strong>Traffic to 10.0.0.x</strong> will go over the VPN; everything else goes over regular internet.</li>
+
+
+
+<li>
+<strong>NGINX</strong> is configured to listen on:<br>        <ul>
+<br>            <li>The public IP (<code>165.**.***.***</code>)</li>
+<br>            <li>The WireGuard IP (<code>10.0.0.1</code>)</li>
+<br>        </ul>
+<br>        for both Redis and PostgreSQL proxies.<br>    </li>
+</ul>
+
+
+
+<p class="important">
+    <strong>Note:</strong> If you are using DigitalOcean-managed databases, be sure to whitelist (add to &#8220;trusted sources&#8221;) the Droplet’s public IP (<code>165.**.***.***</code>) in the database control panel. Otherwise, the database will reject connections.
+</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity">
+
+
+
+<h2 class="wp-block-heading" id="droplet-setup">2. WireGuard Server Setup on the Droplet</h2>
+
+
+
+<h3 class="wp-block-heading">2.1 System Preparation</h3>
+
+
+
+<ol class="wp-block-list">
+<li>
+<br>        SSH into your Droplet:<br>        <pre><code>ssh root@165.**.***.***</code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Update the system:<br>        <pre><code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Install WireGuard:<br>        <pre><code>sudo apt install wireguard -y</code></pre>
+<br>    </li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">2.2 Generate Server Keys</h3>
+
+
+
+<ol class="wp-block-list">
+<li>Create private and public keys:</li>
+
+
+
+<li><code>wg genkey | tee /etc/wireguard/privatekey | wg pubkey &gt; /etc/wireguard/publickey</code></li>
+
+
+
+<li>
+<br>        View and save them (you will need the public key for the client):<br>        <pre><code>cat /etc/wireguard/privatekey<br>cat /etc/wireguard/publickey</code></pre>
+<br>    </li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">2.3 Server Configuration</h3>
+
+
+
+<ol class="wp-block-list">
+<li>Create the <code>/etc/wireguard/wg0.conf</code> file:<br>        <pre><code>sudo nano /etc/wireguard/wg0.conf</code></pre>
+<br>    </li>
+
+
+
+<li>Place the following content (replace <code>&lt;server_private_key&gt;</code> with the private key you generated above):<br>        <pre><code>[Interface]<br>Address = 10.0.0.1/24<br>ListenPort = 51820<br>PrivateKey = &lt;server_private_key&gt;<br></code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Enable IP forwarding in <code>/etc/sysctl.conf</code>:<br>        <pre><code>sudo nano /etc/sysctl.conf<br><br># Uncomment or add:<br>net.ipv4.ip_forward=1<br><br># Then apply:<br>sudo sysctl -p<br></code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Secure files and start WireGuard:<br>        <pre><code>sudo chmod 600 /etc/wireguard/{privatekey,wg0.conf}<br>sudo systemctl enable wg-quick@wg0<br>sudo systemctl start wg-quick@wg0<br></code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Check WireGuard status:<br>        <pre><code>sudo wg show</code></pre>
+<br>        You should see <code>wg0</code> with IP <code>10.0.0.1</code>.<br>    </li>
+</ol>
+
+
+
+<p class="note">
+    If you are using UFW, run:
+    </p>
+
+
+
+<pre class="wp-block-code"><code>sudo ufw allow 51820/udp</code></pre>
+
+
+
+<p>
+    to open the WireGuard port.
+</p>
+
+
+
+<p></p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity">
+
+
+
+<h2 class="wp-block-heading" id="client-setup">3. WireGuard Client Setup on Pop!_OS (Laptop)</h2>
+
+
+
+<h3 class="wp-block-heading">3.1 Install WireGuard</h3>
+
+
+
+<pre class="wp-block-code"><code>sudo apt update
+sudo apt install wireguard
+</code></pre>
+
+
+
+<h3 class="wp-block-heading">3.2 Generate Client Keys</h3>
+
+
+
+<ol class="wp-block-list">
+<li>
+<br>        <pre><code>wg genkey | tee ~/client_privatekey | wg pubkey &gt; ~/client_publickey</code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Note these keys:<br>        <pre><code>cat ~/client_privatekey<br>cat ~/client_publickey<br></code></pre>
+<br>    </li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">3.3 Add the Laptop as a Peer on the Droplet</h3>
+
+
+
+<ol class="wp-block-list">
+<li>SSH back into the droplet:<br>        <pre><code>ssh root@165.**.***.***</code></pre>
+<br>    </li>
+
+
+
+<li>Edit <code>/etc/wireguard/wg0.conf</code> to add a new peer. Replace <code>&lt;client_public_key&gt;</code> with the client’s <code>~/client_publickey</code>:<br>        <pre><code>[Peer]<br>PublicKey = &lt;client_public_key&gt;<br>AllowedIPs = 10.0.0.2/32<br></code></pre>
+<br>    </li>
+
+
+
+<li>Restart WireGuard on the droplet:<br>        <pre><code>sudo systemctl restart wg-quick@wg0</code></pre>
+<br>    </li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">3.4 Create the Client Configuration on Your Laptop</h3>
+
+
+
+<ol class="wp-block-list">
+<li>
+<br>        <pre><code>sudo nano /etc/wireguard/wg0.conf</code></pre>
+<br>    </li>
+
+
+
+<li>Place the following content. Replace <code>&lt;client_private_key&gt;</code> and <code>&lt;server_public_key&gt;</code> with the actual keys you noted:<br>        <pre><code>[Interface]<br>PrivateKey = &lt;client_private_key&gt;<br>Address = 10.0.0.2/24<br># If routing ONLY 10.0.0.0/24 over the VPN, remove "DNS = 8.8.8.8" or route 8.8.8.8 as well.<br># DNS = 8.8.8.8<br><br>[Peer]<br>PublicKey = &lt;server_public_key&gt;<br>Endpoint = 165.**.***.***:51820<br>AllowedIPs = 10.0.0.0/24<br>PersistentKeepalive = 25<br></code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Secure the file and bring up the interface:<br>        <pre><code>sudo chmod 600 /etc/wireguard/wg0.conf<br>sudo wg-quick up wg0<br></code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Verify:<br>        <pre><code>wg show<br>ping 10.0.0.1<br></code></pre>
+<br>        You should see successful pings to <code>10.0.0.1</code>.<br>    </li>
+</ol>
+
+
+
+<p class="note">
+    If using <code>DNS = 8.8.8.8</code> in the client config and <code>AllowedIPs</code> is only <code>10.0.0.0/24</code>, DNS lookups may break since 8.8.8.8 would be routed incorrectly. You can either remove the DNS line or add <code>8.8.8.8/32</code> to <code>AllowedIPs</code> and configure NAT on the droplet. For partial routing only, it&#8217;s usually easiest to remove <code>DNS=8.8.8.8</code>.
+</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity">
+
+
+
+<h2 class="wp-block-heading" id="nginx-stream">4. NGINX Stream Configuration (Redis &amp; PostgreSQL) on the Droplet</h2>
+
+
+
+<p>
+We’ll configure NGINX stream blocks so that they listen on:
+</p>
+
+
+
+<ul class="wp-block-list">
+<li>The Droplet’s public IP: <code>165.**.***.***</code>
+</li>
+
+
+
+<li>The Droplet’s WireGuard IP: <code>10.0.0.1</code>
+</li>
+</ul>
+
+
+
+<p>
+Then NGINX proxies traffic to DigitalOcean-managed Redis and PostgreSQL databases. Make sure you have whitelisted <code>165.**.***.***</code> in the DO database trusted sources.
+</p>
+
+
+
+<h3 class="wp-block-heading">4.1 Install NGINX (if not installed)</h3>
+
+
+
+<pre class="wp-block-code"><code>sudo apt update
+sudo apt install nginx
+</code></pre>
+
+
+
+<p>
+Be sure you have <code>stream</code> module support. On Ubuntu, <code>/etc/nginx/modules-enabled/50-mod-stream.conf</code> typically loads it. 
+</p>
+
+
+
+<h3 class="wp-block-heading">4.2 Example Stream Configuration</h3>
+
+
+
+<p>
+Below is an example <code>/etc/nginx/streams-available/default</code> (or a separate file if you prefer). It listens on ports for Redis and PostgreSQL, both public &amp; WireGuard IPs. 
+</p>
+
+
+
+<pre class="wp-block-code"><code>############################
+# nginx proxy for db forwarding
+
+upstream redis_servers {
+    server do-user-1459265-0.c.db.ondigitalocean.com:25061;
+}
+
+upstream dev_redis_servers {
+    server do-user-1459265-0.i.db.ondigitalocean.com:25061;
+}
+
+upstream postgres_servers {
+    server persistent-backup-do-user-1459265-0.i.db.ondigitalocean.com:25060;
+}
+
+upstream dev_postgres_servers {
+    server persistent-backup-do-user-1459265-0.e.db.ondigitalocean.com:25060;
+}
+
+# Redis proxy (both public and WireGuard)
+server {
+    listen 165.**.***.***:6501;
+    listen 10.0.0.1:6501;
+    proxy_pass redis_servers;
+    proxy_timeout 30s;
+}
+
+server {
+    listen 165.**.***.***:7501;
+    listen 10.0.0.1:7501;
+    proxy_pass dev_redis_servers;
+    proxy_timeout 30s;
+}
+
+# PostgreSQL proxy (both public and WireGuard)
+server {
+    listen 165.**.***.***:8501;
+    listen 10.0.0.1:8501;
+    # If DO Postgres requires traffic from the droplet's public IP:
+    # proxy_bind 165.**.***.***;
+    proxy_pass postgres_servers;
+    proxy_timeout 30s;
+}
+
+server {
+    listen 165.**.***.***:9501;
+    listen 10.0.0.1:9501;
+    # If DO Postgres requires traffic from the droplet's public IP:
+    # proxy_bind 165.**.***.***;
+    proxy_pass dev_postgres_servers;
+    proxy_timeout 30s;
+}
+
+############################
+</code></pre>
+
+
+
+<p class="important">
+    <strong>Whitelist Note:</strong> If your managed Postgres instance requires traffic to originate from <code>165.**.***.***</code>, uncomment <code>proxy_bind 165.**.***.***;</code> in the PostgreSQL blocks. Also ensure that <code>165.**.***.***</code> is in the database’s trusted sources. Otherwise, the DB will reject the connection.
+</p>
+
+
+
+<h3 class="wp-block-heading">4.3 Enable &amp; Test the Configuration</h3>
+
+
+
+<ol class="wp-block-list">
+<li>
+<br>        Link or copy the file into <code>/etc/nginx/streams-enabled/</code> or ensure <code>include /etc/nginx/streams-available/default;</code> is in your main <code>/etc/nginx/nginx.conf</code>.<br>    </li>
+
+
+
+<li>
+<br>        Test the config:<br>        <pre><code>sudo nginx -t</code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Reload/Restart NGINX:<br>        <pre><code>sudo service nginx restart</code></pre>
+<br>    </li>
+
+
+
+<li>
+<br>        Verify that NGINX is listening on both IPs:<br>        <pre><code>sudo netstat -tlnp | grep 6501<br>sudo netstat -tlnp | grep 8501<br></code></pre>
+<br>        You should see references to both <code>165.**.***.***</code> and <code>10.0.0.1</code>.<br>    </li>
+</ol>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity">
+
+
+
+<h2 class="wp-block-heading" id="connect-tests">5. Connecting to Redis &amp; PostgreSQL</h2>
+
+
+
+<h3 class="wp-block-heading">5.1 Connect Over Public IP</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Redis on <code>6501</code>: <br>        <pre><code>redis-cli -h 165.**.***.*** -p 6501<br></code></pre>
+<br>    </li>
+
+
+
+<li>Redis Dev on <code>7501</code>:<br>        <pre><code>redis-cli -h 165.**.***.*** -p 7501<br></code></pre>
+<br>    </li>
+
+
+
+<li>Postgres on <code>8501</code>:<br>        <pre><code>psql -h 165.**.***.*** -p 8501 -U username -d dbname<br></code></pre>
+<br>    </li>
+
+
+
+<li>Postgres Dev on <code>9501</code>:<br>        <pre><code>psql -h 165.**.***.*** -p 9501 -U username -d dbname<br></code></pre>
+<br>    </li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">5.2 Connect Over WireGuard IP</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Redis on <code>6501</code>:<br>        <pre><code>redis-cli -h 10.0.0.1 -p 6501<br></code></pre>
+<br>    </li>
+
+
+
+<li>Redis Dev on <code>7501</code>:<br>        <pre><code>redis-cli -h 10.0.0.1 -p 7501<br></code></pre>
+<br>    </li>
+
+
+
+<li>Postgres on <code>8501</code>:<br>        <pre><code>psql -h 10.0.0.1 -p 8501 -U username -d dbname<br></code></pre>
+<br>    </li>
+
+
+
+<li>Postgres Dev on <code>9501</code>:<br>        <pre><code>psql -h 10.0.0.1 -p 9501 -U username -d dbname<br></code></pre>
+<br>    </li>
+</ul>
+
+
+
+<p>
+Connections arriving on <code>10.0.0.1</code> travel securely over the WireGuard tunnel. The droplet then proxies to DigitalOcean’s internal database endpoints. If the database requires traffic from <code>165.**.***.***</code>, ensure you have <code>proxy_bind 165.**.***.***;</code> and that the DB has <code>165.**.***.***</code> whitelisted.
+</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity">
+
+
+
+<h2 class="wp-block-heading" id="caveats">6. Caveats &amp; Additional Notes</h2>
+
+
+
+<ul class="wp-block-list">
+<li>
+<strong>Firewall Rules:</strong> Ensure the droplet’s firewall (UFW or DO firewall) allows inbound connections on the ports you have configured (6501, 7501, 8501, 9501) if you need external access. If you only want VPN access, you can restrict these ports to your internal interface or the DO firewall can block them publicly.</li>
+
+
+
+<li>
+<strong>DNS Over WireGuard:</strong> If you configure <code>DNS=8.8.8.8</code> in WireGuard without also routing <code>8.8.8.8</code> or using NAT, DNS might break. Simply remove <code>DNS=8.8.8.8</code> if only partial routing is desired.</li>
+
+
+
+<li>
+<strong>Cloud Database Trust Settings:</strong> Remember to add <code>165.**.***.***</code> as a trusted source in the DigitalOcean database panel. If you forget, the DB connection will fail with “No route” or “Connection refused.”</li>
+
+
+
+<li>
+<strong>Testing:</strong> If you run into issues, always check <code>wg show</code> (on both client and server), <code>ip route</code> (client), <code>sudo netstat -tlnp | grep nginx</code> (server), and the <code>sudo journalctl -u wg-quick@wg0</code> / <code>/var/log/nginx/error.log</code> logs for details.</li>
+</ul>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity">
+
+
+
+<h2 class="wp-block-heading">7. Conclusion</h2>
+
+
+
+<p>
+By following these steps, you achieve:
+</p>
+
+
+
+<ul class="wp-block-list">
+<li>A secure WireGuard VPN where only <code>10.0.0.0/24</code> flows through the tunnel, ensuring normal Internet traffic remains direct.</li>
+
+
+
+<li>An NGINX-based proxy that can forward Redis and Postgres connections from both <code>165.**.***.***</code> (public) and <code>10.0.0.1</code> (VPN) to the appropriate internal DO database instances.</li>
+
+
+
+<li>A consistent environment that is simple for team members to replicate, given they have the correct keys, IPs, and whitelisted addresses.</li>
+</ul>
+
+
+
+<p class="note">
+    <em>End of Manual.</em> 
+</p>
+  			</div>
+  			<div class="entry-meta-bar clearfix">	        			
+    			<div class="entry-meta">
+    				<span class="by-author vcard author"><span class="fn">By <a href="https://raysayz.com/author/raysayz/">raysayz</a></span></span> |
+    				<span class="date updated"><a href="https://raysayz.com/wireguard-access-to-digital-ocean-dbs/" title="11:10 am">April 14, 2025</a></span> |
+    				             		<span class="category"><a href="https://raysayz.com/category/uncategorized/" rel="category tag">Uncategorized</a></span> |
+             	 
+    				 		          				
+    			</div>
+<!-- .entry-meta -->
+    		</div>
+
+  						<ul class="default-wp-page clearfix">
+				<li class="previous"><a href="https://raysayz.com/installing-unity-hub-on-popos-22-04-lts/" rel="prev"><span class="meta-nav">&larr;</span> Installing Unity Hub on PopOs 22.04 LTS</a></li>
+				<li class="next">
+			</ul>
+		
 <div id="comments" class="comments-area">
 
 	
@@ -449,13 +1031,13 @@ a2a_config.icon_color="#545454,#e8bc8b";
 	 
 
 <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:transparent">
-<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fraysayz.com%2Fx%2F%3Fsimply_static_page%3D95801&amp;linkname=X%20-%20Ray%20Sayz" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fraysayz.com%2Fx%2F%3Fsimply_static_page%3D95801&amp;linkname=X%20-%20Ray%20Sayz" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fraysayz.com%2Fx%2F%3Fsimply_static_page%3D95801&amp;linkname=X%20-%20Ray%20Sayz" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fraysayz.com%2Fwireguard-access-to-digital-ocean-dbs%2F%3Fsimply_static_page%3D95712&amp;linkname=WireGuard%20Access%20to%20Digital%20Ocean%20DBs%20-%20Ray%20Sayz" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fraysayz.com%2Fwireguard-access-to-digital-ocean-dbs%2F%3Fsimply_static_page%3D95712&amp;linkname=WireGuard%20Access%20to%20Digital%20Ocean%20DBs%20-%20Ray%20Sayz" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fraysayz.com%2Fwireguard-access-to-digital-ocean-dbs%2F%3Fsimply_static_page%3D95712&amp;linkname=WireGuard%20Access%20to%20Digital%20Ocean%20DBs%20-%20Ray%20Sayz" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
 </div>
 <script type="text/javascript" src="https://raysayz.com/wp-content/plugins/fullscreen-galleria/galleria-1.6.1.min.js?ver=1.6.1" id="galleria-js"></script>
 <script type="text/javascript" src="https://raysayz.com/wp-content/plugins/fullscreen-galleria/galleria-fs.js?ver=1.6.12-wrkHfY" id="galleria-fs-js"></script>
 <script type="text/javascript" src="https://raysayz.com/wp-content/plugins/fullscreen-galleria/galleria-fs-theme.js?ver=1.6.12-wrkHfY" id="galleria-fs-theme-js"></script>
 <div id="galleria"></div>
-<script>fullscreen_galleria_postid=975;
+<script>fullscreen_galleria_postid=1507;
 fsg_settings = {"theme":"b","transition":"slide","overlay_time":"2000","show_title":true,"show_description":true,"show_camera_info":true,"show_thumbnails":true,"show_permalink":"page","show_attachment":true,"show_map":true,"show_caption":false,"show_sharing":false,"image_nav":false,"auto_start_slideshow":false,"true_fullscreen":false,"load_on_demand":false,"w3tc":false,"load_in_header":false};
 fullscreen_galleria_attachment=false;</script><script type="text/javascript" src="https://raysayz.com/wp-content/themes/attitude-child/js/raysayz.js?ver=1.0.3" id="raysayz"></script>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
